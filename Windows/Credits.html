@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8"/>
+	<title>GifClicker Patch Notes</title>
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body style="text-align: center; display: flex; flex-direction:column;">
+    <button onclick="window.history.back()">Back</button>
+    <text>
+        <a href="https://github.com/Terrces" target="_blank">Главный разработчик: terrces (Харин Иван); </a><br>
+        Помощь в разработке: Lenkon;<br>
+        Помощь с идеями: sol89o <br>
+        <a href="https://tenor.com/" target="_blank"> Api: Tenor </a><br>
+        <a href="https://hitrison.itch.io/menu-sfx-pack" target="_blank"> UI sounds 1 </a><br>
+        <a href="https://coloralpha.itch.io/50-menu-interface-sfx" target="_blank"> UI sounds 2 </a><br>
+    </text>
+</body>
+<script>
+    if(localStorage.getItem("Theme") >= 120){
+        document.querySelector("body").style.color = "black";
+        document.querySelector("body").style.backgroundColor = "White";
+    }
+    else{
+        document.querySelector("body").style.color = "white";
+        document.querySelector("body").style.backgroundColor = "black";
+    }
+</script>

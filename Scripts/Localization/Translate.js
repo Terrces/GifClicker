@@ -1,0 +1,2 @@
+export let ru_RU = ["Обновить","Добавить в коллекцию","Коллекция","Магазин","Настройки тем","Настройки звуков","Другое"];
+export let en_US = ["New GIF","Append in collection","Collection","Shop","Themes Settings","Sounds Settings","Another"];
