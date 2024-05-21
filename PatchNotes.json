@@ -12,7 +12,8 @@
         " Улучшение игрвого процесса",
         " English language",
         " MultiLanguage interface",
-        " More theme customization"
+        " More theme customization",
+        " New Inteface"
     ],
     "Image":[
         "https://media.tenor.com/RFA35nCeNgUAAAAC/colors-meme-kila-uchis.gif",
@@ -27,7 +28,8 @@
         "https://media.tenor.com/82oMjTNT390AAAAC/eat-cake.gif",
         "https://media.tenor.com/9XGuoKOSqrcAAAAi/kaguya-sama-kaguya.gif",
         "https://media.tenor.com/fRgkwiu8K_kAAAAi/senku.gif",
-        "https://media.tenor.com/rVdLW8Oi97kAAAAC/what-aki-adagaki.gif"
+        "https://media.tenor.com/rVdLW8Oi97kAAAAC/what-aki-adagaki.gif",
+        "https://media.tenor.com/kOeE0Cs8gy0AAAAi/anime-dancing.gif"
     ],
     "Changes": [
         "В коллекции стали работать кнопки: Выбрать и Удалить, был изменен дизайн приложения",
@@ -42,8 +44,9 @@
         " были добавленны звуки и настройка звуков темы теперь сохраняются при желании в настройках можно удалить все данные игры,были улучшены уведомления теперь их можно пропустить так же в них были добавленны изображеня для более приятного игрового процесса ◾,магазин стал более удобным благодаря отображению того на какой страницы вы сейчас находитесь и сколько их в принципе есть так же благодаря этому элементу можно перемешаться по страницам,была полностью исправлена проблема при которой можно было бесконечно добавлять одинаковые гифки в коллекцию, улучшенно окно patch notes",
         " All effects have been removed for an improved user experience, the main language has been changed to English, the theme system now works correctly",
         " icons on the buttons were changed and added, a language change was added, the theme system was completely corrected",
-        " Fixed a bug where the text merged with the background when first launched, added ability to edit background image"
+        " Fixed a bug where the text merged with the background when first launched, added ability to edit background image",
+        " Added standart background, new icons, new sounds, New animations have been added, windows now appear and disappear smoothly, buttons for moving left and right have been removed from the store, adding to the collection is now free"
     ],
-    "UpdateNumbers":["0.3","0.4","0.4.1","0.4.2","0.4.3","0.4.4","0.4.5","0.4.6","0.4.7","0.4.8","0.4.9","0.5.0","0.5.1"],
-    "Date":["Утеряна","24.03.2024","25.03.2024","27.03.2024","28.03.2024","06.04.2024","15.04.2024","16.04.2024","19.04.2024","21.04.2024","01.05.2024","02.05.2024","03.05.2024"]
+    "UpdateNumbers":["0.3","0.4","0.4.1","0.4.2","0.4.3","0.4.4","0.4.5","0.4.6","0.4.7","0.4.8","0.4.9","0.5.0","0.5.1","0.5.2"],
+    "Date":["Утеряна","24.03.2024","25.03.2024","27.03.2024","28.03.2024","06.04.2024","15.04.2024","16.04.2024","19.04.2024","21.04.2024","01.05.2024","02.05.2024","03.05.2024","21.05.2024"]
 }
