@@ -29,7 +29,8 @@
             "theme_title": "Theme settings",
             "sounds_title": "Sounds settings",
             "another_title": "Another",
-            "main_accent_color": "Accent color",
+            "main_accent_color_text": "Accent color",
+            "sounds_volume_text": "Volume",
             "language_text": "language:"
         },
         "patch_notes" : 
@@ -83,81 +84,78 @@
     "uk_UKR": {
         "main":
         {
-            "shop":"Shop",
-            "collection": "Collection",
-            "refresh": "Refresh",
+            "shop":"Магазин",
+            "collection": "Колекція",
+            "refresh": "Перезавантажити",
             "add_gif_to_collection": ""
         },
         "shop":
         {
-            "purchase_cost" : " Purchase cost: ",
-            "only_stickers" : "Only stickers: ",
-            "coming_soon" : "Coming soon",
-            "neko_clicks" : "autoclicks",
-            "change_gif":"Change gif",
-            "upgrade": "Upgrade ",
-            "clicks" : "clicks",
-            "buy" : "buy"
+            "purchase_cost" : " Вартість товару: ",
+            "only_stickers" : "Тільки стікери: ",
+            "change_gif":"Змінити гіфку: ",
+            "neko_clicks" : "Автокліки",
+            "coming_soon" : "В найближчому майбутньому",
+            "upgrade": "Прокачати ",
+            "clicks" : "Кліки",
+            "buy" : "Купити"
         },
         "Collection":
         {
-            "copy_GIF": "Copy GIF",
-            "choise": "Choise",
-            "delete": "Delete"
+            "copy_GIF": "Скопіювати",
+            "choise": "Обрати",
+            "delete": "Видалити"
         },
         "settings":
         {
-            "theme_title": "Theme settings",
-            "sounds_title": "Sounds settings",
-            "another_title": "Another",
-            "main_accent_color": "Accent color",
-            "language_text": "language:"
+            "theme_title": "Налаштування теми",
+            "sounds_title": "Налаштування звуків",
+            "another_title": "Інше",
+            "main_accent_color_text": "Колір акцентів",
+            "sounds_volume_text": "Загальна гучність",
+            "language_text": "Мова:"
         },
         "patch_notes" : 
         {
-            "title" : "Update: ",
-            "mini_title" : "Changes - Updates" ,
-            "updated" : "updated: "
+            "title" : "Оновлення: ",
+            "mini_title" : "Зміни - оновлення" ,
+            "updated" : "Дата оновлень: "
         }
     },
     "no_NOR": {
-        "main":
-        {
-            "shop":"Shop",
-            "collection": "Collection",
-            "refresh": "Refresh",
+        "main": {
+            "shop": "Butikk",
+            "collection": "Samling",
+            "refresh": "Oppdater",
             "add_gif_to_collection": ""
         },
-        "shop":
-        {
-            "purchase_cost" : " Purchase cost: ",
-            "only_stickers" : "Only stickers: ",
-            "coming_soon" : "Coming soon",
-            "neko_clicks" : "autoclicks",
-            "change_gif":"Change gif",
-            "upgrade": "Upgrade ",
-            "clicks" : "clicks",
-            "buy" : "buy"
+        "shop": {
+            "purchase_cost": "Pris for varen: ",
+            "only_stickers": "Kun klistremerker: ",
+            "change_gif": "Endre GIF: ",
+            "neko_clicks": "Autoklikk",
+            "coming_soon": "Kommer snart",
+            "upgrade": "Oppgrader",
+            "clicks": "Klikk",
+            "buy": "Kjøp"
         },
-        "Collection":
-        {
-            "copy_GIF": "Copy GIF",
-            "choise": "Choise",
-            "delete": "Delete"
+        "Collection": {
+            "copy_GIF": "Kopier gif",
+            "choise": "Velg",
+            "delete": "Slett"
         },
-        "settings":
-        {
-            "theme_title": "Theme settings",
-            "sounds_title": "Sounds settings",
-            "another_title": "Another",
-            "main_accent_color": "Accent color",
-            "language_text": "language:"
+        "settings": {
+            "theme_title": "Tema innstillinger",
+            "sounds_title": "Lydinnstillinger",
+            "another_title": "Annet",
+            "main_accent_color_text": "Aksentfarge",
+            "sounds_volume_text": "Lydvolum",
+            "language_text": "Språk:"
         },
-        "patch_notes" : 
-        {
-            "title" : "Update: ",
-            "mini_title" : "Changes - Updates" ,
-            "updated" : "updated: "
+        "patch_notes": {
+            "title": "Oppdatering: ",
+            "mini_title": "Endringer - oppdatering",
+            "updated": "Oppdateringsdato: "
         }
     }
 }
