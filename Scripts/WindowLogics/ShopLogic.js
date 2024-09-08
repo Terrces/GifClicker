@@ -10,7 +10,10 @@ let Lang = localStorage.getItem("lang");
 let CurrentPage = 0;
 let categories = ["Changes gif:","Upgrade clicks:","Upgrade autoclicks:","Coming Soon"];
 let categorieBuy = ["ChangeGif","ClickUpgrade","AutoClickUpgrade"];
-let ProductImage = ["https://media.tenor.com/PxoS152OMWwAAAAi/%D0%B0%D0%BD%D0%B8%D0%BC%D0%B5.gif","https://media.tenor.com/5tvr3R-VgtEAAAAi/kyoko-toshino.gif","https://media.tenor.com/hgR97aG7R2YAAAAi/the-helpful-fox-senko-san-blushing.gif","https://media.tenor.com/fVcCLR2YQXUAAAAi/funny-anime.gif"];
+let ProductImage = ["https://media.tenor.com/PxoS152OMWwAAAAi/%D0%B0%D0%BD%D0%B8%D0%BC%D0%B5.gif",
+	"https://media.tenor.com/5tvr3R-VgtEAAAAi/kyoko-toshino.gif",
+	"https://media.tenor.com/hgR97aG7R2YAAAAi/the-helpful-fox-senko-san-blushing.gif",
+	"https://media.tenor.com/lKiKX2lNvhUAAAAi/anime-girl-dance-anime-dance.gif"];
 
 function Update(){
 	let title = document.createElement("text");
