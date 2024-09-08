@@ -1,9 +1,14 @@
 
+let TranslateFetch = await fetch("../Scripts/Localization/Translate.json");
+let Translate = await TranslateFetch.json()
+
 let PatchNotesFetch = await fetch("https://raw.githubusercontent.com/Terrces/GifClicker/main/PatchNotes.json");
 let PatchNotes = await PatchNotesFetch.json()
 
 let GameInfoFetch = await fetch("https://raw.githubusercontent.com/Terrces/GifClicker/main/GameInfo.json");
 let GameInfo = await GameInfoFetch.json();
+
+let Lang = localStorage.getItem("lang");
 
 document.querySelector("body").style.backgroundColor = "rgb(" + localStorage.getItem("Theme") + "," + localStorage.getItem("Theme") + "," + localStorage.getItem("Theme") + "," + localStorage.getItem("Theme")  + ")";
 
@@ -35,10 +40,10 @@ for(let i = 0; i < PatchNotes.UpdateNumbers.length;i++){
     Container.style.backgroundRepeat = "no-repeat";
     Container.style.backgroundSize = "12%";
     Container.style.backgroundBlendMode = "multiply";
-    MiniTitle.textContent = "Изменения - Обновления";
-    name.textContent = "Обновление: " + PatchNotes.UpdateNumbers[i] + PatchNotes.PatchNotesNames[i];
+    MiniTitle.textContent = Translate[Lang].patch_notes.mini_title;
+    name.textContent = Translate[Lang].patch_notes.title + PatchNotes.UpdateNumbers[i] + PatchNotes.PatchNotesNames[i];
     changes.textContent = PatchNotes.Changes[i];
-    date.textContent = "Дата обновления: " + PatchNotes.Date[i];
+    date.textContent = Translate[Lang].patch_notes.updated + PatchNotes.Date[i];
     document.getElementById("PatchNotesContainer").prepend(Container);
     Container.append(name,MiniTitle,changes,updatenumber,date);
 }

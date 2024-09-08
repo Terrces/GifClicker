@@ -1,2 +1,0 @@
-export let ru_RU = ["Обновить","","Коллекция","Магазин","Настройки тем","Настройки звуков","Другое"];
-export let en_US = ["Refresh","","Collection","Shop","Themes Settings","Sounds Settings","Another"];

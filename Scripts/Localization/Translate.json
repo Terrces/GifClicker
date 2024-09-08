@@ -1,0 +1,163 @@
+{
+    "en_US": {
+        "main":
+        {
+            "shop":"Shop",
+            "collection": "Collection",
+            "refresh": "Refresh",
+            "add_gif_to_collection": ""
+        },
+        "shop":
+        {
+            "purchase_cost" : " Purchase cost: ",
+            "only_stickers" : "Only stickers: ",
+            "coming_soon" : "Coming soon",
+            "neko_clicks" : "autoclicks",
+            "change_gif":"Change gif",
+            "upgrade": "Upgrade ",
+            "clicks" : "clicks",
+            "buy" : "buy"
+        },
+        "Collection":
+        {
+            "copy_GIF": "Copy GIF",
+            "choise": "Choise",
+            "delete": "Delete"
+        },
+        "settings":
+        {
+            "theme_title": "Theme settings",
+            "sounds_title": "Sounds settings",
+            "another_title": "Another",
+            "main_accent_color": "Accent color",
+            "language_text": "language:"
+        },
+        "patch_notes" : 
+        {
+            "title" : "Update: ",
+            "mini_title" : "Changes - Updates" ,
+            "updated" : "updated: "
+        }
+    },
+    "ru_RU": {
+        "main":
+        {
+            "shop":"Магазин",
+            "collection": "Коллекция",
+            "refresh": "Обновить",
+            "add_gif_to_collection": ""
+        },
+        "shop":
+        {
+            "purchase_cost" : " Стоимость покупки: ",
+            "only_stickers" : "Только стикеры: ",
+            "change_gif":"Изменить гиф: ",
+            "neko_clicks" : "автоклики",
+            "coming_soon" : "Скоро",
+            "upgrade": "Улучшить ",
+            "clicks" : "клики",
+            "buy" : "купить"
+        },
+        "Collection":
+        {
+            "copy_GIF": "Скопировать",
+            "choise": "Выбрать",
+            "delete": "Удалить"
+        },
+        "settings":
+        {
+            "theme_title": "Настройка темы",
+            "sounds_title": "Настройка звуков",
+            "another_title": "Другое",
+            "main_accent_color_text": "Цвет акцента",
+            "sounds_volume_text": "Общая громкость",
+            "language_text": "Язык:"
+        },
+        "patch_notes" : 
+        {
+            "title" : "Обновление: ",
+            "mini_title" : "Изменения - Обновления" ,
+            "updated" : "Дата обновления: "
+        }
+    },
+    "uk_UKR": {
+        "main":
+        {
+            "shop":"Shop",
+            "collection": "Collection",
+            "refresh": "Refresh",
+            "add_gif_to_collection": ""
+        },
+        "shop":
+        {
+            "purchase_cost" : " Purchase cost: ",
+            "only_stickers" : "Only stickers: ",
+            "coming_soon" : "Coming soon",
+            "neko_clicks" : "autoclicks",
+            "change_gif":"Change gif",
+            "upgrade": "Upgrade ",
+            "clicks" : "clicks",
+            "buy" : "buy"
+        },
+        "Collection":
+        {
+            "copy_GIF": "Copy GIF",
+            "choise": "Choise",
+            "delete": "Delete"
+        },
+        "settings":
+        {
+            "theme_title": "Theme settings",
+            "sounds_title": "Sounds settings",
+            "another_title": "Another",
+            "main_accent_color": "Accent color",
+            "language_text": "language:"
+        },
+        "patch_notes" : 
+        {
+            "title" : "Update: ",
+            "mini_title" : "Changes - Updates" ,
+            "updated" : "updated: "
+        }
+    },
+    "no_NOR": {
+        "main":
+        {
+            "shop":"Shop",
+            "collection": "Collection",
+            "refresh": "Refresh",
+            "add_gif_to_collection": ""
+        },
+        "shop":
+        {
+            "purchase_cost" : " Purchase cost: ",
+            "only_stickers" : "Only stickers: ",
+            "coming_soon" : "Coming soon",
+            "neko_clicks" : "autoclicks",
+            "change_gif":"Change gif",
+            "upgrade": "Upgrade ",
+            "clicks" : "clicks",
+            "buy" : "buy"
+        },
+        "Collection":
+        {
+            "copy_GIF": "Copy GIF",
+            "choise": "Choise",
+            "delete": "Delete"
+        },
+        "settings":
+        {
+            "theme_title": "Theme settings",
+            "sounds_title": "Sounds settings",
+            "another_title": "Another",
+            "main_accent_color": "Accent color",
+            "language_text": "language:"
+        },
+        "patch_notes" : 
+        {
+            "title" : "Update: ",
+            "mini_title" : "Changes - Updates" ,
+            "updated" : "updated: "
+        }
+    }
+}
