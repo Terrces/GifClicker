@@ -1,6 +1,12 @@
 import { priceAnother, priceUpgrades } from "../script.js";
 import {ThemeApply} from "./SettingsLogic.js";
 import {GifRefresh,upgrade} from '../script.js';
+
+let TranslateFetch = await fetch("Scripts/Localization/Translate.json");
+let Translate = await TranslateFetch.json()
+
+let Lang = localStorage.getItem("lang");
+
 let CurrentPage = 0;
 let categories = ["Changes gif:","Upgrade clicks:","Upgrade autoclicks:","Coming Soon"];
 let categorieBuy = ["ChangeGif","ClickUpgrade","AutoClickUpgrade"];
@@ -32,10 +38,10 @@ function Update(){
 	function updateText(priceFlag){
 		switch(priceFlag){
 			case 1:
-				PriceText.textContent = " Purchase cost: " + priceAnother[CurrentPage].toFixed(1) + " Gifcoins";
+				PriceText.textContent = Translate[Lang].shop.purchase_cost + priceAnother[CurrentPage].toFixed(1) + " Gifcoins";
 			break;
 			case 2:
-				PriceText.textContent = " Purchase cost: " + priceUpgrades[CurrentPage-1].toFixed(1) + " Gifcoins";
+				PriceText.textContent = Translate[Lang].shop.purchase_cost + priceUpgrades[CurrentPage-1].toFixed(1) + " Gifcoins";
 			break;
 		}
 	}
@@ -55,7 +61,7 @@ function Update(){
 			CheckBox.className = "stickers";
 			
 			StickersText = document.createElement("text");
-			StickersText.textContent = "Only stickers: ";
+			StickersText.textContent = Translate[Lang].shop.only_stickers;
 	
 			StickersContainer = document.createElement("div");
 			StickersContainer.style.cssText = "display:flex; flex-direction:row; margin:16px 15px;";
@@ -151,10 +157,24 @@ function Update(){
 	setTimeout(() => {ProductBlock.style.opacity = 1;},100);
 	ProductBlock.className = "ProductBlock";
 
-	title.textContent = categories[CurrentPage];
+	switch(CurrentPage)
+	{
+		case 0:
+			title.textContent = Translate[Lang].shop.change_gif;
+		break;
+		case 1:
+			title.textContent = Translate[Lang].shop.upgrade + Translate[Lang].shop.clicks;
+		break;
+		case 2:
+			title.textContent = Translate[Lang].shop.upgrade + Translate[Lang].shop.neko_clicks;
+		break;
+		default:
+			title.textContent = Translate[Lang].shop.coming_soon;
+		break;
+	}
 	title.style.fontSize = "larger";
 
-	BuyButton.textContent = "Buy";
+	BuyButton.textContent = Translate[Lang].shop.buy;
 	BuyButton.type = "button";
 
 	BuyButton.prepend(buyIcon);

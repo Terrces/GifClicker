@@ -1,5 +1,8 @@
 import GifLibrary from "../script.js";
 import {ThemeApply} from "./SettingsLogic.js";
+let TranslateFetch = await fetch("Scripts/Localization/Translate.json");
+let Translate = await TranslateFetch.json()
+
 export function GifsInLibraryCreate(){
 	for(let i=0; i < GifLibrary.length; i++){
 		setTimeout(() => {
@@ -32,10 +35,12 @@ export function GifsInLibraryCreate(){
 
 		CreateBlock.className = "CollectionGif";
 		CreateBlock.id = "DeleteThis";
+		
+		let Lang = localStorage.getItem("lang");
 
-		CopyLinkbutton.textContent = "Copy GIF";
-		choisebutton.textContent = "Choise";
-		removebutton.textContent = "Delete";
+		CopyLinkbutton.textContent = Translate[Lang].Collection.copy_GIF;
+		choisebutton.textContent = Translate[Lang].Collection.choise;
+		removebutton.textContent = Translate[Lang].Collection.delete;
 
 		CopyLinkbutton.prepend(copyIcon);
 		choisebutton.prepend(choiseIcon);
