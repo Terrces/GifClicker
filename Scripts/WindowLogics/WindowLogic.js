@@ -1,14 +1,18 @@
 function noselect(){return false;} function select(){return true;} document.ondragstart = noselect; document.onselectstart = noselect;
 import {GifsInLibraryCreate,DeleteById} from './CollectionLogic.js';
 
-let CollectionWindow = document.querySelector(".Collection");
-let shopWindow = document.querySelector(".shopWindow");
-let SettingsWindow = document.querySelector(".SettingsWindow");
+let CollectionWindow = document.querySelector("#Collection");
+let shopWindow = document.querySelector("#shopWindow");
+let SettingsWindow = document.querySelector("#SettingsWindow");
+let MainWindow = document.querySelector("#MainWindow");
 
 //кнопки для открытия окон
 const CloseWindow = document.querySelectorAll("#CloseWindowbutton");
 
-function OpenWindow(WindowName){ WindowName.style.display = "block"}
+function OpenWindow(WindowName){
+	setTimeout(()=> WindowName.style.opacity = 1,1);
+	WindowName.style.display = "block"
+}
 CollectionOpen.onclick=function(){
 	GifsInLibraryCreate();
 	OpenWindow(CollectionWindow);
@@ -18,13 +22,21 @@ OpenSettingsButton.onclick=function(){OpenWindow(SettingsWindow);}
 OpenShopWindow.onclick=function(){OpenWindow(shopWindow);}
 
 export function AutoCloseWindows(){
-	if(CollectionWindow.style.display != "none"){DeleteById("DeleteThis");}
-	CollectionWindow.style.display = "none";
-	shopWindow.style.display = "none";
-	SettingsWindow.style.display = "none";
-	achievements.style.display = "none";
-}
+	if(CollectionWindow.style.display == "block")
+		DeleteById("DeleteThis");
 
+	shopWindow.style.opacity = 0;
+	SettingsWindow.style.opacity = 0;
+	achievements.style.opacity = 0;
+	CollectionWindow.style.opacity = 0;
+	setTimeout(()=> {
+		shopWindow.style.display = "none";
+		SettingsWindow.style.display = "none";
+		achievements.style.display = "none";
+		CollectionWindow.style.display = "none";
+	},300);
+
+}
 CloseWindow.forEach(button => {
 	button.addEventListener("click",(event)=>
 	{

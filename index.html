@@ -4,14 +4,12 @@
 	<!-- <link rel="shortcut icon" href="https://i.pinimg.com/736x/f4/f8/a4/f4f8a4207dbf846cc4496e3499645806.jpg"/> -->
 	<meta charset="utf-8">
 	<title>GIFClicker</title>
-	<meta cache-control="no-cache">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 	<!-- окно достижений -->
-	<div class="achievements" id="achievements" style="display:none; border-radius: 1em; background-color: rgba(0, 0, 0, 0.2);backdrop-filter:blur(10px); z-index:2; min-width:80vw;min-height:98vh;">
+	<div class="window" id="achievements">
 		<br><div class="left">
 			<button type="button" id="CloseWindowbutton" z-index="5"><img class="buttonimg" src="./Pictures/Icons/close.svg" style="height:1.4em; margin-bottom:-0.3em;"> Закрыть Достижения</button>
 		</div>
@@ -21,17 +19,18 @@
 	</div>
 
 	<!-- окно коллекции -->
-	<div class="Collection" style="display:none; border-radius: 1em; background-color: rgba(0, 0, 0, 0.2); backdrop-filter:blur(30px); z-index:2; min-width:80vw;min-height:98vh; width:100%;">
-		<br><div class="left">
-			<button type="button" id="CloseWindowbutton" z-index="5" title="Закрыть коллекцию"><img class="buttonimg" src="./Pictures/Icons/close.svg" style="height:1.4em; margin-bottom:-0.3em;"></button>
+	<div class="window" id="Collection">
+		<div class="left" style="margin-top:15px; z-index: 1;">
+			<button type="button" id="CloseWindowbutton" title="Закрыть коллекцию"><img class="buttonimg" src="./Pictures/Icons/close.svg" style="height:1.4em; margin-bottom:-0.3em;"></button>
 		</div>
+
 		<br>
 		<div class="allgifs" id="AllGifsContainer">
 		</div>
 	</div>
 
 	<!-- Настройки -->
-	<div class="SettingsWindow" style="display:none; border-radius: 1em; background-color: rgba(0, 0, 0, 0.2); backdrop-filter:blur(35px); z-index: 2; width:100%;min-height:98.2vh;">
+	<div class="window" id="SettingsWindow">
 		<br>
 		<div class="left">
 			<button type="button" id="CloseWindowbutton"><img class="buttonimg" src="./Pictures/Icons/close.svg" style="height:1.4em; margin-bottom:-0.3em;"></button>
@@ -61,14 +60,16 @@
 			<text>Horizontal position:</text>
 			<input class="range" id="BackgroundImagePosX" type="range" min="0" max="150" step="1" value="0" list="BackgroundImageMarkers"><br><br>
 			<text>Scale:</text>
-			<input class="range" id="BackgroundImageScale" type="range" min="0" max="150" step="1" value="0" list="BackgroundImageMarkers"><br>
+			<input class="range" id="BackgroundImageScale" type="range" min="1" max="150" step="1" value="0" list="BackgroundImageMarkers"><br>
 
 			<datalist id="BackgroundImageMarkers">
-				<option value="0"></option>
-				<option value="50"></option>
-				<option value="100"></option>
-				<option value="150"></option>
+				<option value="1" label="0%"></option>
+				<option value="50" label="50%"></option>
+				<option value="100" label="100%"></option>
+				<option value="150" label="150%"></option>
 			</datalist>
+			<br>
+			<button id="ShowBackground">Show Background</button>
 		</div>
 
 		
@@ -103,7 +104,7 @@
 	</div>
 
 	<!-- Магазин -->
-	<form class="shopWindow" style="display:none;">
+	<form class="window" id="shopWindow" style="display:none;">
 		<br>
 		<!-- top GUi -->
 		<div class="left" style="flex-direction:row; vertical-align:middle; z-index:6;">
@@ -111,15 +112,15 @@
 		</div>
 		<div class="horizontalCenter" ><text class="money" style="font-size: larger;"></text></div>
 		<div class="center" id="ProductAppend" style="margin-top:2vh; bottom:0px;"></div>
-		<button type="button" class="WorkspaceButton" id="NextProduct" style="right:32px; top:25%; height:50%;">></button>
-		<button type="button" class="WorkspaceButton" id="PreviousProduct" style="left:32px; top:25%; height:50%;"><</button>
+		<!-- <button type="button" class="WorkspaceButton" id="NextProduct" style="right:32px; top:25%; height:50%;">></button>
+		<button type="button" class="WorkspaceButton" id="PreviousProduct" style="left:32px; top:25%; height:50%;"><</button> -->
 	</form>
 
 	<!-- Основное окно -->
-	<form class="MainWindow" style="position:absolute;margin-left:-6px;margin-top:-6px;">
+	<form id="MainWindow" style="position:absolute;margin-left:-6px;margin-top:-6px;">
 	<div class="top">
 		<div class="left">
-			<button type="button" id="OpenShopWindow" title="Вход в магазин улучшений и тд"><img class="buttonimg" src="./Pictures/Icons/shop.svg" style="height:1.2em;">Shop</button>
+			<button type="button" id="OpenShopWindow" title="Вход в магазин"><img class="buttonimg" src="./Pictures/Icons/shop.svg" style="height:1.2em;"> Shop</button>
 			<div style="display: flex; flex-direction: row;" >
 				<!-- <button type="button" id="leave" title="Кнопка позволяет выйти в меню" style="width:2em; height:2em; padding:0em;"><img class="buttonimg" src="./Pictures/Icons/exit.png" style="padding-right:0em;height:1.5em;"></button> -->
 				<button type="button" id="OpenSettingsButton" title="Вход в настройки" style="width:2em; height:2em; padding:0em;"><img class="buttonimg" src="./Pictures/Icons/settings.svg" style="padding-right:0em;height:1.5em;"></button>
@@ -141,8 +142,8 @@
 	</div>
 
 	<div class="center">
-		<text class="price" id="GifRefresh1">Price: 2</text>
-		<button type="button" id="BuyGifRefresh" title="Обновить 'GIF'"><img class="buttonimg" src="./Pictures/Icons/update.svg" style="height:1em;"> New Gif</button>
+
+		
 		<div id="clicker">
 			<image class="clicker" id="Main" maxheight="27vw" maxwidth="27vw" src="https://media.tenor.com/kapiIMBSRgYAAAAi/lindo-cute.gif"></image>
 		</div>
@@ -152,22 +153,42 @@
 		<div class="horizontalCenter">
 			<div class="bottom">
 				<div class="horizontalCenter">
-					<text class="price" id="AddInCollection">Price: 20</text>
-					<button type="button" id="AppendInCollection"><img class="buttonimg" src="./Pictures/Icons/bookmark.svg" style="height:1em;">Append in collection</button>
+					<text class="price" id="GifRefresh1">Price: 2</text>
+					<div style="display: flex; flex-direction: row;">
+						<button type="button" id="copy" style="padding:4px;" onclick="
+							let tempInput = document.createElement('input'); 
+							tempInput.value = getElementById('Main').src; 
+							document.body.appendChild(tempInput); 
+							tempInput.select(); 
+							document.execCommand('copy');
+							document.body.removeChild(tempInput);
+							var sound = new Audio();
+							sound.volume = document.getElementById('ChangeSystemSound').value;
+							sound.src = 'Audio/Sounds/Copy.mp3';
+							sound.play();
+							avalible = false;
+							">
+							<img class="buttonimg" src="./Pictures/Icons/copy.svg" style="height:1.5em;">
+						</button>
+						<button type="button" id="BuyGifRefresh" title="Обновить 'GIF'"><img class="buttonimg" src="./Pictures/Icons/update.svg" style="height:1em;"> New Gif</button>
+						<button type="button" id="AppendInCollection"><img class="buttonimg" src="./Pictures/Icons/bookmark.svg" style="height:1.5em;"></button>
+					</div>
+
 				</div>
 			</div>
 		</div>
 	</div>
 	</form>
-	
-	<script src="./Scripts/WindowLogics/Achivements.js"></script>
-	<script src="./Scripts/KeyboardEvents.js" type="module"></script>
-	<script src="./Scripts/WindowLogics/ShopLogic.js" type="module"></script>
-	<script src="./Scripts/WindowLogics/SettingsLogic.js" type="module"></script>
-	<script src="./Scripts/WindowLogics/WindowLogic.js" type="module"></script>
-	<script src="./Scripts/Api/GifUpdate.js" type="module"></script>
-	<script src="./Scripts/script.js" type="module"></script>
-	<script src="./Scripts/Localization/Translater.js" type="module"></script>
-	<script src="./Scripts/VersionContol.js" type="module"></script>
+
+	<script src="Scripts/script.js" type="module"></script>
+	<script src="Scripts/Game.js" type="module"></script>
+	<script src="Scripts/WindowLogics/Achivements.js"></script>
+	<script src="Scripts/KeyboardEvents.js" type="module"></script>
+	<script src="Scripts/WindowLogics/ShopLogic.js" type="module"></script>
+	<script src="Scripts/WindowLogics/SettingsLogic.js" type="module"></script>
+	<script src="Scripts/WindowLogics/WindowLogic.js" type="module"></script>
+	<script src="Scripts/Api/GifUpdate.js" type="module"></script>
+	<script src="Scripts/Localization/Translater.js" type="module"></script>
+	<script src="Scripts/VersionContol.js" type="module"></script>
 </body>
 </html>

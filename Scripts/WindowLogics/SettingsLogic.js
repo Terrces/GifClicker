@@ -11,6 +11,8 @@ const BackgroundImagePosX = document.querySelector("#BackgroundImagePosX");
 const BackgroundImageScale = document.querySelector("#BackgroundImageScale");
 const repeat = document.querySelector("#ChoiseRepeat");
 
+document.getElementById("ShowBackground").addEventListener("focusin" ,()=>{document.getElementById('SettingsWindow').style.backdropFilter = "blur(0px)" })
+document.getElementById("ShowBackground").addEventListener("focusout" ,()=>{document.getElementById('SettingsWindow').style.backdropFilter = "blur(30px)" })
 BackImg.onclick = function(){
 	BackImg.value = "";
 }
@@ -30,13 +32,22 @@ if(localStorage.getItem("BackImg") != null){
 	body.style.backgroundRepeat = BackImgStorage[3];
 	body.style.backgroundSize = BackImgStorage[4] + "%";
 }
+else{
+	body.style.backgroundImage = "url(https://images.unsplash.com/photo-1551708919-5b50c2aceffa?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)";
+	BackgroundImagePosY.value = 50;
+	BackgroundImagePosX.value = 50;
+	repeat.value = "no-repeat";
+	body.style.backgroundPositionY = 50 + "%";
+	body.style.backgroundPositionX = 50 + "%";
+	body.style.backgroundRepeat = "no-repeat";
+	body.style.backgroundSize = 100 + "%";
+}
 BackImg.onchange = function(){
 	BackImgStorage[0] = BackImg.value;
 	body.style.backgroundImage = "url("+BackImgStorage[0]+")";
 	localStorage.setItem("BackImg",JSON.stringify(BackImgStorage))
 	ThemeApply();
 }
-
 BackgroundImagePosY.onchange = function(){
 	BackImgStorage[1] = BackgroundImagePosY.value;
 	body.style.backgroundPositionY = BackImgStorage[1] + "%";
@@ -60,6 +71,9 @@ BackgroundImageScale.onchange = function(){
 
 export function ThemeApply(){
 	let theme = localStorage.getItem("Theme");
+	if(theme == null){
+		localStorage.setItem("Theme",0);
+	}
 	if(theme != null){
 		if(theme >=100) {
 			document.querySelectorAll(".buttonimg").forEach(btn => {

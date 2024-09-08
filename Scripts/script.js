@@ -1,16 +1,15 @@
 // import GameInfo from "../Data/GameInfo.json" with{type: 'json'}
-
 import * as animation from "./Animation.js";
 import {nextImage} from './Api/GifUpdate.js';
 import {Alert} from "./WindowLogics/WindowLogic.js";
 let GameInfoFetch = await fetch("https://raw.githubusercontent.com/Terrces/GifClicker/main/GameInfo.json");
 let GameInfo = await GameInfoFetch.json();
 
-export let GifCoin = 0;
+export var GifCoin = 0;
 export let GifLibrary = [];
 export let StatsCountUpgrades=[0,0,0];
 export let priceUpgrades = [1,5];
-export let priceAnother = [2,10];
+export let priceAnother = [2];
 export let multiply = [1,0];
 
 if(localStorage.getItem('coins') != null){
@@ -49,6 +48,10 @@ export function GifRefresh(){
 	if(GifCoin >= priceAnother[0]){
 		GifCoin -= priceAnother[0];
 		priceAnother[0] += 2;
+		document.getElementById("Main").style.opacity = 0;
+		setTimeout(() => {
+			document.getElementById("Main").style.opacity = 1;
+		},400)
 		var sound = new Audio();
 		sound.volume = document.getElementById('ChangeSystemSound').value;
 		sound.src = "Audio/Sounds/NewGif.mp3";
@@ -59,6 +62,7 @@ export function GifRefresh(){
 	else{
 		Alert("Not enough funds","Not enough: " + (priceAnother[0]-GifCoin).toFixed(1) + " GIFcoin","https://media.tenor.com/Fbc1ES3oTE4AAAAi/confused-shocked.gif",1500,true);
 	}
+
 }
 
 function AppendGifInCollection(){
@@ -69,21 +73,22 @@ function AppendGifInCollection(){
 			avalible = false;
 		}	
 	}
-	if(avalible == true && priceAnother[1] <= GifCoin){
+	if(avalible == true){
 		//animation.GifAppendCollection();
-		GifCoin -= priceAnother[1];
-		priceAnother[1] += 5;
 		GifLibrary.push(document.getElementById("Main").src);
 		localStorage.setItem('GifCollection',JSON.stringify(GifLibrary));
-		textcountupdate();
+		var sound = new Audio();
+		sound.volume = document.getElementById('ChangeSystemSound').value;
+		sound.src = "Audio/Sounds/AddGif.mp3";
+		sound.play();
 		avalible = false;
 	}
 	else if(avalible == false)
 	{
-		Alert("You have already added this gif","","https://media.tenor.com/VIrdreHaxiEAAAAi/alymew-aly.gif",1500,true)
+		Alert("You have already added this gif","","https://media.tenor.com/VIrdreHaxiEAAAAi/alymew-aly.gif",1000,true)
 	}
 	else{
-		Alert("Not enough funds","Not enough: " +(priceAnother[1]-GifCoin).toFixed(1) + " GIFcoins","",1500,true);
+		Alert("Not enough funds","Not enough: " +(priceAnother[1]-GifCoin).toFixed(1) + " GIFcoins","",1000,true);
 	}
 }
 
@@ -105,7 +110,6 @@ async function textcountupdate (){
 	GifRefresh1.textContent = GifRefresh.textContent = "Price:" + Math.ceil(priceAnother[0]) + gifcoinsNames[1];
 	document.querySelector(".money").textContent = gifcoinsNames[1]+ ": " + GifCoin.toFixed(1);
 
-	AddInCollection.textContent = " Price: "+ priceAnother[1].toFixed(1) + gifcoinsNames[1];
 	document.querySelector(".count").textContent =  gifcoinsNames[1]+ ": "+ GifCoin.toFixed(1);
 }
 textcountupdate();

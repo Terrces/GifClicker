@@ -1,12 +1,10 @@
-import {GifRefresh, multiply, priceAnother, priceUpgrades,upgrade,GifCoin} from '../script.js';
-import {ThemeApply} from "../WindowLogics/SettingsLogic.js";
+import { priceAnother, priceUpgrades } from "../script.js";
+import {ThemeApply} from "./SettingsLogic.js";
+import {GifRefresh,upgrade} from '../script.js';
 let CurrentPage = 0;
 let categories = ["Changes gif:","Upgrade clicks:","Upgrade autoclicks:","Coming Soon"];
 let categorieBuy = ["ChangeGif","ClickUpgrade","AutoClickUpgrade"];
 let ProductImage = ["https://media.tenor.com/PxoS152OMWwAAAAi/%D0%B0%D0%BD%D0%B8%D0%BC%D0%B5.gif","https://media.tenor.com/5tvr3R-VgtEAAAAi/kyoko-toshino.gif","https://media.tenor.com/hgR97aG7R2YAAAAi/the-helpful-fox-senko-san-blushing.gif","https://media.tenor.com/fVcCLR2YQXUAAAAi/funny-anime.gif"];
-
-let PreviousPage = document.getElementById("PreviousProduct");
-let NextPage = document.getElementById("NextProduct");
 
 function Update(){
 	let title = document.createElement("text");
@@ -16,14 +14,16 @@ function Update(){
 	let ButtonContainer = document.createElement("div");
 	let PriceText = document.createElement("text");
 	let BuyButton = document.createElement("button");
-	let StickersContainer = "";
-	let StickersText = "";
-	let CheckBox = "";
-	let Input = "";
+
 	let hidden = document.createElement("input");
 
 	let InfoBorder = document.createElement("div");
 	
+	let StickersContainer = "";
+	let StickersText = "";
+	let CheckBox = "";
+	let Input = "";
+
 	InfoBorder.style.cssText = "display:flex; flex-direction:row; width:100%; justify-content:center;";
 
 	InfoBorder.className = "InfoBorder";
@@ -99,18 +99,31 @@ function Update(){
 	}
 	for(let i = 0; i < categories.length; i++){
 		let CurrentPageDisplay = document.createElement("div");
-		CurrentPageDisplay.style.cssText = "padding:7px 14px; background-color:White; border: 2px solid transparent; border-radius:16px; margin:0px 4px 8px 4px; transition:0.2s ease-in-out;";
+		CurrentPageDisplay.style.cssText = "padding:7px 7px; background-color:rgba(255,255,255,0.4); border: 2px solid transparent; border-radius:16px; margin:0px 4px 8px 4px; transition:0.2s ease-in-out;";
 		CurrentPageDisplay.id = i;
 		//Изменение для перехода на другую страницу и для изменение визуального стиля
+		if(CurrentPageDisplay.id == CurrentPage){
+			let size = "7px 14px";
+			CurrentPageDisplay.style.transition = "0.4s ease-in-out";
+			setTimeout(() => {
+				CurrentPageDisplay.style.padding = size
+				CurrentPageDisplay.style.backgroundColor = "White";
+			},0)
+			
+		}
 		if(CurrentPageDisplay.id != CurrentPage){
 			CurrentPageDisplay.style.backgroundColor = "rgba(255,255,255,0.4)";
+			let size = "7px 7px";
+			CurrentPageDisplay.style.padding = size;
 			CurrentPageDisplay.style.cursor = "pointer";
 			CurrentPageDisplay.onmouseover = function(){
 				CurrentPageDisplay.style.border = "2px solid white";
+				CurrentPageDisplay.style.padding = "7px 12px";
 				CurrentPageDisplay.style.backgroundColor = "rgba(255,255,255,0.6)";
 			}
 			CurrentPageDisplay.onmouseleave = function(){
 				CurrentPageDisplay.style.border = "2px solid transparent";
+				CurrentPageDisplay.style.padding = size;
 				CurrentPageDisplay.style.backgroundColor = "rgba(255,255,255,0.4)";
 				
 			}
@@ -134,6 +147,8 @@ function Update(){
 	Productimg.src = ProductImage[CurrentPage]
 	Productimg.style.cssText = "max-height:42vh;max-width:42vh;margin-top:16px;";
 
+	ProductBlock.style.opacity = 0;
+	setTimeout(() => {ProductBlock.style.opacity = 1;},100);
 	ProductBlock.className = "ProductBlock";
 
 	title.textContent = categories[CurrentPage];
@@ -154,7 +169,7 @@ function Update(){
 		if(0 > event.deltaY){
 			GoNextPage();
 		}
-		else{
+		if(0 < event.deltaY){
 			GoPreviousPage();
 		}	
 	})
@@ -167,28 +182,30 @@ function GoPreviousPage(){
 		document.querySelector(".InfoBorder").remove();
 		CurrentPage -= 1;
 		Update();
+		document.querySelector(".ProductBlock").style.opacity = 0;
 	}
 	else if(CurrentPage == 0){
 		document.querySelector(".ProductBlock").remove();
 		document.querySelector(".InfoBorder").remove();
 		CurrentPage = categories.length-1;
 		Update();
+		document.querySelector(".ProductBlock").style.opacity = 0;
 	}
 }
 function GoNextPage(){
-	console.log(CurrentPage)
 	if(CurrentPage != categories.length-1){
+		
 		document.querySelector(".ProductBlock").remove();
 		document.querySelector(".InfoBorder").remove();
 		CurrentPage += 1;
 		Update();
+		document.querySelector(".ProductBlock").style.opacity = 0;
 	}
 	else if(CurrentPage <= categories.length-1){
 		document.querySelector(".ProductBlock").remove();
 		document.querySelector(".InfoBorder").remove();
 		CurrentPage =  0;
 		Update();
+		document.querySelector(".ProductBlock").style.opacity = 0;
 	}
 }
-PreviousPage.addEventListener("click", ()=>{GoPreviousPage();})
-NextPage.addEventListener("click", ()=>{GoNextPage();})

@@ -1,8 +1,12 @@
 import GifLibrary from "../script.js";
 import {ThemeApply} from "./SettingsLogic.js";
 export function GifsInLibraryCreate(){
-	for(let i=0;i < GifLibrary.length;i++){
-
+	for(let i=0; i < GifLibrary.length; i++){
+		setTimeout(() => {
+			document.getElementById("AllGifsContainer").style.transform = "scale(1, 1)";
+			//document.getElementById("AllGifsContainer").style.opacity = 1;
+		},200)
+		
 		const librarybase = document.querySelector(".allgifs");
 		const CreateBlock= document.createElement('div');
 		const CreateGif= document.createElement('img');
@@ -37,26 +41,38 @@ export function GifsInLibraryCreate(){
 		choisebutton.prepend(choiseIcon);
 		removebutton.prepend(deleteIcon);
 		
-		
-
 		ThemeApply();
 		CopyLinkbutton.onclick = function(){
-			
 			let tempInput = document.createElement("input");
 			tempInput.value = CreateGif.src;
 			document.body.appendChild(tempInput);
 			tempInput.select();
 			document.execCommand("copy");
 			document.body.removeChild(tempInput);
+			var sound = new Audio();
+			sound.volume = document.getElementById('ChangeSystemSound').value;
+			sound.src = 'Audio/Sounds/Copy.mp3';
+			sound.play();
 		}
-		choisebutton.onclick = function(){Main.src = GifLibrary[choisebutton.id]}
+		choisebutton.onclick = function(){
+			Main.src = GifLibrary[choisebutton.id]
+			var sound = new Audio();
+			sound.volume = document.getElementById('ChangeSystemSound').value;
+			sound.src = 'Audio/Sounds/Choise.mp3';
+			sound.play();
+		}
 		removebutton.onclick = function()
 		{
+			document.getElementById("AllGifsContainer").style.transform = "scale(0.9,0.9)";
+			//document.getElementById("AllGifsContainer").style.opacity = 0;
 			DeleteById("DeleteThis");
-			//console.log(GifLibrary);
 			GifLibrary.splice(removebutton.id,1);
 			localStorage.setItem('GifCollection',JSON.stringify(GifLibrary));
 			GifsInLibraryCreate();
+			var sound = new Audio();
+			sound.volume = document.getElementById('ChangeSystemSound').value;
+			sound.src = 'Audio/Sounds/Delete.mp3';
+			sound.play();
 		}
 		choisebutton.className = "ChoiseThisGif";
 		removebutton.className = "DeleteThisGif";
@@ -70,6 +86,7 @@ export function GifsInLibraryCreate(){
 	}
 }
 export function DeleteById(id){
-	for(let i=0;i < GifLibrary.length;i++){
+	for(let i=0;i < GifLibrary.length; i++){
 		document.getElementById(id).remove();
-}}
+	}
+}
