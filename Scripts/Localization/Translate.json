@@ -38,6 +38,10 @@
             "title" : "Update: ",
             "mini_title" : "Changes - Updates" ,
             "updated" : "updated: "
+        },
+        "achievement" :
+        {
+            "achievements_names" : ["Welcome to gif clicker"]
         }
     },
     "ru_RU": {
