@@ -1,7 +1,10 @@
+
+console.log("connected");
+
 // import GameInfo from "../Data/GameInfo.json" with{type: 'json'}
-import * as animation from "./Animation.js";
-import {nextImage} from './Api/GifUpdate.js';
-import {Alert} from "./WindowLogics/WindowLogic.js";
+import * as animation from "../Animation.js";
+import {nextImage} from '../Api/GifUpdate.js';
+import {Alert} from "../WindowLogics/WindowLogic.js";
 let GameInfoFetch = await fetch("https://raw.githubusercontent.com/Terrces/GifClicker/main/GameInfo.json");
 let GameInfo = await GameInfoFetch.json();
 
@@ -36,11 +39,11 @@ export function upgrade (id,addmultiply,addprice) {
 		textcountupdate();
 		var sound = new Audio();
 		sound.volume = document.getElementById('ChangeSystemSound').value;
-		sound.src = "Audio/Sounds/BuyConfirm.mp3";
+		sound.src = "../Audio/Sounds/BuyConfirm.mp3";
 		sound.play();
 	}
 	else{
-		Alert("Not enough funds","Not enough: " + (priceUpgrades[id]-GifCoin).toFixed(1) + " GIFcoin","https://media.tenor.com/Fbc1ES3oTE4AAAAi/confused-shocked.gif",1500,true);
+		Alert("Not enough: " + (priceUpgrades[id]-GifCoin).toFixed(1) + " GIFcoin","","https://media.tenor.com/Fbc1ES3oTE4AAAAi/confused-shocked.gif",1500,true);
 	}
 }
 
@@ -54,8 +57,8 @@ export function GifRefresh(){
 		},400)
 		var sound = new Audio();
 		sound.volume = document.getElementById('ChangeSystemSound').value;
-		sound.src = "Audio/Sounds/NewGif.mp3";
-		sound.play();
+		sound.src = "../Audio/Sounds/NewGif.mp3";
+		sound.play().catch(()=>{});
 		nextImage();
 		textcountupdate();
 	}
@@ -79,8 +82,8 @@ function AppendGifInCollection(){
 		localStorage.setItem('GifCollection',JSON.stringify(GifLibrary));
 		var sound = new Audio();
 		sound.volume = document.getElementById('ChangeSystemSound').value;
-		sound.src = "Audio/Sounds/AddGif.mp3";
-		sound.play();
+		sound.src = "../Audio/Sounds/AddGif.mp3";
+		sound.play().catch(()=>{});
 		avalible = false;
 	}
 	else if(avalible == false)

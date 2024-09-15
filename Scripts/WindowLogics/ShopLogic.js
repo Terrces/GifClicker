@@ -1,8 +1,8 @@
-import { priceAnother, priceUpgrades } from "../script.js";
+import { priceAnother, priceUpgrades } from "./clicker.js";
 import {ThemeApply} from "./SettingsLogic.js";
-import {GifRefresh,upgrade} from '../script.js';
+import {GifRefresh,upgrade} from './clicker.js';
 
-let TranslateFetch = await fetch("Scripts/Localization/Translate.json");
+let TranslateFetch = await fetch("../Data/Translate.json");
 let Translate = await TranslateFetch.json()
 
 let Lang = localStorage.getItem("lang");
@@ -151,7 +151,7 @@ function Update(){
 
 	buyIcon.className = "buttonimg";
 	buyIcon.style.cssText = "margin:0px 0px -6px 0px;";
-	buyIcon.src = "Pictures/Icons/buy.svg";
+	buyIcon.src = "../Pictures/Icons/buy.svg";
 
 	Productimg.src = ProductImage[CurrentPage]
 	Productimg.style.cssText = "max-height:42vh;max-width:42vh;margin-top:16px;";

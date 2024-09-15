@@ -1,4 +1,4 @@
-import {GifRefresh} from './script.js';
+import {GifRefresh} from './WindowLogics/clicker.js';
 import {AutoCloseWindows} from './WindowLogics/WindowLogic.js';
 window.addEventListener('keyup',function(event){
 	if(event.key == " "){

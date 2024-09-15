@@ -49,17 +49,19 @@ export function Alert(Messege,description,img,time,skip){
 	const text = document.createElement("text");
 	const Image = document.createElement("img");
 	const descriptiontext = document.createElement("text");
-	alertwindow.style.height = "100%";
-	alertwindow.style.width = "100%";
+	alertwindow.style.height = "20%";
+	alertwindow.style.width = "20%";
+	// alertwindow.style.right = "16px";
+	// alertwindow.style.bottom = "16px"
 	alertwindow.id = "Alert";
 
 	alertwindow.style.zIndex = 30;
 	text.textContent = Messege;
-	text.style.fontSize = "larger";
+	text.style.fontSize = "medium";
 
 	descriptiontext.textContent = description;
 	descriptiontext.style.color = "#9dff7d";
-	descriptiontext.style.fontSize = "large";
+	descriptiontext.style.fontSize = "medium";
 	descriptiontext.style.marginTop = "1em";
 
 	Image.src = img;
@@ -74,8 +76,8 @@ export function Alert(Messege,description,img,time,skip){
 		alertwindow.style.opacity = 100;
 		var sound = new Audio();
 		sound.volume = document.getElementById('ChangeSystemSound').value * 4;
-		sound.src = "Audio/Sounds/Popup.mp3";
-		sound.play();
+		sound.src = "../Audio/Sounds/Popup.mp3";
+		sound.play().catch(()=>{});
 	},0);
 	setTimeout(() => {alertwindow.style.opacity = 0;},time-300);
 	setTimeout(() => {
@@ -83,8 +85,8 @@ export function Alert(Messege,description,img,time,skip){
 		alertwindow.remove();
 		var sound = new Audio();
 		sound.volume = document.getElementById('ChangeSystemSound').value;
-		sound.src = "Audio/Sounds/Popdown.mp3";
-		sound.play();
+		sound.src = "../Audio/Sounds/Popdown.mp3";
+		sound.play().catch(()=>{});
 	},time);
 	if(skip == true){
 		alertwindow.onclick = function(){

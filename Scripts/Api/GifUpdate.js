@@ -46,11 +46,12 @@ function tenorCallback_search(responsetext)
 }
 export function nextImage()
 {
-    var search_term = "anime hello";
+    let Lang = localStorage.getItem("Lang");
+    var search_term = "kawaii hello";
     var InputSearch = localStorage.getItem("SearchImage");
 
     if(localStorage.getItem("SearchImage") == ""){
-        localStorage.setItem("SearchImage","anime hello");
+        localStorage.setItem("SearchImage","kawaii hello");
     }
 
     search_term = InputSearch;
@@ -61,10 +62,10 @@ export function nextImage()
 
     //using default locale of en_US
     if(document.querySelector(".stickers") != null && document.querySelector(".stickers").checked == true){
-        var search_url = "https://tenor.googleapis.com/v2/search?q=" + search_term + "&locale=ru_RU" +  "&key=" + apikey +"&client_key=" + clientkey + "&random=true"+"&searchfilter=sticker";
+        var search_url = "https://tenor.googleapis.com/v2/search?q=" + search_term + "&locale="+ Lang +  "&key=" + apikey +"&client_key=" + clientkey + "&random=true"+"&searchfilter=sticker";
     }
 	else{
-        var search_url = "https://tenor.googleapis.com/v2/search?q=" + search_term + "&locale=ru_RU" +  "&key=" + apikey +"&client_key=" + clientkey + "&random=true";
+        var search_url = "https://tenor.googleapis.com/v2/search?q=" + search_term + "&locale="+ Lang + "&key=" + apikey +"&client_key=" + clientkey + "&random=true";
     	
     }
     httpGetAsync(search_url,tenorCallback_search);

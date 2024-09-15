@@ -1,6 +1,6 @@
-import GifLibrary from "../script.js";
+import GifLibrary from "./clicker.js";
 import {ThemeApply} from "./SettingsLogic.js";
-let TranslateFetch = await fetch("Scripts/Localization/Translate.json");
+let TranslateFetch = await fetch("../Data/Translate.json");
 let Translate = await TranslateFetch.json()
 
 export function GifsInLibraryCreate(){
@@ -22,15 +22,15 @@ export function GifsInLibraryCreate(){
 		const deleteIcon = document.createElement("img");
 
 		copyIcon.className = "buttonimg";
-		copyIcon.src = "Pictures/Icons/copy.svg";
+		copyIcon.src = "../Pictures/Icons/copy.svg";
 		copyIcon.style.cssText = "height:1.2em; margin:0px 0px -3px 0px;";
 
 		choiseIcon.className = "buttonimg";
-		choiseIcon.src = "Pictures/Icons/select.svg";
+		choiseIcon.src = "../Pictures/Icons/select.svg";
 		choiseIcon.style.cssText = "height:1.2em; margin:0px 0px -3px 0px;";
 
 		deleteIcon.className = "buttonimg";
-		deleteIcon.src = "Pictures/Icons/trash.svg";
+		deleteIcon.src = "../Pictures/Icons/trash.svg";
 		deleteIcon.style.cssText = "height:1.2em; margin:0px 0px -3px 0px;";
 
 		CreateBlock.className = "CollectionGif";
@@ -57,14 +57,14 @@ export function GifsInLibraryCreate(){
 			var sound = new Audio();
 			sound.volume = document.getElementById('ChangeSystemSound').value;
 			sound.src = 'Audio/Sounds/Copy.mp3';
-			sound.play();
+			sound.play().catch(()=>{});
 		}
 		choisebutton.onclick = function(){
 			Main.src = GifLibrary[choisebutton.id]
 			var sound = new Audio();
 			sound.volume = document.getElementById('ChangeSystemSound').value;
 			sound.src = 'Audio/Sounds/Choise.mp3';
-			sound.play();
+			sound.play().catch(()=>{});
 		}
 		removebutton.onclick = function()
 		{
@@ -77,7 +77,7 @@ export function GifsInLibraryCreate(){
 			var sound = new Audio();
 			sound.volume = document.getElementById('ChangeSystemSound').value;
 			sound.src = 'Audio/Sounds/Delete.mp3';
-			sound.play();
+			sound.play().catch(()=>{});
 		}
 		choisebutton.className = "ChoiseThisGif";
 		removebutton.className = "DeleteThisGif";

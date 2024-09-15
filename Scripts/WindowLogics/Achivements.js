@@ -1,4 +1,4 @@
-let FetchTranslate = await fetch("../Scripts/Localization/Translate.json");
+let FetchTranslate = await fetch("Data/Translate.json");
 let Translate = await FetchTranslate.json();
 
 let Lang = localStorage.getItem("lang");
