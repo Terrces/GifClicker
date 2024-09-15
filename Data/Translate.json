@@ -1,5 +1,9 @@
 {
     "en_US": {
+        "general":
+        {
+            "back":""
+        },
         "main":
         {
             "shop":"Shop",
@@ -45,6 +49,10 @@
         }
     },
     "ru_RU": {
+        "general":
+        {
+            "back":""
+        },
         "main":
         {
             "shop":"Магазин",
@@ -86,6 +94,10 @@
         }
     },
     "uk_UKR": {
+        "general":
+        {
+            "back":""
+        },
         "main":
         {
             "shop":"Магазин",
@@ -127,6 +139,10 @@
         }
     },
     "no_NOR": {
+        "general":
+        {
+            "back":""
+        },
         "main": {
             "shop": "Butikk",
             "collection": "Samling",

@@ -40,7 +40,7 @@ export function upgrade (id,addmultiply,addprice) {
 		var sound = new Audio();
 		sound.volume = document.getElementById('ChangeSystemSound').value;
 		sound.src = "../Audio/Sounds/BuyConfirm.mp3";
-		sound.play();
+		sound.play().catch(()=>{});
 	}
 	else{
 		Alert("Not enough: " + (priceUpgrades[id]-GifCoin).toFixed(1) + " GIFcoin","","https://media.tenor.com/Fbc1ES3oTE4AAAAi/confused-shocked.gif",1500,true);

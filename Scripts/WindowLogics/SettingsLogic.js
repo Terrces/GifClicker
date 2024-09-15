@@ -1,6 +1,6 @@
 // let TranslateFetch = await fetch("Scripts/Localization/Translate.json");
 // let Translate = await TranslateFetch.json()
-let PatchNotesFetch = await fetch("https://raw.githubusercontent.com/Terrces/GifClicker/main/PatchNotes.json");
+let PatchNotesFetch = await fetch("../../Data/PatchNotes.json");
 let PatchNotes = await PatchNotesFetch.json()
 
 let Lang = localStorage.getItem("lang");

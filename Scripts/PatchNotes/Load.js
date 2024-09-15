@@ -1,11 +1,11 @@
 
-let TranslateFetch = await fetch("../Scripts/Localization/Translate.json");
+let TranslateFetch = await fetch("../../Data/Translate.json");
 let Translate = await TranslateFetch.json()
 
-let PatchNotesFetch = await fetch("https://raw.githubusercontent.com/Terrces/GifClicker/main/PatchNotes.json");
+let PatchNotesFetch = await fetch("../../Data/PatchNotes.json");
 let PatchNotes = await PatchNotesFetch.json()
 
-let GameInfoFetch = await fetch("https://raw.githubusercontent.com/Terrces/GifClicker/main/GameInfo.json");
+let GameInfoFetch = await fetch("../../Data/GameInfo.json");
 let GameInfo = await GameInfoFetch.json();
 
 let Lang = localStorage.getItem("lang");
@@ -21,7 +21,7 @@ else{
     document.querySelector("body").style.backgroundColor = "black";
 }
 
-// console.log(Changelog.Changes[0]);
+console.log(PatchNotes.Changes[0]);
 for(let i = 0; i < PatchNotes.UpdateNumbers.length;i++){
     let Container = document.createElement("div");
     let name = document.createElement("text");

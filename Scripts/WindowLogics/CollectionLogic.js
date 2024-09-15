@@ -56,14 +56,14 @@ export function GifsInLibraryCreate(){
 			document.body.removeChild(tempInput);
 			var sound = new Audio();
 			sound.volume = document.getElementById('ChangeSystemSound').value;
-			sound.src = 'Audio/Sounds/Copy.mp3';
+			sound.src = '../Audio/Sounds/Copy.mp3';
 			sound.play().catch(()=>{});
 		}
 		choisebutton.onclick = function(){
 			Main.src = GifLibrary[choisebutton.id]
 			var sound = new Audio();
 			sound.volume = document.getElementById('ChangeSystemSound').value;
-			sound.src = 'Audio/Sounds/Choise.mp3';
+			sound.src = '../Audio/Sounds/Choise.mp3';
 			sound.play().catch(()=>{});
 		}
 		removebutton.onclick = function()
@@ -76,7 +76,7 @@ export function GifsInLibraryCreate(){
 			GifsInLibraryCreate();
 			var sound = new Audio();
 			sound.volume = document.getElementById('ChangeSystemSound').value;
-			sound.src = 'Audio/Sounds/Delete.mp3';
+			sound.src = '../Audio/Sounds/Delete.mp3';
 			sound.play().catch(()=>{});
 		}
 		choisebutton.className = "ChoiseThisGif";

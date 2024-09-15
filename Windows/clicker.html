@@ -78,7 +78,7 @@
 		</div>
 		
 		<text id="SoundsvolumeText">Sounds volume</text>
-		<input class="range" id="ChangeSystemSound" type="range" min="0" max="1" step="0.05" value="0.05" onchange=" var sound = new Audio; sound.src='../Audio/Sounds/BuyConfirm.mp3'; sound.volume = document.getElementById('ChangeSystemSound').value; sound.play()">
+		<input class="range" id="ChangeSystemSound" type="range" min="0" max="1" step="0.05" value="0.05" onchange=" var sound = new Audio; sound.src='../Audio/Sounds/BuyConfirm.mp3'; sound.volume = document.getElementById('ChangeSystemSound').value; sound.play().catch(()=>{})">
 		<!-- App Description -->
 
 		<div class="Heading" style="margin-top:64px;">
