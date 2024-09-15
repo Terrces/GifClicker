@@ -294,6 +294,7 @@ img{border-radius:0.5vw;}
 	transition:0.4s ease-in-out;
 	background-color:rgba(0,0,0,0.5);
 	position:absolute;
+	padding:8px;
 	height:98.5%;
 	width: 99%;
 	display:flex;

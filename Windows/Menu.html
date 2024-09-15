@@ -7,11 +7,22 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body style="background-image:url('https://images.unsplash.com/photo-1551708919-5b50c2aceffa?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
-    <div style="font-size:larger; padding:8px; border-radius:8%; position:absolute; display: flex; flex-direction: column; width:15%; left:16px; top:40%;backdrop-filter:blur(8px);">
-        <button onclick="window.location.href='./Clicker.html'" type="button">Play</button>
-        <button onclick="" type="button">Settings</button>
-        <button onclick="window.location.href='./Credits.html'" type="button">Credits</button>
-        <button onclick="" type="button">Exit</button>
+    <div style="font-size:larger; padding:8px; border-radius:8%; position:absolute; display: flex; flex-direction: column; width:15%; left:16px; top:40%;backdrop-filter:blur(8px); background-color:rgba(0,0,0,0.3);">
+        <button class="ButtonPlay" onclick="window.location.href='./Clicker.html'" type="button">Play</button>
+        <button class="ButtonSettings" onclick="" type="button">Settings</button>
+        <button class="ButtonCredits" onclick="window.location.href='./Credits.html'" type="button">Credits</button>
+        <button class="ButtonExit" onclick="" type="button">Exit</button>
     </div>
+    <script type="module">
+        let TranslateFetch = await fetch("../Data/Translate.json");
+        let Translate = await TranslateFetch.json();
+
+        let Lang = localStorage.getItem("lang");
+
+        document.querySelector(".ButtonPlay").innerHTML = Translate[Lang].menu.play;
+        document.querySelector(".ButtonSettings").innerHTML = Translate[Lang].menu.settings;
+        document.querySelector(".ButtonCredits").innerHTML = Translate[Lang].menu.credits;
+        document.querySelector(".ButtonExit").innerHTML = Translate[Lang].menu.exit;
+    </script>
 </body>
 </html>

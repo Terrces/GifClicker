@@ -2,7 +2,17 @@
     "en_US": {
         "general":
         {
-            "back":""
+            "back":"back",
+            "back_to_game":"back to game",
+            "currency":"GIFcoin",
+            "price":"price"
+        },
+        "menu": 
+        {
+            "play":"Play",
+            "settings":"Settings",
+            "credits":"Credits",
+            "exit":"Exit"
         },
         "main":
         {
@@ -42,16 +52,22 @@
             "title" : "Update: ",
             "mini_title" : "Changes - Updates" ,
             "updated" : "updated: "
-        },
-        "achievement" :
-        {
-            "achievements_names" : ["Welcome to gif clicker"]
         }
     },
     "ru_RU": {
         "general":
         {
-            "back":""
+            "back":"Назад",
+            "back_to_game":"Вернуться к игре",
+            "currency":"GIFcoin",
+            "price":"Цена"
+        },
+        "menu": 
+        {
+            "play":"Играть",
+            "settings":"Настройки",
+            "credits":"Титры",
+            "exit":"Выйти"
         },
         "main":
         {
@@ -96,7 +112,17 @@
     "uk_UKR": {
         "general":
         {
-            "back":""
+            "back":"",
+            "back_to_game":"",
+            "currency":"GIFcoin",
+            "price":""
+        },
+        "menu": 
+        {
+            "play":"",
+            "settings":"",
+            "credits":"",
+            "exit":""
         },
         "main":
         {
@@ -141,7 +167,17 @@
     "no_NOR": {
         "general":
         {
-            "back":""
+            "back":"",
+            "back_to_game":"",
+            "currency":"GIFcoin",
+            "price":""
+        },
+        "menu": 
+        {
+            "play":"",
+            "settings":"",
+            "credits":"",
+            "exit":""
         },
         "main": {
             "shop": "Butikk",

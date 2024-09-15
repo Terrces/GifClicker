@@ -51,6 +51,7 @@ export function Alert(Messege,description,img,time,skip){
 	const descriptiontext = document.createElement("text");
 	alertwindow.style.height = "20%";
 	alertwindow.style.width = "20%";
+	alertwindow.style.padding = "16px";
 	// alertwindow.style.right = "16px";
 	// alertwindow.style.bottom = "16px"
 	alertwindow.id = "Alert";

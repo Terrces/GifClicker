@@ -2,8 +2,15 @@
 import * as animation from "../Animation.js";
 import {nextImage} from '../Api/GifUpdate.js';
 import {Alert} from "./WindowLogic.js";
+
 let GameInfoFetch = await fetch("https://raw.githubusercontent.com/Terrces/GifClicker/main/GameInfo.json");
 let GameInfo = await GameInfoFetch.json();
+let TranslateAlertsFetch = await fetch("../Data/TranslateAlerts.json");
+let TranslateAlerts = await TranslateAlertsFetch.json();
+let TranslateFetch = await fetch("../Data/Translate.json");
+let Translate = await TranslateFetch.json()
+
+let Lang = localStorage.getItem("lang");
 
 export var GifCoin = 0;
 export let GifLibrary = [];
@@ -40,7 +47,7 @@ export function upgrade (id,addmultiply,addprice) {
 		sound.play().catch(()=>{});
 	}
 	else{
-		Alert("Not enough: " + (priceUpgrades[id]-GifCoin).toFixed(1) + " GIFcoin","","https://media.tenor.com/Fbc1ES3oTE4AAAAi/confused-shocked.gif",1500,true);
+		Alert(TranslateAlerts[Lang].clicker.lack  + (priceUpgrades[id]-GifCoin).toFixed(1) + " GIFcoin","","https://media.tenor.com/Fbc1ES3oTE4AAAAi/confused-shocked.gif",1500,true);
 	}
 }
 
@@ -60,7 +67,7 @@ export function GifRefresh(){
 		textcountupdate();
 	}
 	else{
-		Alert("Not enough funds","Not enough: " + (priceAnother[0]-GifCoin).toFixed(1) + " GIFcoin","https://media.tenor.com/Fbc1ES3oTE4AAAAi/confused-shocked.gif",1500,true);
+		Alert(TranslateAlerts[Lang].clicker.lack  + (priceAnother[0]-GifCoin).toFixed(1),"" + " GIFcoin","https://media.tenor.com/Fbc1ES3oTE4AAAAi/confused-shocked.gif",1500,true);
 	}
 
 }
@@ -85,10 +92,10 @@ function AppendGifInCollection(){
 	}
 	else if(avalible == false)
 	{
-		Alert("You have already added this gif","","https://media.tenor.com/VIrdreHaxiEAAAAi/alymew-aly.gif",1000,true)
+		Alert(TranslateAlerts[Lang].clicker.collection_duplicate,"","https://media.tenor.com/VIrdreHaxiEAAAAi/alymew-aly.gif",1000,true)
 	}
 	else{
-		Alert("Not enough funds","Not enough: " +(priceAnother[1]-GifCoin).toFixed(1) + " GIFcoins","",1000,true);
+		Alert(TranslateAlerts[Lang].clicker.lack  + (priceAnother[0]-GifCoin).toFixed(1),"" + " GIFcoins","",1000,true);
 	}
 }
 
@@ -107,7 +114,7 @@ async function textcountupdate (){
 	let gifcoinsNames = ["GIFCoin"," GIFCoins"];
 	localStorage.setItem('coins',GifCoin);
 	
-	GifRefresh1.textContent = GifRefresh.textContent = "Price:" + Math.ceil(priceAnother[0]) + gifcoinsNames[1];
+	GifRefresh1.textContent = GifRefresh.textContent = Translate[Lang].general.price + ": " + Math.ceil(priceAnother[0]) + gifcoinsNames[1];
 	document.querySelector(".money").textContent = gifcoinsNames[1]+ ": " + GifCoin.toFixed(1);
 
 	document.querySelector(".count").textContent =  gifcoinsNames[1]+ ": "+ GifCoin.toFixed(1);

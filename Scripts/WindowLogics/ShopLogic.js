@@ -2,6 +2,9 @@ import { priceAnother, priceUpgrades } from "./Clicker.js";
 import {ThemeApply} from "./SettingsLogic.js";
 import {GifRefresh,upgrade} from './Clicker.js';
 
+
+let TranslateAlertsFetch = await fetch("../Data/TranslateAlerts.json");
+let TranslateAlerts = await TranslateAlertsFetch.json();
 let TranslateFetch = await fetch("../Data/Translate.json");
 let Translate = await TranslateFetch.json()
 
