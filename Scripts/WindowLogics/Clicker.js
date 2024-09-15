@@ -1,10 +1,7 @@
-
-console.log("connected");
-
 // import GameInfo from "../Data/GameInfo.json" with{type: 'json'}
 import * as animation from "../Animation.js";
 import {nextImage} from '../Api/GifUpdate.js';
-import {Alert} from "../WindowLogics/WindowLogic.js";
+import {Alert} from "./WindowLogic.js";
 let GameInfoFetch = await fetch("https://raw.githubusercontent.com/Terrces/GifClicker/main/GameInfo.json");
 let GameInfo = await GameInfoFetch.json();
 

@@ -1,6 +1,6 @@
-import { priceAnother, priceUpgrades } from "./clicker.js";
+import { priceAnother, priceUpgrades } from "./Clicker.js";
 import {ThemeApply} from "./SettingsLogic.js";
-import {GifRefresh,upgrade} from './clicker.js';
+import {GifRefresh,upgrade} from './Clicker.js';
 
 let TranslateFetch = await fetch("../Data/Translate.json");
 let Translate = await TranslateFetch.json()

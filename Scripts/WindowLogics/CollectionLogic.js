@@ -1,4 +1,4 @@
-import GifLibrary from "./clicker.js";
+import GifLibrary from "./Clicker.js";
 import {ThemeApply} from "./SettingsLogic.js";
 let TranslateFetch = await fetch("../Data/Translate.json");
 let Translate = await TranslateFetch.json()

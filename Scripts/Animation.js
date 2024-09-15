@@ -1,4 +1,4 @@
-import {multiply,priceAnother} from "./WindowLogics/clicker.js";
+import {multiply,priceAnother} from "./WindowLogics/Clicker.js";
 let screenWidth = window.innerWidth;
 let screenHeight = window.innerHeight;
 

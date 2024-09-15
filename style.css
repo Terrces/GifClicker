@@ -18,7 +18,7 @@
 }
 body{
 	font-family:"Martian Mono";
-	background:black;
+	background:rgb(109, 109, 109);
 	color:white;
 	text-align:center;
 	display:grid;
@@ -102,7 +102,6 @@ img{border-radius:0.5vw;}
 	transition:0.1s ease;
 }
 .horizontalCenter{
-	padding:1em;
 	display:flex;
 	align-items:center;
 	justify-content:center;
@@ -181,7 +180,7 @@ img{border-radius:0.5vw;}
 	flex-direction:column;
 }
 .center{
-	
+
 	word-wrap: break-word;
 	width:99vw;
 	height:93vh;
@@ -279,7 +278,7 @@ img{border-radius:0.5vw;}
 .window{
 	display:none;
 	flex-direction:row;
-	min-height:100vh;
+	min-height:98vh;
 	width:100%;
 	border-radius: 1em;
 	background-color: rgba(0, 0, 0, 0.2);
