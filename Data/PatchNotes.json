@@ -14,7 +14,8 @@
         " MultiLanguage interface",
         " More theme customization",
         " New Inteface",
-        " BUG Fixes"
+        " BUG Fixes",
+        " Recreating"
     ],
     "Image":[
         "https://media.tenor.com/RFA35nCeNgUAAAAC/colors-meme-kila-uchis.gif",
@@ -32,7 +33,7 @@
         "https://media.tenor.com/rVdLW8Oi97kAAAAC/what-aki-adagaki.gif",
         "https://media.tenor.com/kOeE0Cs8gy0AAAAi/anime-dancing.gif",
         "https://media.tenor.com/MjIaOsH4Y8IAAAAi/novoura-goobin.gif",
-        ""
+        "https://media.tenor.com/rE3c9r2MnCsAAAAi/konata-dance.gif"
     ],
     "Changes": [
         "В коллекции стали работать кнопки: Выбрать и Удалить, был изменен дизайн приложения",
@@ -50,8 +51,8 @@
         " Fixed a bug where the text merged with the background when first launched, added ability to edit background image",
         " Added standart background, new icons, new sounds, New animations have been added, windows now appear and disappear smoothly, buttons for moving left and right have been removed from the store, adding to the collection is now free",
         " New translate engine, new version controll, optimization",
-        ""
+        " Added game menu, added display of recent changes to the menu, updated settings "
     ],
     "UpdateNumbers":["0.3","0.4","0.4.1","0.4.2","0.4.3","0.4.4","0.4.5","0.4.6","0.4.7","0.4.8","0.4.9","0.5.0","0.5.1","0.5.2","0.5.3","0.5.4"],
-    "Date":["Утеряна","24.03.2024","25.03.2024","27.03.2024","28.03.2024","06.04.2024","15.04.2024","16.04.2024","19.04.2024","21.04.2024","01.05.2024","02.05.2024","03.05.2024","21.05.2024","08.09.2024",""]
+    "Date":["Утеряна","24.03.2024","25.03.2024","27.03.2024","28.03.2024","06.04.2024","15.04.2024","16.04.2024","19.04.2024","21.04.2024","01.05.2024","02.05.2024","03.05.2024","21.05.2024","08.09.2024","19.09.2024"]
 }

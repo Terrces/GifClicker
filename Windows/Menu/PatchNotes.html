@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8"/>
+	<title>GifClicker Patch Notes</title>
+	<link rel="stylesheet" href="../../style.css">
+</head>
+<body style="text-align: center; display: flex; flex-direction:column;">
+    <button class="Back" onclick="window.history.back()" style="position: absolute; z-index:1;background-color:rgba(0,0,0,0.7); margin-top:16px; margin-left:16px;">back</button>
+    <div class="PatchNotesContainer" id="PatchNotesContainer" style="display: flex; flex-direction: column;">
+    </div>
+    <div class="horizontalCenter">
+        <text> If you find any errors, write in the comments under the post of the latest update: <a style="color: lightblue;" href="https://t.me/+0Bo_FBFgVMBiOWZi">https://t.me/+0Bo_FBFgVMBiOWZi</a></text>
+    </div>
+        
+    <script src="../../Scripts/PatchNotes/Load.js" type="module"></script>
+    <script type="module">
+            let LocalizationFetch = await fetch("../../Data/Translate.json");
+    let Localization = await LocalizationFetch.json();
+
+    let lang = localStorage.getItem("lang");
+
+    document.querySelector(".Back").innerHTML = Localization[lang].general.back;
+    </script>
+</body>

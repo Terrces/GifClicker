@@ -3,7 +3,6 @@
         "general":
         {
             "back":"back",
-            "back_to_game":"back to game",
             "currency":"GIFcoin",
             "price":"price"
         },
@@ -64,7 +63,6 @@
         "general":
         {
             "back":"Назад",
-            "back_to_game":"Вернуться к игре",
             "currency":"GIFcoin",
             "price":"Цена"
         },
@@ -78,7 +76,7 @@
             "general":"Общие",
             "graphics":"Графика",
             "audio":"Звук",
-            "themes":"Продвинутые темы",
+            "themes":"Настойки темы",
             "menu":"Меню"
         },
         "main":
@@ -125,7 +123,6 @@
         "general":
         {
             "back":"",
-            "back_to_game":"",
             "currency":"GIFcoin",
             "price":""
         },
@@ -180,7 +177,6 @@
         "general":
         {
             "back":"",
-            "back_to_game":"",
             "currency":"GIFcoin",
             "price":""
         },
