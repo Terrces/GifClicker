@@ -12,7 +12,13 @@
             "play":"Play",
             "settings":"Settings",
             "credits":"Credits",
-            "exit":"Exit"
+            "exit":"Exit",
+
+            "general":"General",
+            "graphics":"Graphics",
+            "audio":"Audio",
+            "themes":"Advanced themes",
+            "menu":"Menu"
         },
         "main":
         {
@@ -67,7 +73,13 @@
             "play":"Играть",
             "settings":"Настройки",
             "credits":"Титры",
-            "exit":"Выйти"
+            "exit":"Выйти",
+
+            "general":"Общие",
+            "graphics":"Графика",
+            "audio":"Звук",
+            "themes":"Продвинутые темы",
+            "menu":"Меню"
         },
         "main":
         {

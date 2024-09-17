@@ -21,7 +21,7 @@ function localizator(){
     document.querySelector("#FoggingText").innerHTML = Translate[Lang].settings.main_accent_color_text;
     document.querySelector("#SoundsvolumeText").innerHTML = Translate[Lang].settings.sounds_volume_text;
     document.querySelector("#LanguageText").innerHTML = Translate[Lang].settings.language_text;
-
+    document.querySelector("#Credits").innerHTML = Translate[Lang].menu.credits;
     ThemeApply();
 }
 localizator();
