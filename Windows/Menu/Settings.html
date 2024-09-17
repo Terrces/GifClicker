@@ -6,7 +6,7 @@
     <title>Menu</title>
     <link rel="stylesheet" href="../../style.css">
 </head>
-<body style="background-size:100%; background-image:url('https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+<body style="z-index:2; background-size:100%; background-image:url('https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
     <div style="font-size:larger; padding:8px; border-radius:8%; position:absolute; display: flex; flex-direction: column; width:15%; left:16px; top:30%;background-color: rgba(0,0,0,0.4);">
         <button class="ButtonGeneral" onclick="" type="button">General</button>
         <button class="ButtonGraphics" onclick="" type="button">Graphics</button>
@@ -14,7 +14,35 @@
         <button class="ButtonThemes" onclick="" type="button">Advanced Themes</button>
         <button class="ButtonMenu" onclick="window.location.href='./Menu'" type="button">Menu</button>
     </div>
-    <script src="../../Scripts/Localization/Menu.js" type="module">
-    </script>
+    <div style="position: absolute; background-color:rgba(0,0,0,0.5); z-index:1; width:50%;height:90%; border-radius:32px; right:5%; padding:32px;">
+		<div class="Heading">
+			<text id="SoundsSettingsHeading">Sounds Settings</text>
+		</div>
+		
+		<text id="SoundsvolumeText">Sounds volume</text>
+		<input class="range" id="ChangeSystemSound" type="range" min="0" max="1" step="0.05" value="0.05" onchange=" var sound = new Audio; sound.src='../Audio/Sounds/BuyConfirm.mp3'; sound.volume = document.getElementById('ChangeSystemSound').value; sound.play().catch(()=>{})">
+		<!-- App Description -->
+
+		<div class="Heading" style="margin-top:64px;">
+			<text id="AnotherSettingsHeading">Another</text>
+		</div>
+
+		<text id="LanguageText">Language:</text>
+		<select id="LanguageChoise" style="background-color:rgba(255,255,255,0.2);">
+			<option value="en_US">English</option>
+			<option value="ru_RU">Русский</option>
+            <option value="no_NOR">Norsk</option>
+			<option value="uk_UKR">Український</option>
+			
+		</select>
+
+		<div class="horizontalCenter" style="margin-top:32px;">
+			<div style="display:flex; flex-direction: column;">
+			</div>
+		</div>
+		<button id="Credits" type="button" onclick="window.location.href='../Windows/Credits.html'">Credits</button>
+		<button type="button" onclick="localStorage.clear();window.location.reload()">Clear game data</button>
+    </div>
+    <script src="../../Scripts/Localization/Menu.js" type="module"></script>
 </body>
 </html>

@@ -1,4 +1,3 @@
-import {ThemeApply} from "../WindowLogics/SettingsLogic.js";
 let TranslateFetch = await fetch("../../Data/Translate.json");
 let Translate = await TranslateFetch.json()
 
@@ -18,11 +17,9 @@ function localizator(){
     document.querySelector("#ThemesSettingsHeading").innerHTML = Translate[Lang].settings.theme_title;
     document.querySelector("#SoundsSettingsHeading").innerHTML = Translate[Lang].settings.sounds_title;
     document.querySelector("#AnotherSettingsHeading").innerHTML = Translate[Lang].settings.another_title;
-    document.querySelector("#FoggingText").innerHTML = Translate[Lang].settings.main_accent_color_text;
     document.querySelector("#SoundsvolumeText").innerHTML = Translate[Lang].settings.sounds_volume_text;
     document.querySelector("#LanguageText").innerHTML = Translate[Lang].settings.language_text;
     document.querySelector("#Credits").innerHTML = Translate[Lang].menu.credits;
-    ThemeApply();
 }
 localizator();
 LanguageChoiser.onchange = function(){

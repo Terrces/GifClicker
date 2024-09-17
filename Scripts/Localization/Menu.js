@@ -17,5 +17,10 @@ catch
     document.querySelector(".ButtonAudio").innerHTML = Translate[lang].menu.audio;
     document.querySelector(".ButtonThemes").innerHTML = Translate[lang].menu.themes;
     document.querySelector(".ButtonMenu").innerHTML = Translate[lang].menu.menu;
+    document.querySelector("#SoundsSettingsHeading").innerHTML = Translate[lang].settings.sounds_title;
+    document.querySelector("#AnotherSettingsHeading").innerHTML = Translate[lang].settings.another_title;
+    document.querySelector("#SoundsvolumeText").innerHTML = Translate[lang].settings.sounds_volume_text;
+    document.querySelector("#LanguageText").innerHTML = Translate[lang].settings.language_text;
+    document.querySelector("#Credits").innerHTML = Translate[lang].menu.credits;
 }
 //settings

@@ -1,5 +1,5 @@
 import GifLibrary from "./Clicker.js";
-import {ThemeApply} from "./SettingsLogic.js";
+// import {ThemeApply} from "./SettingsLogic.js";
 let TranslateFetch = await fetch("../Data/Translate.json");
 let Translate = await TranslateFetch.json()
 
@@ -46,7 +46,6 @@ export function GifsInLibraryCreate(){
 		choisebutton.prepend(choiseIcon);
 		removebutton.prepend(deleteIcon);
 		
-		ThemeApply();
 		CopyLinkbutton.onclick = function(){
 			let tempInput = document.createElement("input");
 			tempInput.value = CreateGif.src;
@@ -87,7 +86,6 @@ export function GifsInLibraryCreate(){
 
 		CreateGif.src = giflink.textContent=GifLibrary[i];
 		CopyLinkbutton.id = removebutton.id = choisebutton.id = CreateGif.id = i;
-		ThemeApply();
 	}
 }
 export function DeleteById(id){

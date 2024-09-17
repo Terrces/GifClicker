@@ -1,5 +1,4 @@
 import { priceAnother, priceUpgrades } from "./Clicker.js";
-import {ThemeApply} from "./SettingsLogic.js";
 import {GifRefresh,upgrade} from './Clicker.js';
 
 
@@ -189,7 +188,6 @@ function Update(){
 	ProductBlock.append(title,StickersContainer,Input,hidden,Productimg,ButtonContainer);
 	document.querySelector("#ProductAppend").append(ProductBlock,InfoBorder);
 	document.querySelector("#ProductAppend").style.position = "absolute";
-	ThemeApply();
 
 	ProductBlock.addEventListener("wheel",(event)=>{
 		if(0 > event.deltaY){
