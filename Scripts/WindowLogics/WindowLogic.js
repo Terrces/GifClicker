@@ -49,8 +49,8 @@ export function Alert(Messege,description,img,time,skip){
 	const text = document.createElement("text");
 	const Image = document.createElement("img");
 	const descriptiontext = document.createElement("text");
-	alertwindow.style.height = "20%";
-	alertwindow.style.width = "20%";
+	alertwindow.style.height = "150px";
+	alertwindow.style.width = "200px";
 	alertwindow.style.padding = "16px";
 	// alertwindow.style.right = "16px";
 	// alertwindow.style.bottom = "16px"
@@ -67,8 +67,8 @@ export function Alert(Messege,description,img,time,skip){
 
 	Image.src = img;
 	Image.style.marginTop = "16px";
-	Image.style.maxHeight = "42vh";
-	Image.style.maxWidth = "42vh";
+	Image.style.maxHeight = "42%";
+	Image.style.maxWidth = "42%";
 	Image.style.borderRadius = "0px";
 
 	alertwindow.append(text,Image,descriptiontext);

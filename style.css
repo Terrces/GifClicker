@@ -280,9 +280,9 @@ img{border-radius:0.5vw;}
 	flex-direction:row;
 	min-height:98vh;
 	width:100%;
-	border-radius: 1em;
-	background-color: rgba(0, 0, 0, 0.2);
-	backdrop-filter:blur(30px);
+	border-radius: 16px;
+	background-color: rgba(0, 0, 0, 0.4);
+	/* /backdrop-filter:blur(30px); */
 	opacity:0;
 	transition:0.3s ease;
 	z-index:2;
@@ -295,8 +295,8 @@ img{border-radius:0.5vw;}
 	background-color:rgba(0,0,0,0.5);
 	position:absolute;
 	padding:8px;
-	height:98.5%;
-	width: 99%;
+	height:16em;
+	width: 16em;
 	display:flex;
 	flex-direction: column;
 	vertical-align:middle;
