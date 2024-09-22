@@ -250,7 +250,7 @@ img{border-radius:0.5vw;}
 	flex-direction:column;
 	display:flex;
 	transition: 0.5s linear;
-	&:hover{background-size: 130%;background-position: 50% 0%;background-origin: content-box;}
+	&:hover{background-size: 130%; background-position: 30% -10px;}
 }
 .ProductBlock{
 	vertical-align:middle;
