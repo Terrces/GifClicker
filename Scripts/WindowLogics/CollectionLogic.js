@@ -12,8 +12,6 @@ export function GifsInLibraryCreate(){
 		
 		const librarybase = document.querySelector(".allgifs");
 		const CreateBlock= document.createElement('div');
-		const CreateGif= document.createElement('img');
-		const giflink = document.createElement('text');
 		const choisebutton = document.createElement('button');
 		const removebutton = document.createElement('button');
 		const CopyLinkbutton = document.createElement('button');
@@ -48,7 +46,7 @@ export function GifsInLibraryCreate(){
 		
 		CopyLinkbutton.onclick = function(){
 			let tempInput = document.createElement("input");
-			tempInput.value = CreateGif.src;
+			tempInput.value = GifLibrary[CopyLinkbutton.id];
 			document.body.appendChild(tempInput);
 			tempInput.select();
 			document.execCommand("copy");
@@ -82,10 +80,10 @@ export function GifsInLibraryCreate(){
 		removebutton.className = "DeleteThisGif";
 
 		librarybase.prepend(CreateBlock);
-		CreateBlock.append(CreateGif,CopyLinkbutton,choisebutton,removebutton);
+		CreateBlock.append(CopyLinkbutton,choisebutton,removebutton);
+		CreateBlock.style.backgroundImage = "url(" + GifLibrary[i] + ")"
 
-		CreateGif.src = giflink.textContent=GifLibrary[i];
-		CopyLinkbutton.id = removebutton.id = choisebutton.id = CreateGif.id = i;
+		CopyLinkbutton.id = removebutton.id = choisebutton.id = i;
 	}
 }
 export function DeleteById(id){

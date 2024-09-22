@@ -237,16 +237,20 @@ img{border-radius:0.5vw;}
 	background:rgba(255,255,255,0.2);
 	border-radius: 1em;
 	word-wrap:break-word;
-	max-height:10%;
-	max-width:10%;
+	height: 21em;
+	width:16em;
 	margin: 0.6vw;
 	padding:0.5em;
-	
-	justify-content:center;
-	vertical-align:middle;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: 0px;
+	background-position-y:top;
+	justify-content:end;
+	vertical-align:bottom;
 	flex-direction:column;
 	display:flex;
-	transition: 0.2s ease;
+	transition: 0.5s linear;
+	&:hover{background-size: 130%;background-position: 50% 0%;background-origin: content-box;}
 }
 .ProductBlock{
 	vertical-align:middle;
