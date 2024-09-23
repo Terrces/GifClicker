@@ -236,10 +236,11 @@ img{border-radius:0.5vw;}
 .CollectionGif{
 	background:rgba(255,255,255,0.2);
 	border-radius: 1em;
+	border: dashed white 2px;
 	word-wrap:break-word;
 	height: 21em;
 	width:16em;
-	margin: 0.6vw;
+	margin: 0.83vw;
 	padding:0.5em;
 	background-repeat: no-repeat;
 	background-size: 100%;
@@ -249,8 +250,9 @@ img{border-radius:0.5vw;}
 	vertical-align:bottom;
 	flex-direction:column;
 	display:flex;
-	transition: 0.5s linear;
-	&:hover{background-size: 130%; background-position: 30% -10px;}
+	background-position: 50% 50%;
+	transition: 0.3s ease-in-out;
+	&:hover{border: solid white 2px; background-size: 130%; background-position: 50% 0%;}
 }
 .ProductBlock{
 	vertical-align:middle;

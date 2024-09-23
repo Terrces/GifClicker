@@ -29,48 +29,6 @@
 		</div>
 	</div>
 
-	<!-- Настройки -->
-	<div class="window" id="SettingsWindow">
-		<br>
-		<div class="left">
-			<button type="button" id="CloseWindowbutton"><img class="buttonimg" src="../Pictures/Icons/close.svg" style="height:1.4em; margin-bottom:-0.3em;"></button>
-		</div>
-		<div class="Heading" style="margin-top:64px;">
-			<text id="ThemesSettingsHeading">Themes Settings</text>
-		</div>
-		<div>
-		</div>
-
-		
-		<div class="Heading" style="margin-top:64px;">
-			<text id="SoundsSettingsHeading">Sounds Settings</text>
-		</div>
-		
-		<text id="SoundsvolumeText">Sounds volume</text>
-		<input class="range" id="ChangeSystemSound" type="range" min="0" max="1" step="0.05" value="0.05" onchange=" var sound = new Audio; sound.src='../Audio/Sounds/BuyConfirm.mp3'; sound.volume = document.getElementById('ChangeSystemSound').value; sound.play().catch(()=>{})">
-		<!-- App Description -->
-
-		<div class="Heading" style="margin-top:64px;">
-			<text id="AnotherSettingsHeading">Another</text>
-		</div>
-
-		<text id="LanguageText">Language:</text>
-		<select id="LanguageChoise" style="background-color:rgba(255,255,255,0.2);">
-			<option value="en_US">English</option>
-			<option value="ru_RU">Русский</option>
-            <option value="no_NOR">Norsk</option>
-			<option value="uk_UKR">Український</option>
-			
-		</select>
-
-		<div class="horizontalCenter" style="margin-top:32px;">
-			<div style="display:flex; flex-direction: column;">
-			</div>
-		</div>
-		<button id="Credits" type="button" onclick="window.location.href='../Windows/Credits.html'">Credits</button>
-		<button type="button" onclick="localStorage.clear();window.location.reload()">Clear game data</button>
-	</div>
-
 	<!-- Магазин -->
 	<form class="window" id="shopWindow" style="display:none;">
 		<br>
@@ -100,7 +58,7 @@
 		<div class="right">
 			<button type="button" id="CollectionOpen" title="Вход в вашу коллекцию"><img class="buttonimg" src="../Pictures/Icons/collection.svg" style="height:1em;">Collection</button>
 			<div style="display: flex; flex-direction: row;">
-				<button type="button" id="OpenSettingsButton" style="width:2em; height:2em; padding:0em;"><img class="buttonimg" src="../Pictures/Icons/settings.svg" style="padding-right:0em;height:1.5em;"></button>
+				<button type="button" id="OpenSettingsButton" onclick="window.location.href = './Menu/Settings.html'" style="width:2em; height:2em; padding:0em;"><img class="buttonimg" src="../Pictures/Icons/settings.svg" style="padding-right:0em;height:1.5em;"></button>
 			</div>
 		</div>
 	</div>
@@ -145,7 +103,6 @@
 	<script src="../Scripts/WindowLogics/Clicker.js" type="module"></script>
 	<script src="../Scripts/KeyboardEvents.js" type="module"></script>
 	<script src="../Scripts/WindowLogics/ShopLogic.js" type="module"></script>
-	<script src="../Scripts/WindowLogics/SettingsLogic.js" type="module"></script>
 	<script src="../Scripts/WindowLogics/WindowLogic.js" type="module"></script>
 	<script src="../Scripts/Api/GifUpdate.js" type="module"></script>
 	<script src="../Scripts/Localization/Translater.js" type="module"></script>

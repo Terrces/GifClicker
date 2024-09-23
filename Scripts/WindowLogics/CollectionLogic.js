@@ -1,5 +1,4 @@
 import GifLibrary from "./Clicker.js";
-// import {ThemeApply} from "./SettingsLogic.js";
 let TranslateFetch = await fetch("../Data/Translate.json");
 let Translate = await TranslateFetch.json()
 
@@ -7,7 +6,7 @@ export function GifsInLibraryCreate(){
 	for(let i=0; i < GifLibrary.length; i++){
 		setTimeout(() => {
 			document.getElementById("AllGifsContainer").style.transform = "scale(1, 1)";
-			//document.getElementById("AllGifsContainer").style.opacity = 1;
+			document.getElementById("AllGifsContainer").style.opacity = 1;
 		},200)
 		
 		const librarybase = document.querySelector(".allgifs");
@@ -39,23 +38,28 @@ export function GifsInLibraryCreate(){
 		CopyLinkbutton.textContent = Translate[Lang].Collection.copy_GIF;
 		choisebutton.textContent = Translate[Lang].Collection.choise;
 		removebutton.textContent = Translate[Lang].Collection.delete;
-
+		choisebutton.style.opacity = "0";removebutton.style.opacity = "0";CopyLinkbutton.style.opacity = "0";
 		CopyLinkbutton.prepend(copyIcon);
 		choisebutton.prepend(choiseIcon);
 		removebutton.prepend(deleteIcon);
 		
-		CopyLinkbutton.onclick = function(){
+		function CopyLink ()
+		{
 			let tempInput = document.createElement("input");
 			tempInput.value = GifLibrary[CopyLinkbutton.id];
 			document.body.appendChild(tempInput);
 			tempInput.select();
 			document.execCommand("copy");
 			document.body.removeChild(tempInput);
-			var sound = new Audio();
+			let sound = new Audio();
 			sound.volume = document.getElementById('ChangeSystemSound').value;
 			sound.src = '../Audio/Sounds/Copy.mp3';
 			sound.play().catch(()=>{});
 		}
+
+		CreateBlock.addEventListener("mouseenter", (event) => {choisebutton.style.opacity = "1";removebutton.style.opacity = "1";CopyLinkbutton.style.opacity = "1";})
+		CreateBlock.addEventListener("mouseleave", (event) => {choisebutton.style.opacity = "0";removebutton.style.opacity = "0";CopyLinkbutton.style.opacity = "0";})
+		CopyLinkbutton.onclick = function(){CopyLink();}
 		choisebutton.onclick = function(){
 			Main.src = GifLibrary[choisebutton.id]
 			var sound = new Audio();
@@ -65,8 +69,8 @@ export function GifsInLibraryCreate(){
 		}
 		removebutton.onclick = function()
 		{
-			document.getElementById("AllGifsContainer").style.transform = "scale(0.9,0.9)";
-			//document.getElementById("AllGifsContainer").style.opacity = 0;
+			document.getElementById("AllGifsContainer").style.transform = "scale(0.95,0.95)";
+			document.getElementById("AllGifsContainer").style.opacity = 0;
 			DeleteById("DeleteThis");
 			GifLibrary.splice(removebutton.id,1);
 			localStorage.setItem('GifCollection',JSON.stringify(GifLibrary));

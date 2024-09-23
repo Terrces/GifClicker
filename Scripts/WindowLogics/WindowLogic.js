@@ -18,7 +18,6 @@ CollectionOpen.onclick=function(){
 	OpenWindow(CollectionWindow);
 }
 
-OpenSettingsButton.onclick=function(){OpenWindow(SettingsWindow);}
 OpenShopWindow.onclick=function(){OpenWindow(shopWindow);}
 
 export function AutoCloseWindows(){

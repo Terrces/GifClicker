@@ -12,7 +12,7 @@
         <button class="ButtonGraphics" onclick="" type="button">Graphics</button>
         <button class="ButtonAudio" onclick="" type="button">Audio</button>
         <button class="ButtonThemes" onclick="" type="button">Advanced Themes</button>
-        <button class="ButtonMenu" onclick="window.location.href='./Menu'" type="button">Menu</button>
+        <button class="ButtonBack" onclick="window.history.back()" type="button">Back</button>
     </div>
     <div style="position: absolute; background-color:rgba(0,0,0,0.5); z-index:1; width:50%;height:87%; border-radius:32px; right:5%; padding:32px;">
 		<div class="Heading">
@@ -44,5 +44,6 @@
 		<button type="button" onclick="localStorage.clear();window.location.reload()">Clear game data</button>
     </div>
     <script src="../../Scripts/Localization/Menu.js" type="module"></script>
+	<script src="../../Scripts/WindowLogics/SettingsLogic.js" type="module"></script>
 </body>
 </html>

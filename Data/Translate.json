@@ -4,6 +4,7 @@
         {
             "back":"back",
             "currency":"GIFcoin",
+            "currencies":"GIFcoins",
             "price":"price"
         },
         "menu": 
@@ -64,6 +65,7 @@
         {
             "back":"Назад",
             "currency":"GIFcoin",
+            "currencies":"GIFcoins",
             "price":"Цена"
         },
         "menu": 
@@ -124,6 +126,7 @@
         {
             "back":"",
             "currency":"GIFcoin",
+            "currencies":"GIFcoins",
             "price":""
         },
         "menu": 
@@ -178,6 +181,7 @@
         {
             "back":"",
             "currency":"GIFcoin",
+            "currencies":"GIFcoins",
             "price":""
         },
         "menu": 

@@ -3,8 +3,6 @@ import * as animation from "../Animation.js";
 import {nextImage} from '../Api/GifUpdate.js';
 import {Alert} from "./WindowLogic.js";
 
-let GameInfoFetch = await fetch("https://raw.githubusercontent.com/Terrces/GifClicker/main/GameInfo.json");
-let GameInfo = await GameInfoFetch.json();
 let TranslateAlertsFetch = await fetch("../Data/TranslateAlerts.json");
 let TranslateAlerts = await TranslateAlertsFetch.json();
 let TranslateFetch = await fetch("../Data/Translate.json");
@@ -32,6 +30,13 @@ if(localStorage.getItem('GifCollection') != null){
 	GifLibrary = JSON.parse(localStorage.getItem('GifCollection'));
 }
 
+document.body.style.backgroundImage = "url(https://images.unsplash.com/photo-1700909415807-9abe5be462cb?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)";
+document.body.style.backgroundPositionY = 50 + "%";
+document.body.style.backgroundPositionX = 50 + "%";
+document.body.style.backgroundRepeat = "no-repeat";
+document.body.style.backgroundSize = 100 + "%";
+
+
 export function upgrade (id,addmultiply,addprice) {
 	if(GifCoin >= priceUpgrades[id]){
 		StatsCountUpgrades[id] += 1;
@@ -47,18 +52,18 @@ export function upgrade (id,addmultiply,addprice) {
 		sound.play().catch(()=>{});
 	}
 	else{
-		Alert(TranslateAlerts[Lang].clicker.lack  + (priceUpgrades[id]-GifCoin).toFixed(1) + " GIFcoin","","https://media.tenor.com/Fbc1ES3oTE4AAAAi/confused-shocked.gif",1500,true);
+		Alert(TranslateAlerts[Lang].clicker.lack  + (priceUpgrades[id]-GifCoin).toFixed(1) + " GIFcoin","","https://media.tenor.com/Rb5rxSBr27YAAAAi/jinzhan-lily-and-marigold.gif",1800,true);
 	}
 }
 
 export function GifRefresh(){
 	if(GifCoin >= priceAnother[0]){
 		GifCoin -= priceAnother[0];
-		priceAnother[0] += 2;
+		priceAnother[0] += 1.2;
 		document.getElementById("Main").style.opacity = 0;
 		setTimeout(() => {
 			document.getElementById("Main").style.opacity = 1;
-		},400)
+		},600)
 		var sound = new Audio();
 		sound.volume = document.getElementById('ChangeSystemSound').value;
 		sound.src = "../Audio/Sounds/NewGif.mp3";
@@ -67,7 +72,7 @@ export function GifRefresh(){
 		textcountupdate();
 	}
 	else{
-		Alert(TranslateAlerts[Lang].clicker.lack  + (priceAnother[0]-GifCoin).toFixed(1),"" + " GIFcoin","https://media.tenor.com/Fbc1ES3oTE4AAAAi/confused-shocked.gif",1500,true);
+		Alert(TranslateAlerts[Lang].clicker.lack  + (priceAnother[0]-GifCoin).toFixed(1),"" + " GIFcoin","https://media.tenor.com/eH4X6fy69gsAAAAi/jinzhan-lydia.gif",1800,true);
 	}
 
 }
@@ -111,13 +116,12 @@ document.getElementById("AppendInCollection").onclick = function(){AppendGifInCo
 document.querySelector("#BuyGifRefresh").addEventListener("click",(event)=>{GifRefresh();})
 
 async function textcountupdate (){
-	let gifcoinsNames = ["GIFCoin"," GIFCoins"];
 	localStorage.setItem('coins',GifCoin);
 	
-	GifRefresh1.textContent = GifRefresh.textContent = Translate[Lang].general.price + ": " + Math.ceil(priceAnother[0]) + gifcoinsNames[1];
-	document.querySelector(".money").textContent = gifcoinsNames[1]+ ": " + GifCoin.toFixed(1);
+	GifRefresh1.textContent = GifRefresh.textContent = Translate[Lang].general.price + ": " + Math.ceil(priceAnother[0]) + " " + Translate[Lang].general.currencies;
+	document.querySelector(".money").textContent = Translate[Lang].general.currencies+ ": " + GifCoin.toFixed(2);
 
-	document.querySelector(".count").textContent =  gifcoinsNames[1]+ ": "+ GifCoin.toFixed(1);
+	document.querySelector(".count").textContent =  Translate[Lang].general.currencies+ ": "+ GifCoin.toFixed(2);
 }
 textcountupdate();
 export default GifLibrary;

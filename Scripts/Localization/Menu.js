@@ -16,7 +16,7 @@ catch
     document.querySelector(".ButtonGraphics").innerHTML = Translate[lang].menu.graphics;
     document.querySelector(".ButtonAudio").innerHTML = Translate[lang].menu.audio;
     document.querySelector(".ButtonThemes").innerHTML = Translate[lang].menu.themes;
-    document.querySelector(".ButtonMenu").innerHTML = Translate[lang].menu.menu;
+    document.querySelector(".ButtonBack").innerHTML = Translate[lang].general.back;
     document.querySelector("#SoundsSettingsHeading").innerHTML = Translate[lang].settings.sounds_title;
     document.querySelector("#AnotherSettingsHeading").innerHTML = Translate[lang].settings.another_title;
     document.querySelector("#SoundsvolumeText").innerHTML = Translate[lang].settings.sounds_volume_text;
