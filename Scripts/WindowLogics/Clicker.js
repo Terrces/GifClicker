@@ -47,7 +47,7 @@ export function upgrade (id,addmultiply,addprice) {
 		localStorage.setItem('Upgrades',JSON.stringify(multiply));
 		textcountupdate();
 		var sound = new Audio();
-		sound.volume = document.getElementById('ChangeSystemSound').value;
+		sound.volume = localStorage.getItem("volume");
 		sound.src = "../Audio/Sounds/BuyConfirm.mp3";
 		sound.play().catch(()=>{});
 	}
@@ -65,7 +65,7 @@ export function GifRefresh(){
 			document.getElementById("Main").style.opacity = 1;
 		},600)
 		var sound = new Audio();
-		sound.volume = document.getElementById('ChangeSystemSound').value;
+		sound.volume = localStorage.getItem("volume");
 		sound.src = "../Audio/Sounds/NewGif.mp3";
 		sound.play().catch(()=>{});
 		nextImage();
@@ -90,7 +90,7 @@ function AppendGifInCollection(){
 		GifLibrary.push(document.getElementById("Main").src);
 		localStorage.setItem('GifCollection',JSON.stringify(GifLibrary));
 		var sound = new Audio();
-		sound.volume = document.getElementById('ChangeSystemSound').value;
+		sound.volume = localStorage.getItem("volume");
 		sound.src = "../Audio/Sounds/AddGif.mp3";
 		sound.play().catch(()=>{});
 		avalible = false;

@@ -75,7 +75,7 @@ export function Alert(Messege,description,img,time,skip){
 	setTimeout(() => {
 		alertwindow.style.opacity = 100;
 		var sound = new Audio();
-		sound.volume = document.getElementById('ChangeSystemSound').value * 4;
+		sound.volume = localStorage.getItem("volume") * 4;
 		sound.src = "../Audio/Sounds/Popup.mp3";
 		sound.play().catch(()=>{});
 	},0);
@@ -84,7 +84,7 @@ export function Alert(Messege,description,img,time,skip){
 		Image.src = "";
 		alertwindow.remove();
 		var sound = new Audio();
-		sound.volume = document.getElementById('ChangeSystemSound').value;
+		sound.volume = localStorage.getItem("volume");
 		sound.src = "../Audio/Sounds/Popdown.mp3";
 		sound.play().catch(()=>{});
 	},time);

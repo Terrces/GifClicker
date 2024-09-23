@@ -52,7 +52,7 @@ export function GifsInLibraryCreate(){
 			document.execCommand("copy");
 			document.body.removeChild(tempInput);
 			let sound = new Audio();
-			sound.volume = document.getElementById('ChangeSystemSound').value;
+			sound.volume = localStorage.getItem("volume");
 			sound.src = '../Audio/Sounds/Copy.mp3';
 			sound.play().catch(()=>{});
 		}
@@ -63,7 +63,7 @@ export function GifsInLibraryCreate(){
 		choisebutton.onclick = function(){
 			Main.src = GifLibrary[choisebutton.id]
 			var sound = new Audio();
-			sound.volume = document.getElementById('ChangeSystemSound').value;
+			sound.volume = localStorage.getItem("volume");
 			sound.src = '../Audio/Sounds/Choise.mp3';
 			sound.play().catch(()=>{});
 		}
@@ -76,7 +76,7 @@ export function GifsInLibraryCreate(){
 			localStorage.setItem('GifCollection',JSON.stringify(GifLibrary));
 			GifsInLibraryCreate();
 			var sound = new Audio();
-			sound.volume = document.getElementById('ChangeSystemSound').value;
+			sound.volume = localStorage.getItem("volume");
 			sound.src = '../Audio/Sounds/Delete.mp3';
 			sound.play().catch(()=>{});
 		}
