@@ -57,7 +57,7 @@ function Update(){
 			Input.style.width = "16em";
 			Input.type = "text";
 			Input.className = "Search";
-			Input.placeholder = JSON.parse(localStorage.getItem("SearchImage"))[0]
+			Input.value = JSON.parse(localStorage.getItem("SearchImage"))[0]
 	
 			CheckBox = document.createElement("input");
 			CheckBox.type = "checkbox";

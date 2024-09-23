@@ -65,18 +65,23 @@ export function nextImage(search = "")
     }
 
     //Сохранение данных о том является ли гифка стикром иначе пустота что значит что гифка это гифка жесть да
-    document.querySelector(".stickers").addEventListener("click", () => {
-        if(document.querySelector(".stickers").checked == true)
-        {
-            search_term[1] = "sticker"
-            StorageSave();
-        }
-        else
-        {
-            search_term[1] = ""
-            StorageSave();
-        }
-    })
+    if(document.querySelector(".stickers") != null)
+    {
+        document.querySelector(".stickers").addEventListener("click", () => {
+            if(document.querySelector(".stickers").checked == true)
+            {
+                search_term[1] = "sticker"
+                StorageSave();
+            }
+            else
+            {
+                search_term[1] = ""
+                StorageSave();
+            }
+        })
+    }
+
+
 
     // set the apikey and limit
     var apikey = "AIzaSyBPCEe-KyjlWdroCAE0fFvS5Yxbrk6YhJ0";
