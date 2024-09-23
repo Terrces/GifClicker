@@ -133,20 +133,21 @@ img{border-radius:0.5vw;}
 	&:focus{background:rgba(255,255,255,0.3);}
 }
 .Search{
+	accent-color:transparent;
 	text-align:center;
 	width:15%;
 	font-size:1em;
 	padding:9px 3vw 9px 3vw;
 	color:white;
 	background:transparent;
-	border:0.2em solid white;
+	border:0.2em dashed white;
 	border-radius:1vw;
-	transition:0.2s ease-out;
+	transition:0.4s ease-out;
 	&:hover{
 		text-align:center;
 		background:rgba(255,255,255,0.3);
-		border:0.2em solid rgb(166, 0, 255);
-		transition:0.3s ease-out;
+		border:0.2em solid white;
+		transition:0.4s ease-out;
 	}
 	&:focus{background:rgba(255,255,255,0.3);}
 }

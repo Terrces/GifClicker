@@ -1,6 +1,4 @@
-import { priceAnother, priceUpgrades } from "./Clicker.js";
-import {GifRefresh,upgrade} from './Clicker.js';
-
+import { priceAnother, priceUpgrades,GifRefresh,upgrade } from "./Clicker.js";
 
 let TranslateAlertsFetch = await fetch("../Data/TranslateAlerts.json");
 let TranslateAlerts = await TranslateAlertsFetch.json();
@@ -59,7 +57,7 @@ function Update(){
 			Input.style.width = "16em";
 			Input.type = "text";
 			Input.className = "Search";
-			Input.placeholder = localStorage.getItem("SearchImage")
+			Input.placeholder = JSON.parse(localStorage.getItem("SearchImage"))[0]
 	
 			CheckBox = document.createElement("input");
 			CheckBox.type = "checkbox";
@@ -74,16 +72,14 @@ function Update(){
 
 			Input.onchange = function(){
 				if(document.querySelector(".Search").value != null){
-					localStorage.setItem('SearchImage', document.querySelector(".Search").value);
+					GifRefresh(document.querySelector(".Search").value);
 				}
-				GifRefresh();
 			}
 
 			BuyButton.addEventListener("click",()=>{
 				if(document.querySelector(".Search").value != null){
-					localStorage.setItem('SearchImage', document.querySelector(".Search").value);
+					GifRefresh(document.querySelector(".Search").value);
 				}
-				GifRefresh();
 				updateText(1);
 			})
 		break;

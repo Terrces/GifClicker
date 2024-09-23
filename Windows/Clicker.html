@@ -87,7 +87,7 @@
 							document.execCommand('copy');
 							document.body.removeChild(tempInput);
 							var sound = new Audio();
-							sound.volume = document.getElementById('ChangeSystemSound').value;
+							sound.volume = localStorage.getItem('volume');
 							sound.src = '../Audio/Sounds/Copy.mp3';
 							sound.play().catch(()=>{});
 							avalible = false;

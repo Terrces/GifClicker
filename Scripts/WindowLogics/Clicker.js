@@ -56,7 +56,7 @@ export function upgrade (id,addmultiply,addprice) {
 	}
 }
 
-export function GifRefresh(){
+export function GifRefresh(search){
 	if(GifCoin >= priceAnother[0]){
 		GifCoin -= priceAnother[0];
 		priceAnother[0] += 1.2;
@@ -68,7 +68,7 @@ export function GifRefresh(){
 		sound.volume = localStorage.getItem("volume");
 		sound.src = "../Audio/Sounds/NewGif.mp3";
 		sound.play().catch(()=>{});
-		nextImage();
+		nextImage(search);
 		textcountupdate();
 	}
 	else{
