@@ -124,6 +124,7 @@ img{border-radius:0.5vw;}
 	border:0.2em solid white;
 	border-radius:1vw;
 	transition:0.2s ease-out;
+	
 	&:hover{
 		text-align:center;
 		background:rgba(255,255,255,0.3);

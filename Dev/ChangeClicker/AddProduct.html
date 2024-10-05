@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+	<link rel="shortcut icon" href="https://i.pinimg.com/736x/f4/f8/a4/f4f8a4207dbf846cc4496e3499645806.jpg"/>
+	<meta charset="utf-8">
+	<title>GIFClicker DevMenu</title>
+	<link rel="stylesheet" href="../../style.css">
+</head>
+<body style="background-size:100%; background-image:url('https://images.unsplash.com/photo-1484417894907-623942c8ee29?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></body>
+    <div style="font-size:medium; position:absolute; display: flex; flex-direction: column; width:5em; left:16px;  z-index:5;"></div>
+        <button class="ButtonExit" onclick="window.history.back()" type="button" style="width:5em;">Exit</button>
+    </div>
+    <div class="" id="AddElements" style="position: absolute; display: flex; flex-direction: column; top:20%; z-index:5;">
+        <text>Добавить элемент</text>
+        <text style="color:lightblue;">top elements</text>
+        <button type="button" id="AddTitle">title</button>
+        <button type="button">description</button>
+        <button type="button">price(text)</button>
+        <button type="button">option</button>
+        <button type="button">input</button>
+        <text style="color:lightblue;">media</text>
+        <button type="button">image</button>
+        <button type="button">gif</button>
+        <button type="button">video</button>
+        <text style="color:lightcoral;">operations</text>
+        <button type="button">buy button</button>
+        <button type="button">sell button</button>
+    </div>
+    <div id="Preview" class="center" style="bottom: 0px; position: absolute;">
+        <div id="PreviewSB" class="ProductBlock">
+
+        </div>
+    </div>
+    <div id="ScriptOutput" style="position: absolute;">
+
+    </div>
+    <div id="ChangeElements" style="position: absolute; display: flex; flex-direction: column; top:20%; right: 10%;  z-index:5;">
+
+    </div>
+</body>
+<script src="./AddProduct.js" type="module"></script>
