@@ -4,8 +4,11 @@
 
 //const InputSearch = document.querySelector(".Search");
 
+
+let FirstStartSearch = "Anime Dance";
+
 if(localStorage.getItem("SearchImage") == null){
-    localStorage.setItem("SearchImage",JSON.stringify(["game hello","sticker"]));
+    localStorage.setItem("SearchImage",JSON.stringify([FirstStartSearch,"sticker"]));
 }
 
 function httpGetAsync(theUrl, callback)
@@ -54,7 +57,7 @@ export function nextImage(search = "")
         localStorage.setItem("SearchImage",JSON.stringify(search_term));
     }
 
-    var search_term = ["game hello","sticker"];
+    var search_term = [FirstStartSearch,"sticker"];
     var InputSearch = JSON.parse(localStorage.getItem("SearchImage"));
 
     search_term = InputSearch;

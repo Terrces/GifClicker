@@ -18,11 +18,12 @@
 }
 body{
 	font-family:"Martian Mono";
-	background:rgb(109, 109, 109);
+	background:rgb(0, 0, 0);
 	color:white;
 	text-align:center;
 	display:grid;
 	background-attachment:fixed;
+	background-repeat: no-repeat; background-position: 50%;
 	transition:0.1s ease;
 }
 button{

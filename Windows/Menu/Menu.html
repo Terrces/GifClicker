@@ -12,6 +12,7 @@
         <button class="ButtonSettings" onclick="window.location.href='./Settings'" type="button">Settings</button>
         <button class="ButtonCredits" onclick="window.location.href='./Credits.html'" type="button">Credits</button>
         <button class="ButtonExit" onclick="" type="button">Exit</button>
+        <button class="ButtonDevMenu" onclick="window.location.href='../../Dev/dev_menu.html'" type="button"></button>
     </div>
     <div class="LatestBuild" style="position: absolute; right:16px; background-color: rgba(255,255,255,0.9); color: black; padding:8px; border-radius:16px;max-width: 21em; cursor: pointer;">
         <text class="CurrentBuild"></text><text class="CurrentBuildName"></text><br>
@@ -30,6 +31,13 @@
             document.querySelector(".BuildImage").src = PatchNotes.Image[i];
             document.querySelector(".changes").textContent = PatchNotes.Changes[i];
             document.querySelector(".Date").textContent = "Updated: " + PatchNotes.Date[i];
+            if(PatchNotes.Date[i] == "Creating"){
+                document.querySelector(".ButtonDevMenu").style.display = "block";
+            }
+            else
+            {
+                document.querySelector(".ButtonDevMenu").style.display = "none";
+            }
         }
     </script>
 </body>
