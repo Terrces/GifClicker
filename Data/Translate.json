@@ -18,7 +18,9 @@
             "graphics":"Graphics",
             "audio":"Audio",
             "themes":"Advanced themes",
-            "menu":"Menu"
+            "menu":"Menu",
+            "development_menu":"development menu",
+            "":""
         },
         "main":
         {
@@ -79,7 +81,8 @@
             "graphics":"Графика",
             "audio":"Звук",
             "themes":"Настойки темы",
-            "menu":"Меню"
+            "menu":"Меню",
+            "development_menu":"Меню разработки"
         },
         "main":
         {
@@ -134,7 +137,14 @@
             "play":"",
             "settings":"",
             "credits":"",
-            "exit":""
+            "exit":"",
+
+            "general":"General",
+            "graphics":"Graphics",
+            "audio":"Audio",
+            "themes":"Advanced themes",
+            "menu":"Menu",
+            "development_menu":"development menu"
         },
         "main":
         {
@@ -189,7 +199,14 @@
             "play":"",
             "settings":"",
             "credits":"",
-            "exit":""
+            "exit":"",
+
+            "general":"",
+            "graphics":"",
+            "audio":"",
+            "themes":"",
+            "menu":"",
+            "development_menu":""
         },
         "main": {
             "shop": "Butikk",
