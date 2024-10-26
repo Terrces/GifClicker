@@ -1,8 +1,9 @@
 Created without Game Engines
 For optimization and fast loading
 
-API for gifs: tenor
-Main programming language: java script
+API for gifs: tenor;
+
+Main programming language: java script;
 
 URL:
 
