@@ -31,11 +31,11 @@ button{
 	background:transparent;
 	color:inherit;
 	font-size:1.2em;
-	margin:0.2vh;
+	margin:0.2em;
 	padding: 8px;
 	border:2px solid transparent;
 	border-bottom:2px solid;
-	border-radius:0.4vw;
+	border-radius:0.4em;
 	transition:0.2s ease;
 	&:hover{
 		font-size:1.5em;
@@ -265,7 +265,7 @@ img{border-radius:0.5vw;}
 	align-items:center;
 	
 	background:rgba(255,255,255,0.2);
-	padding:2% 10%;
+	padding:1em 2em;
 	border:2px solid transparent;
 	border-radius:1em;
 	margin:0px 10px 30px 10px;
@@ -287,6 +287,8 @@ img{border-radius:0.5vw;}
 .window{
 	display:none;
 	flex-direction:row;
+	left:0px;
+	position: absolute;
 	min-height:98vh;
 	width:100%;
 	border-radius: 16px;
