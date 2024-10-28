@@ -25,7 +25,7 @@
     <script type="module">
         let windowOuterWidth = window.outerWidth
         if(windowOuterWidth <= 600){
-            document.querySelector(".LatestBuild").style.fontSize = "0.55em";
+            document.querySelector(".LatestBuild").style.fontSize = "0.75em";
         }
         let PatchNotesFetch = await fetch("../../Data/PatchNotes.json");
         let PatchNotes = await PatchNotesFetch.json()
