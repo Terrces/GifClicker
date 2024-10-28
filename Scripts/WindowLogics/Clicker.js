@@ -34,7 +34,7 @@ document.body.style.backgroundImage = "url(https://images.unsplash.com/photo-170
 document.body.style.backgroundPositionY = 50 + "%";
 document.body.style.backgroundPositionX = 50 + "%";
 document.body.style.backgroundRepeat = "no-repeat";
-document.body.style.backgroundSize = 100 + "%";
+document.body.style.backgroundSize = "cover";
 
 
 export function upgrade (id,addmultiply,addprice) {
