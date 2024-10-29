@@ -8,25 +8,52 @@
     <link rel="stylesheet" href="../../style.css">
 </head>
 <body style="overflow-x:hidden; background-size:cover; background-image:url('https://images.unsplash.com/photo-1601850494422-3cf14624b0b3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
-    <div style="font-size:larger; padding:8px; border-radius:8%; position:absolute; display: flex; flex-direction: column; max-width:11em; left:16px; top:40%; background-color:rgba(0,0,0,0.3);">
-        <button class="ButtonPlay" onclick="window.location.href='../Clicker.html'" type="button">Play</button>
-        <button class="ButtonSettings" onclick="window.location.href='./Settings'" type="button">Settings</button>
-        <button class="ButtonCredits" onclick="window.location.href='./Credits.html'" type="button">Credits</button>
-        <button class="ButtonExit" onclick="" type="button">Exit</button>
-        <button class="ButtonDevMenu" onclick="window.location.href='../../Dev/dev_menu.html'" type="button"></button>
+    <div style="display: flex; align-items: center; vertical-align: middle; justify-content: center; height: 100vh;">
+        <div class="UI" style="font-size:1.2em; padding:8px; border-radius:8%; position:absolute; display: flex; flex-direction: column; max-width:11em; left:16px; background-color:rgba(0,0,0,0.3);">
+            <button class="ButtonPlay" onclick="window.location.href='../Clicker.html'" type="button">Play</button>
+            <button class="ButtonSettings" onclick="window.location.href='./Settings'" type="button">Settings</button>
+            <button class="ButtonCredits" onclick="window.location.href='./Credits.html'" type="button">Credits</button>
+            <button class="ButtonExit" onclick="" type="button">Exit</button>
+            <button class="ButtonDevMenu" onclick="window.location.href='../../Dev/dev_menu.html'" type="button"></button>
+        </div>
     </div>
-    <div class="LatestBuild" style="position: absolute; z-index:-1; font-size:1em; right:1px; background-color: rgba(255,255,255,0.9); color: black; padding:8px; border-radius:16px;max-width:21em; min-width:15em; width:21vw; cursor: pointer;">
-        <text class="CurrentBuild"></text><text class="CurrentBuildName"></text><br>
+
+    <div class="LatestBuild">
+        <div><text class="CurrentBuild"></text><text class="CurrentBuildName"></text></div>
+        <img class="BuildImage" style="max-height: 16em;">
         <text class="Date"></text>
-        <img class="BuildImage" style="max-height: 16em;"><br>
-        <text class="changes" style="word-break:normal;"></text><br>
+        <text class="changes" style="word-break:normal;"></text>
     </div>
     <script src="../../Scripts/Localization/Menu.js" type="module"></script>
     <script type="module">
         let windowOuterWidth = window.outerWidth
-        if(windowOuterWidth <= 600){
-            document.querySelector(".LatestBuild").style.fontSize = "0.55em";
+        window.addEventListener('resize',() => {
+            location.reload();
+        })
+        function changesize(){
+            if(windowOuterWidth <= 800){
+                
+                let latestbuild = document.querySelector(".LatestBuild");
+                let UI = document.querySelector(".UI");
+                latestbuild.style.fontSize = "1.4vh";
+                latestbuild.style.backgroundColor = "background-color: rgba(255,255,255,0.2);";
+                //latestbuild.style.bottom = "0px";
+                latestbuild.style.maxWidth = "100em";
+                latestbuild.style.left = "0px"
+                latestbuild.style.width ="auto";
+                UI.style.borderRadius = "0px";
+                UI.style.left = "0px";
+                UI.style.right = "0px";
+                UI.style.width = "auto";
+                UI.style.maxWidth = "1000vw";
+            }
+            else
+            {
+                document.querySelector(".LatestBuild").style.fontSize = "1em";
+            }
         }
+        changesize();
+
         let PatchNotesFetch = await fetch("../../Data/PatchNotes.json");
         let PatchNotes = await PatchNotesFetch.json()
         document.querySelector(".LatestBuild").addEventListener("click", () => {window.location.href='./PatchNotes.html'})
