@@ -19,16 +19,16 @@ let Translate = await TranslateFetch.json()
 let Lang = localStorage.getItem("lang");
 
 //перевод основных кнопок 
-try
-{
-	document.querySelector("#BuyGifRefresh").innerHTML ='<img class="buttonimg" src="../Pictures/Icons/update.svg" style="height:1em;">' + Translate[Lang].main.refresh;
-	document.querySelector("#AppendInCollection").innerHTML ='<img class="buttonimg" src="../Pictures/Icons/bookmark.svg" style="height:1em;">';
-	document.querySelector("#CollectionOpen").innerHTML ='<img class="buttonimg" src="../Pictures/Icons/collection.svg" style="height:1em;">' + Translate[Lang].main.collection;
-	document.querySelector("#OpenShopWindow").innerHTML ='<img class="buttonimg" src="../Pictures/Icons/shop.svg" style="height:1.2em; margin-bottom:-3px;">' + Translate[Lang].main.shop;
-}
-catch{
- console.log("Кто ПРИДУМАЛ ЭТО ГОВНО ГОРИ СУКА В АДУ БЛЯТЬ ");
-}
+// try
+// {
+// 	document.querySelector("#BuyGifRefresh").innerHTML ='<img class="buttonimg" src="../Pictures/Icons/update.svg" style="height:1em;">' + Translate[Lang].main.refresh;
+// 	document.querySelector("#AppendInCollection").innerHTML ='<img class="buttonimg" src="../Pictures/Icons/bookmark.svg" style="height:1em;">';
+// 	document.querySelector("#CollectionOpen").innerHTML ='<img class="buttonimg" src="../Pictures/Icons/collection.svg" style="height:1em;">' + Translate[Lang].main.collection;
+// 	document.querySelector("#OpenShopWindow").innerHTML ='<img class="buttonimg" src="../Pictures/Icons/shop.svg" style="height:1.2em; margin-bottom:-3px;">' + Translate[Lang].main.shop;
+// }
+// catch{
+//  console.log("Кто ПРИДУМАЛ ЭТО ГОВНО ГОРИ СУКА В АДУ БЛЯТЬ ");
+// }
 
 
 
