@@ -1,6 +1,6 @@
 // import GameInfo from "../Data/GameInfo.json" with{type: 'json'}
-import * as animation from "/Scripts/Animation.js";
-import {nextImage} from '/Scripts/Api/GifUpdate.js';
+import * as animation from "../Animation.js";
+import {nextImage} from '../Api/GifUpdate.js';
 import {Alert} from "./WindowLogic.js";
 
 let TranslateAlertsFetch = await fetch("../Data/TranslateAlerts.json");
@@ -41,7 +41,7 @@ export function upgrade (id,addmultiply,addprice) {
 		textcountupdate();
 		var sound = new Audio();
 		sound.volume = localStorage.getItem("volume");
-		sound.src = "../Audio/Sounds/BuyConfirm.mp3";
+		sound.src = "/Audio/Sounds/BuyConfirm.mp3";
 		sound.play().catch(()=>{});
 	}
 	else{
@@ -59,7 +59,7 @@ export function GifRefresh(search){
 		},600)
 		var sound = new Audio();
 		sound.volume = localStorage.getItem("volume");
-		sound.src = "../Audio/Sounds/NewGif.mp3";
+		sound.src = "/Audio/Sounds/NewGif.mp3";
 		sound.play().catch(()=>{});
 		nextImage(search);
 		textcountupdate();
@@ -84,7 +84,7 @@ function AppendGifInCollection(){
 		localStorage.setItem('GifCollection',JSON.stringify(GifLibrary));
 		var sound = new Audio();
 		sound.volume = localStorage.getItem("volume");
-		sound.src = "../Audio/Sounds/AddGif.mp3";
+		sound.src = "/Audio/Sounds/AddGif.mp3";
 		sound.play().catch(()=>{});
 		avalible = false;
 	}
