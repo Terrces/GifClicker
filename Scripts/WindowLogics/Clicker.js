@@ -1,11 +1,11 @@
 // import GameInfo from "../Data/GameInfo.json" with{type: 'json'}
-import * as animation from "../Animation.js";
-import {nextImage} from '../Api/GifUpdate.js';
+import * as animation from "/Scripts/Animation.js";
+import {nextImage} from '/Scripts/Api/GifUpdate.js';
 import {Alert} from "./WindowLogic.js";
 
 let TranslateAlertsFetch = await fetch("../Data/TranslateAlerts.json");
 let TranslateAlerts = await TranslateAlertsFetch.json();
-let TranslateFetch = await fetch("../Data/Translate.json");
+let TranslateFetch = await fetch("/Data/Translate.json");
 let Translate = await TranslateFetch.json()
 
 let Lang = localStorage.getItem("lang");

@@ -1,11 +1,11 @@
 
-let TranslateFetch = await fetch("../../Data/Translate.json");
+let TranslateFetch = await fetch("/Data/Translate.json");
 let Translate = await TranslateFetch.json()
 
-let PatchNotesFetch = await fetch("../../Data/PatchNotes.json");
+let PatchNotesFetch = await fetch("/Data/PatchNotes.json");
 let PatchNotes = await PatchNotesFetch.json()
 
-let GameInfoFetch = await fetch("../../Data/GameInfo.json");
+let GameInfoFetch = await fetch("/Data/GameInfo.json");
 let GameInfo = await GameInfoFetch.json();
 
 let Lang = localStorage.getItem("lang");
