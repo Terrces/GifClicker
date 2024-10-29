@@ -7,15 +7,15 @@
     <title>Menu</title>
     <link rel="stylesheet" href="../../style.css">
 </head>
-<body style="z-index:2; background-size:cover; background-attachment:fixed; background-image:url('https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
-    <div style="font-size:larger; padding:8px; border-radius:8%; position:absolute; display: flex; flex-direction: column; width:28vw; max-width:11em; left:2px; top:30%;background-color: rgba(0,0,0,0.4);">
-        <button class="ButtonGeneral" onclick="" type="button">General</button>
+<body style="height:97vh; display:flex; flex-direction: column; background-size:cover; background-attachment:fixed; background-image:url('https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+    <div style="background-color:rgba(0,0,0,0.2); height: fit-content; border-radius:16px;">
+        <button class="ButtonBack" onclick="window.history.back()" type="button">Back</button>
+		<button class="ButtonGeneral" onclick="" type="button">General</button>
         <button class="ButtonGraphics" onclick="" type="button">Graphics</button>
         <button class="ButtonAudio" onclick="" type="button">Audio</button>
         <button class="ButtonThemes" onclick="" type="button">Advanced Themes</button>
-        <button class="ButtonBack" onclick="window.history.back()" type="button">Back</button>
     </div>
-    <div style="position: absolute; background-color:rgba(0,0,0,0.5); z-index:1; width:50%;height:87%; border-radius:32px; right:5%; padding:32px;">
+    <div style="background-color:rgba(0,0,0,0.5); height:auto; padding:1em; margin-top:8px; border-radius:16px;">
 		<div class="Heading">
 			<text id="SoundsSettingsHeading">Sounds Settings</text>
 		</div>
@@ -43,6 +43,7 @@
 		</div>
 		<button id="Credits" type="button" onclick="window.location.href='../Windows/Credits.html'">Credits</button>
     </div>
+	<script src="../../Scripts/Style.js" type="module"></script>
     <script src="../../Scripts/Localization/Menu.js" type="module"></script>
 	<script src="../../Scripts/WindowLogics/SettingsLogic.js" type="module"></script>
 </body>
