@@ -40,7 +40,7 @@
             "clicks" : "clicks",
             "buy" : "buy"
         },
-        "Collection":
+        "collection":
         {
             "copy_GIF": "Copy GIF",
             "choise": "Choise",
@@ -102,7 +102,7 @@
             "clicks" : "клики",
             "buy" : "купить"
         },
-        "Collection":
+        "collection":
         {
             "copy_GIF": "Скопировать",
             "choise": "Выбрать",
@@ -125,120 +125,123 @@
         }
     },
     "uk_UKR": {
-    "general":
-    {
-        "back":"назад",
-        "currency":"GIFcoin",
-        "currencies":"GIFcoins",
-        "price":"ціна"
+        "general":
+        {
+            "back":"назад",
+            "currency":"GIFcoin",
+            "currencies":"GIFcoins",
+            "price":"ціна"
+        },
+        "menu": 
+        {
+            "play":"грати",
+            "settings":"налаштування",
+            "credits":"кошти",
+            "exit":"вихід",
+    
+            "general":"Загальні",
+            "graphics":"Графіка",
+            "audio":"Аудіо",
+            "themes":"Розширені теми",
+            "menu":"Меню",
+            "development_menu":"меню розробника"
+        },
+        "main":
+        {
+            "shop":"Магазин",
+            "collection": "Колекція",
+            "refresh": "Перезавантажити",
+            "add_gif_to_collection": "Додати GIF до колекції"
+        },
+        "shop":
+        {
+            "purchase_cost" : "Вартість товару: ",
+            "only_stickers" : "Тільки стікери: ",
+            "change_gif":"Змінити GIF: ",
+            "neko_clicks" : "Автокліки",
+            "coming_soon" : "Незабаром",
+            "upgrade": "Покращити",
+            "clicks" : "Кліки",
+            "buy" : "Купити"
+        },
+        "collection":
+        {
+            "copy_GIF": "Скопіювати",
+            "choise": "Вибрати",
+            "delete": "Видалити"
+        },
+        "settings":
+        {
+            "theme_title": "Налаштування теми",
+            "sounds_title": "Налаштування звуків",
+            "another_title": "Інше",
+            "main_accent_color_text": "Колір акценту",
+            "sounds_volume_text": "Загальна гучність",
+            "language_text": "Мова:"
+        },
+        "patch_notes" : 
+        {
+            "title" : "Оновлення: ",
+            "mini_title" : "Зміни - оновлення",
+            "updated" : "Дата оновлення: "
+        }
     },
-    "menu": 
-    {
-        "play":"грати",
-        "settings":"налаштування",
-        "credits":"кошти",
-        "exit":"вихід",
-
-        "general":"Загальні",
-        "graphics":"Графіка",
-        "audio":"Аудіо",
-        "themes":"Розширені теми",
-        "menu":"Меню",
-        "development_menu":"меню розробника"
-    },
-    "main":
-    {
-        "shop":"Магазин",
-        "collection": "Колекція",
-        "refresh": "Перезавантажити",
-        "add_gif_to_collection": "Додати GIF до колекції"
-    },
-    "shop":
-    {
-        "purchase_cost" : "Вартість товару: ",
-        "only_stickers" : "Тільки стікери: ",
-        "change_gif":"Змінити GIF: ",
-        "neko_clicks" : "Автокліки",
-        "coming_soon" : "Незабаром",
-        "upgrade": "Покращити",
-        "clicks" : "Кліки",
-        "buy" : "Купити"
-    },
-    "collection":
-    {
-        "copy_GIF": "Скопіювати",
-        "choise": "Вибрати",
-        "delete": "Видалити"
-    },
-    "settings":
-    {
-        "theme_title": "Налаштування теми",
-        "sounds_title": "Налаштування звуків",
-        "another_title": "Інше",
-        "main_accent_color_text": "Колір акценту",
-        "sounds_volume_text": "Загальна гучність",
-        "language_text": "Мова:"
-    },
-    "patch_notes" : 
-    {
-        "title" : "Оновлення: ",
-        "mini_title" : "Зміни - оновлення",
-        "updated" : "Дата оновлення: "
-    },
-  "no_NOR": {
-    "general":
-    {
-        "back":"Tilbake",
-        "currency":"GIFcoin",
-        "currencies":"GIFcoins",
-        "price":"Pris"
-    },
-    "menu": 
-    {
-        "play":"Spill",
-        "settings":"Innstillinger",
-        "credits":"Kreditter",
-        "exit":"Avslutt",
-
-        "general":"Generelt",
-        "graphics":"Grafikk",
-        "audio":"Lyd",
-        "themes":"Avanserte temaer",
-        "menu":"Meny",
-        "development_menu":"Utviklermeny"
-    },
-    "main": {
-        "shop": "Butikk",
-        "collection": "Samling",
-        "refresh": "Oppdater",
-        "add_gif_to_collection": "Legg til GIF i samlingen"
-    },
-    "shop": {
-        "purchase_cost": "Pris for varen: ",
-        "only_stickers": "Kun klistremerker: ",
-        "change_gif": "Endre GIF: ",
-        "neko_clicks": "Autoklikk",
-        "coming_soon": "Kommer snart",
-        "upgrade": "Oppgrader",
-        "clicks": "Klikk",
-        "buy": "Kjøp"
-    },
-    "collection": {
-        "copy_GIF": "Kopier GIF",
-        "choise": "Velg",
-        "delete": "Slett"
-    },
-    "settings": {
-        "theme_title": "Temainnstillinger",
-        "sounds_title": "Lydinnstillinger",
-        "another_title": "Annet",
-        "main_accent_color_text": "Aksentfarge",
-        "sounds_volume_text": "Lydvolum",
-        "language_text": "Språk:"
-    },
-    "patch_notes": {
-        "title": "Oppdatering: ",
-        "mini_title": "Endringer - oppdatering",
-        "updated": "Oppdateringsdato: "
+    "no_NOR": {
+        "general":
+        {
+            "back":"Tilbake",
+            "currency":"GIFcoin",
+            "currencies":"GIFcoins",
+            "price":"Pris"
+        },
+        "menu": 
+        {
+            "play":"Spill",
+            "settings":"Innstillinger",
+            "credits":"Kreditter",
+            "exit":"Avslutt",
+    
+            "general":"Generelt",
+            "graphics":"Grafikk",
+            "audio":"Lyd",
+            "themes":"Avanserte temaer",
+            "menu":"Meny",
+            "development_menu":"Utviklermeny"
+        },
+        "main": {
+            "shop": "Butikk",
+            "collection": "Samling",
+            "refresh": "Oppdater",
+            "add_gif_to_collection": "Legg til GIF i samlingen"
+        },
+        "shop": {
+            "purchase_cost": "Pris for varen: ",
+            "only_stickers": "Kun klistremerker: ",
+            "change_gif": "Endre GIF: ",
+            "neko_clicks": "Autoklikk",
+            "coming_soon": "Kommer snart",
+            "upgrade": "Oppgrader",
+            "clicks": "Klikk",
+            "buy": "Kjøp"
+        },
+        "collection": {
+            "copy_GIF": "Kopier GIF",
+            "choise": "Velg",
+            "delete": "Slett"
+        },
+        "settings": {
+            "theme_title": "Temainnstillinger",
+            "sounds_title": "Lydinnstillinger",
+            "another_title": "Annet",
+            "main_accent_color_text": "Aksentfarge",
+            "sounds_volume_text": "Lydvolum",
+            "language_text": "Språk:"
+        },
+        "patch_notes": {
+            "title": "Oppdatering: ",
+            "mini_title": "Endringer - oppdatering",
+            "updated": "Oppdateringsdato: "
+        }
     }
+
 }

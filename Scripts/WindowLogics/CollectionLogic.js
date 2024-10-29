@@ -35,9 +35,9 @@ export function GifsInLibraryCreate(){
 		
 		let Lang = localStorage.getItem("lang");
 
-		CopyLinkbutton.textContent = Translate[Lang].Collection.copy_GIF;
-		choisebutton.textContent = Translate[Lang].Collection.choise;
-		removebutton.textContent = Translate[Lang].Collection.delete;
+		CopyLinkbutton.textContent = Translate[Lang].collection.copy_GIF;
+		choisebutton.textContent = Translate[Lang].collection.choise;
+		removebutton.textContent = Translate[Lang].collection.delete;
 		choisebutton.style.opacity = "0";removebutton.style.opacity = "0";CopyLinkbutton.style.opacity = "0";
 		CopyLinkbutton.prepend(copyIcon);
 		choisebutton.prepend(choiseIcon);
