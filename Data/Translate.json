@@ -212,7 +212,7 @@
             "shop": "Butikk",
             "collection": "Samling",
             "refresh": "Oppdater",
-            "add_gif_to_collection": "Legg til GIF i samlingen"
+            "add_gif_to_collection": ""
         },
         "shop": {
             "purchase_cost": "Pris for varen: ",

@@ -3,19 +3,29 @@ import * as animation from "../Animation.js";
 import {nextImage} from '../Api/GifUpdate.js';
 import {Alert} from "./WindowLogic.js";
 
-let TranslateAlertsFetch = await fetch("../Data/TranslateAlerts.json");
-let TranslateAlerts = await TranslateAlertsFetch.json();
-let TranslateFetch = await fetch("../Data/Translate.json");
-let Translate = await TranslateFetch.json()
-
-let Lang = localStorage.getItem("lang");
-
+// основные переменные
 export var GifCoin = 0;
 export let GifLibrary = [];
 export let StatsCountUpgrades=[0,0,0];
 export let priceUpgrades = [1,5];
 export let priceAnother = [2];
 export let multiply = [1,0];
+
+let TranslateAlertsFetch = await fetch("../Data/TranslateAlerts.json");
+let TranslateAlerts = await TranslateAlertsFetch.json();
+let TranslateFetch = await fetch("/Data/Translate.json");
+let Translate = await TranslateFetch.json()
+
+let Lang = localStorage.getItem("lang");
+
+//перевод основных кнопок 
+
+document.querySelector("#BuyGifRefresh").innerHTML ='<img class="buttonimg" src="../Pictures/Icons/update.svg" style="height:1em;">' + Translate[Lang].main.refresh;
+document.querySelector("#AppendInCollection").innerHTML ='<img class="buttonimg" src="../Pictures/Icons/bookmark.svg" style="height:1em;">';
+document.querySelector("#CollectionOpen").innerHTML ='<img class="buttonimg" src="../Pictures/Icons/collection.svg" style="height:1em;">' + Translate[Lang].main.collection;
+document.querySelector("#OpenShopWindow").innerHTML ='<img class="buttonimg" src="../Pictures/Icons/shop.svg" style="height:1.2em; margin-bottom:-3px;">' + Translate[Lang].main.shop;
+
+
 
 if(localStorage.getItem('coins') != null){
 	GifCoin = JSON.parse(localStorage.getItem('coins'));
@@ -41,7 +51,7 @@ export function upgrade (id,addmultiply,addprice) {
 		textcountupdate();
 		var sound = new Audio();
 		sound.volume = localStorage.getItem("volume");
-		sound.src = "../Audio/Sounds/BuyConfirm.mp3";
+		sound.src = "/Audio/Sounds/BuyConfirm.mp3";
 		sound.play().catch(()=>{});
 	}
 	else{
@@ -59,7 +69,7 @@ export function GifRefresh(search){
 		},600)
 		var sound = new Audio();
 		sound.volume = localStorage.getItem("volume");
-		sound.src = "../Audio/Sounds/NewGif.mp3";
+		sound.src = "/Audio/Sounds/NewGif.mp3";
 		sound.play().catch(()=>{});
 		nextImage(search);
 		textcountupdate();
@@ -84,7 +94,7 @@ function AppendGifInCollection(){
 		localStorage.setItem('GifCollection',JSON.stringify(GifLibrary));
 		var sound = new Audio();
 		sound.volume = localStorage.getItem("volume");
-		sound.src = "../Audio/Sounds/AddGif.mp3";
+		sound.src = "/Audio/Sounds/AddGif.mp3";
 		sound.play().catch(()=>{});
 		avalible = false;
 	}
