@@ -13,22 +13,22 @@ export let multiply = [1,0];
 
 let TranslateAlertsFetch = await fetch("../Data/TranslateAlerts.json");
 let TranslateAlerts = await TranslateAlertsFetch.json();
-let TranslateFetch = await fetch("../../Data/Translate.json");
+let TranslateFetch = await fetch("../../../Data/Translate.json");
 let Translate = await TranslateFetch.json()
 
 let Lang = localStorage.getItem("lang");
 
 //перевод основных кнопок 
-// try
-// {
-// 	document.querySelector("#BuyGifRefresh").innerHTML ='<img class="buttonimg" src="../Pictures/Icons/update.svg" style="height:1em;">' + Translate[Lang].main.refresh;
-// 	document.querySelector("#AppendInCollection").innerHTML ='<img class="buttonimg" src="../Pictures/Icons/bookmark.svg" style="height:1em;">';
-// 	document.querySelector("#CollectionOpen").innerHTML ='<img class="buttonimg" src="../Pictures/Icons/collection.svg" style="height:1em;">' + Translate[Lang].main.collection;
-// 	document.querySelector("#OpenShopWindow").innerHTML ='<img class="buttonimg" src="../Pictures/Icons/shop.svg" style="height:1.2em; margin-bottom:-3px;">' + Translate[Lang].main.shop;
-// }
-// catch{
-//  console.log("\");
-// }
+try
+{
+	document.querySelector("#BuyGifRefresh").innerHTML ='<img class="buttonimg" src="../Pictures/Icons/update.svg" style="height:1em;">' + Translate[Lang].main.refresh;
+	document.querySelector("#AppendInCollection").innerHTML ='<img class="buttonimg" src="../Pictures/Icons/bookmark.svg" style="height:1em;">';
+	document.querySelector("#CollectionOpen").innerHTML ='<img class="buttonimg" src="../Pictures/Icons/collection.svg" style="height:1em;">' + Translate[Lang].main.collection;
+	document.querySelector("#OpenShopWindow").innerHTML ='<img class="buttonimg" src="../Pictures/Icons/shop.svg" style="height:1.2em; margin-bottom:-3px;">' + Translate[Lang].main.shop;
+}
+catch{
+ console.log("ERROR");
+}
 
 
 
