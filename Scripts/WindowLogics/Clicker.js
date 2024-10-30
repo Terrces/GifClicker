@@ -13,7 +13,7 @@ export let multiply = [1,0];
 
 let TranslateAlertsFetch = await fetch("../Data/TranslateAlerts.json");
 let TranslateAlerts = await TranslateAlertsFetch.json();
-let TranslateFetch = await fetch("../../Data/Translate.json");
+let TranslateFetch = await fetch("../../../Data/Translate.json");
 let Translate = await TranslateFetch.json()
 
 let Lang = localStorage.getItem("lang");
