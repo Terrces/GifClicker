@@ -1,10 +1,3 @@
-//import {Search} from "../WindowLogics/ShopLogic.js"
-
-// import { InputSearch } from "../Variables";
-
-//const InputSearch = document.querySelector(".Search");
-
-
 let FirstStartSearch = "Anime Dance";
 
 if(localStorage.getItem("SearchImage") == null){

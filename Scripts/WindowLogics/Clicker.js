@@ -18,12 +18,6 @@ let Translate = await TranslateFetch.json()
 
 let Lang = localStorage.getItem("lang");
 
-//перевод основных кнопок 
-
-
-
-
-
 if(localStorage.getItem('coins') != null){
 	GifCoin = JSON.parse(localStorage.getItem('coins'));
 }
