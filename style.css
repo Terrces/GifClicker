@@ -225,7 +225,6 @@ img{border-radius:0.5vw;}
 	position:sticky; 
 	padding:0.4em; 
 	border-radius:0.6em; 
-	/* border-bottom:0.1vw solid rgb(255, 255, 255); */
 }
 
 .clicker{
@@ -271,6 +270,9 @@ img{border-radius:0.5vw;}
 	flex-direction: column;
 	justify-content:center;
 	align-items:center;
+
+	max-width:80%;
+	max-height:80%;
 	
 	background:rgba(255,255,255,0.2);
 	padding:1em 2em;
@@ -297,11 +299,12 @@ img{border-radius:0.5vw;}
 	flex-direction:row;
 	left:0px;
 	position: absolute;
+	margin:0px;
 	min-height:98vh;
 	width:100%;
 	border-radius: 16px;
 	background-color: rgba(0, 0, 0, 0.4);
-	/* /backdrop-filter:blur(30px); */
+	backdrop-filter:blur(30px);
 	opacity:0;
 	transition:0.3s ease;
 	z-index:2;
@@ -311,7 +314,7 @@ img{border-radius:0.5vw;}
 	position: absolute;
 	display: flex;
 	flex-direction: column;
-	z-index:-1;
+	z-index:1;
 	font-size:1em;
 	justify-items: center;
 	align-items: center;
