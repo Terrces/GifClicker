@@ -1,6 +1,6 @@
 let lang = localStorage.getItem("lang");
 
-let TranslateFetch = await fetch("/Data/Translate.json");
+let TranslateFetch = await fetch("../../../Data/Translate.json");
 let Translate = await TranslateFetch.json();
 
 try

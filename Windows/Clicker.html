@@ -54,7 +54,7 @@ background-size: cover;
 	<form id="MainWindow" style="position:absolute;margin-left:-6px;margin-top:-6px;">
 	<div class="top">
 		<div class="left">
-			<button type="button" id="OpenShopWindow" title="Вход в магазин"><img class="buttonimg" src="../Pictures/Icons/shop.svg" style="height:1.2em;"> Shop</button>
+			<button type="button" id="OpenShopWindow" title="Вход в магазин"><img class="buttonimg" src="../Pictures/Icons/shop.svg" style="height:1.2em; margin-bottom:-3px;"></button>
 			<div style="display: flex; flex-direction: row;" >
 				<button type="button" id="leave" onclick="window.location.href='./Menu/Menu.html'" title="Кнопка позволяет выйти в меню" style="width:2em; height:2em; padding:0em;"><img class="buttonimg" src="../Pictures/Icons/menu.svg" style="padding-right:0em;height:1.5em;"></button>
 			</div>
@@ -64,7 +64,7 @@ background-size: cover;
 			</text>
 		</div>
 		<div class="right">
-			<button type="button" id="CollectionOpen" title="Вход в вашу коллекцию"><img class="buttonimg" src="../Pictures/Icons/collection.svg" style="height:1em;">Collection</button>
+			<button type="button" id="CollectionOpen" title="Вход в вашу коллекцию"><img class="buttonimg" src="../Pictures/Icons/collection.svg" style="height:1em;"></button>
 			<div style="display: flex; flex-direction: row;">
 				<button type="button" id="OpenSettingsButton" onclick="window.location.href = './Menu/Settings.html'"  style="width:2em; height:2em; padding:0em;"><img class="buttonimg" src="../Pictures/Icons/settings.svg" style="padding-right:0em;height:1.5em;"></button>
 			</div>
@@ -98,8 +98,8 @@ background-size: cover;
 							">
 							<img class="buttonimg" src="../Pictures/Icons/copy.svg" style="height:1.5em;">
 						</button>
-						<button type="button" id="BuyGifRefresh" title="Обновить 'GIF'"><img class="buttonimg" src="../Pictures/Icons/update.svg" style="height:1em;"> New Gif</button>
-						<button type="button" id="AppendInCollection"><img class="buttonimg" src="../Pictures/Icons/bookmark.svg" style="height:1.5em;"></button>
+						<button type="button" id="BuyGifRefresh" title="Обновить 'GIF'"><img class="buttonimg" src="../Pictures/Icons/update.svg" style="height:1em;"></button>
+						<button type="button" id="AppendInCollection"><img class="buttonimg" src="../Pictures/Icons/bookmark.svg" style="height:1em;"></button>
 					</div>
 
 				</div>
@@ -107,6 +107,7 @@ background-size: cover;
 		</div>
 	</div>
 	</form>
+	<script src="../Scripts/Localization/Translater.js" type="module"></script>
 	<script src="../Scripts/WindowLogics/Clicker.js" type="module"></script>
 	<script src="../Scripts/KeyboardEvents.js" type="module"></script>
 	<script src="../Scripts/WindowLogics/ShopLogic.js" type="module"></script>
