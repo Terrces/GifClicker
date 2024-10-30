@@ -26,12 +26,10 @@ export function AutoCloseWindows(){
 
 	shopWindow.style.opacity = 0;
 	SettingsWindow.style.opacity = 0;
-	achievements.style.opacity = 0;
 	CollectionWindow.style.opacity = 0;
 	setTimeout(()=> {
 		shopWindow.style.display = "none";
 		SettingsWindow.style.display = "none";
-		achievements.style.display = "none";
 		CollectionWindow.style.display = "none";
 	},300);
 

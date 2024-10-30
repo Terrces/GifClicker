@@ -9,19 +9,7 @@
 <body style="
 background-image:url(https://images.unsplash.com/photo-1726231160459-308206afb13c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
 background-size: cover;
-
 ">
-
-	<!-- окно достижений -->
-	<div class="window" id="achievements">
-		<br><div class="left">
-			<button type="button" id="CloseWindowbutton" z-index="5"><img class="buttonimg" src="../Pictures/Icons/close.svg" style="height:1.4em; margin-bottom:-0.3em;"> Закрыть Достижения</button>
-		</div>
-		<br>
-		<div class="allAchievements" id="AllAchievementsContainer" style="mix-blend-mode:screen;">
-		</div>
-	</div>
-
 	<!-- окно коллекции -->
 	<div class="window" id="Collection">
 		<div class="left" style="margin-top:15px; z-index: 1;">
@@ -29,7 +17,7 @@ background-size: cover;
 		</div>
 
 		<br>
-		<div class="allgifs" id="AllGifsContainer">
+		<div class="allgifs" id="AllGifsContainer" style="display: flex; justify-content: center;">
 		</div>
 	</div>
 
@@ -45,9 +33,7 @@ background-size: cover;
 			<button type="button" id="CloseWindowbutton" title="Закрыть магазин" style="width:48px; height:48px;"><img class="buttonimg" src="../Pictures/Icons/close.svg" style="width:100%;height:100%; margin:0em;"></button>
 		</div>
 		<div class="horizontalCenter" ><text class="money" style="font-size: larger;"></text></div>
-		<div class="center" id="ProductAppend" style=" bottom:0px;"></div>
-		<!-- <button type="button" class="WorkspaceButton" id="NextProduct" style="right:32px; top:25%; height:50%;">></button>
-		<button type="button" class="WorkspaceButton" id="PreviousProduct" style="left:32px; top:25%; height:50%;"><</button> -->
+		<div class="center" id="ProductAppend" style="bottom:0px; left: 0px; right:0px; position: absolute; max-width:98vw;"></div>
 	</form>
 
 	<!-- Основное окно -->
