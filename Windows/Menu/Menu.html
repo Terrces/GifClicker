@@ -15,9 +15,9 @@
             <button class="ButtonExit" onclick="window.close()" type="button">Exit</button>
             <button class="ButtonDevMenu" onclick="window.location.href='../../Dev/dev_menu.html'" type="button"></button>
             <div style="filter: invert(1); border-radius:16px; padding:2px; margin-top:4px;">
-                <a href="https://x.com/terrces"><img src="../../Pictures/Icons/links/twitterx.svg" style="height:2em; width:2em;"></a>
-                <a href="https://t.me/terrces_dev"><img src="../../Pictures/Icons/links/telegram.svg" style="height:2em; width:2em;"></a>
-                <a href="https://github.com/Terrces"><img src="../../Pictures/Icons/links/github.svg" style="height:2em; width:2em;"></a>
+                <a href="https://x.com/terrces" target="_blank"><img src="../../Pictures/Icons/links/twitterx.svg" style="height:2em; width:2em;"></a>
+                <a href="https://t.me/terrces_dev" target="_blank"><img src="../../Pictures/Icons/links/telegram.svg" style="height:2em; width:2em;"></a>
+                <a href="https://github.com/Terrces" target="_blank"><img src="../../Pictures/Icons/links/github.svg" style="height:2em; width:2em;"></a>
             </div>
         </div>
     </div>
@@ -56,13 +56,14 @@
         let PatchNotes = await PatchNotesFetch.json()
         document.querySelector(".LatestBuild").addEventListener("click", () => {window.location.href='./PatchNotes.html'})
         for(let i = 0; i < PatchNotes.UpdateNumbers.length;i++){
-            if(windowOuterWidth <= 800){
+            if(windowOuterWidth <= 900){
                 document.querySelector(".CurrentBuild").textContent = "current version:" + PatchNotes.UpdateNumbers[i];
                 let latestbuild = document.querySelector(".LatestBuild");
                 let UI = document.querySelector(".UI");
                 latestbuild.style.fontSize = "1.4vh";
                 latestbuild.style.backgroundColor = "transparent";
                 latestbuild.style.bottom = "0px";
+                latestbuild.style.border = "0px solid transparent";
                 latestbuild.style.color = "white";
             }
             else

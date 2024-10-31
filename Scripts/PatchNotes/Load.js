@@ -10,17 +10,6 @@ let GameInfo = await GameInfoFetch.json();
 
 let Lang = localStorage.getItem("lang");
 
-document.querySelector("body").style.backgroundColor = "rgb(" + localStorage.getItem("Theme") + "," + localStorage.getItem("Theme") + "," + localStorage.getItem("Theme") + "," + localStorage.getItem("Theme")  + ")";
-
-if(localStorage.getItem("Theme") >= 120){
-    document.querySelector("body").style.color = "black";
-    document.querySelector("body").style.backgroundColor = "White";
-}
-else{
-    document.querySelector("body").style.color = "white";
-    document.querySelector("body").style.backgroundColor = "black";
-}
-
 console.log(PatchNotes.Changes[0]);
 for(let i = 0; i < PatchNotes.UpdateNumbers.length;i++){
     let Container = document.createElement("div");
@@ -33,7 +22,7 @@ for(let i = 0; i < PatchNotes.UpdateNumbers.length;i++){
 
     MiniTitle.style.marginBottom = "0.2em"
     changes.style.cssText = "background-color:rgba(255, 237, 133,0.2);border-radius:1em;padding:0.5em;margin-bottom:0.2em;font-size:1.2em; max-width:80%; backdrop-filter:blur(5px) saturate(5%);";
-    Container.style.cssText = "display:flex; flex-direction:column;margin:0.8em;padding:0.8em;background:white;color:black;border-radius:0.9em; align-items:center;";
+    Container.style.cssText = "display:flex; flex-direction:column;margin:0.8em;padding:0.8em;background:rgba(255,255,255,0.6);color:black;border-radius:0.9em; align-items:center;";
 
     Container.style.backgroundImage = "url(" + PatchNotes.Image[i] + ")";
     Container.style.backgroundPosition = "left";

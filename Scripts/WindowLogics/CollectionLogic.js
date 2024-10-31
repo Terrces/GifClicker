@@ -39,6 +39,7 @@ export function GifsInLibraryCreate(){
 		choisebutton.textContent = Translate[Lang].collection.choise;
 		removebutton.textContent = Translate[Lang].collection.delete;
 		choisebutton.style.opacity = "0";removebutton.style.opacity = "0";CopyLinkbutton.style.opacity = "0";
+		choisebutton.style.transition = "0.3s ease-in-out";removebutton.style.transition = "0.2s ease-in-out";CopyLinkbutton.style.transition = "0.4s ease-in-out";
 		CopyLinkbutton.prepend(copyIcon);
 		choisebutton.prepend(choiseIcon);
 		removebutton.prepend(deleteIcon);
@@ -57,14 +58,30 @@ export function GifsInLibraryCreate(){
 			sound.play().catch(()=>{});
 		}
 
-		CreateBlock.addEventListener("mouseenter", (event) => {choisebutton.style.opacity = "1";removebutton.style.opacity = "1";CopyLinkbutton.style.opacity = "1";})
-		CreateBlock.addEventListener("mouseleave", (event) => {choisebutton.style.opacity = "0";removebutton.style.opacity = "0";CopyLinkbutton.style.opacity = "0";})
+		CreateBlock.addEventListener("mouseenter", (event) => 
+		{
+			removebutton.style.opacity = "1";
+			choisebutton.style.opacity = "1";
+			CopyLinkbutton.style.opacity = "1";
+			removebutton.style.transform = "scale(1,1)";
+			choisebutton.style.transform = "scale(1,1)";
+			CopyLinkbutton.style.transform = "scale(1,1)";
+		})
+		CreateBlock.addEventListener("mouseleave", (event) => 
+			{
+				removebutton.style.opacity = "0";
+				choisebutton.style.opacity = "0";
+				CopyLinkbutton.style.opacity = "0";
+				removebutton.style.transform = "scale(0,0)";
+				choisebutton.style.transform = "scale(0,0)";
+				CopyLinkbutton.style.transform = "scale(0,0)";
+			})
 		CopyLinkbutton.onclick = function(){CopyLink();}
 		choisebutton.onclick = function(){
 			Main.src = GifLibrary[choisebutton.id]
 			var sound = new Audio();
 			sound.volume = localStorage.getItem("volume");
-			sound.src = '../Audio/Sounds/Choise.mp3';
+			sound.src = '/Audio/Sounds/Choise.mp3';
 			sound.play().catch(()=>{});
 		}
 		removebutton.onclick = function()
@@ -77,7 +94,7 @@ export function GifsInLibraryCreate(){
 			GifsInLibraryCreate();
 			var sound = new Audio();
 			sound.volume = localStorage.getItem("volume");
-			sound.src = '../Audio/Sounds/Delete.mp3';
+			sound.src = '/Audio/Sounds/Delete.mp3';
 			sound.play().catch(()=>{});
 		}
 		choisebutton.className = "ChoiseThisGif";
