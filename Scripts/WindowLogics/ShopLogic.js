@@ -152,7 +152,7 @@ function Update(){
 	buyIcon.src = "../Pictures/Icons/buy.svg";
 
 	Productimg.src = ProductImage[CurrentPage]
-	Productimg.style.cssText = "max-height:21vw;max-width:21vw;margin-top:16px;";
+	Productimg.style.cssText = "max-height:21vh;max-width:21vh;margin-top:16px; min-width:;min-height:;";
 
 	ProductBlock.style.opacity = 0;
 	setTimeout(() => {ProductBlock.style.opacity = 1;},100);
