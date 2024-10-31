@@ -30,7 +30,7 @@
         "https://media.tenor.com/82oMjTNT390AAAAC/eat-cake.gif",
         "https://media.tenor.com/9XGuoKOSqrcAAAAi/kaguya-sama-kaguya.gif",
         "https://media.tenor.com/fRgkwiu8K_kAAAAi/senku.gif",
-        "https://media.tenor.com/rVdLW8Oi97kAAAAC/what-aki-adagaki.gif",
+        "https://media.tenor.com/z2EQgkSj23AAAAAi/anime-dance.gif",
         "https://media.tenor.com/kOeE0Cs8gy0AAAAi/anime-dancing.gif",
         "https://media.tenor.com/MjIaOsH4Y8IAAAAi/novoura-goobin.gif",
         "https://media.tenor.com/RNbFVBYp6R0AAAAi/cheerleader-cheers.gif"
@@ -38,9 +38,9 @@
     "Changes": [
         "В коллекции стали работать кнопки: Выбрать и Удалить, был изменен дизайн приложения",
         "ㅤㅤㅤㅤㅤБыло добавленно или изменено: Примечания к патчу (PatchNotes),Модульность,Производительность,Управление с клавиатуры. ㅤㅤㅤㅤㅤㅤㅤДобавленна поддержка PatchNotes это описание всех изменений и обновлений они будут автоматически пополняться с обновлениями,так же проект стал модульным это значит то что теперь его будет проще поддерживать и развивать так же из-за того что отдельные кусочки кода выполняються не по очереди увеличивается скорость отклика то есть производительность,так же была убрана возможность накручивать деньги при помощи консоли, Добавленно управление приложением через клавиатуру Escape закрывает открытое окно например магазин, а пробел обновляет гифку.",
-        "кнопкам добавленны иконки,теперь при закрытие всех групп текст меняется на 'Открыть группу',теперь при выборе только стикеров автоматически обновляется гифка,так же при обновления теперь не обязательно нажимать ctrl+f5 так как теперь браузер знает что нужно кэшировать а что не нужно(Функция является экспериментальной), Добавленн чекбокс авто улучшение при котором когда у вас достаточно денег для улучшения автоматически происходит улучшение",
-        "Добавленна поддержка других браузеров (Теперь поддерживаются: Opera, Яндекс браузер, Firefox и другие), изменение интерфейса",
-        "Интерфейс стал меньше и удобней, так же была слегка увеличена производительность",
+        " кнопкам добавленны иконки,теперь при закрытие всех групп текст меняется на 'Открыть группу',теперь при выборе только стикеров автоматически обновляется гифка,так же при обновления теперь не обязательно нажимать ctrl+f5 так как теперь браузер знает что нужно кэшировать а что не нужно(Функция является экспериментальной), Добавленн чекбокс авто улучшение при котором когда у вас достаточно денег для улучшения автоматически происходит улучшение",
+        " Добавленна поддержка других браузеров (Теперь поддерживаются: Opera, Яндекс браузер, Firefox и другие), изменение интерфейса",
+        " Интерфейс стал меньше и удобней, так же была слегка увеличена производительность",
         " Добавленна простая поддержка версий, если ваша версия ниже чем должна быть то вам вылезает ошибка с инструкцией что вам нужно сделать что бы получить обновление. Были исправленны некоторые визуальные ошибки",
         " Были добавлены визуальные эффекты добавления gifcoin'ов, так же был исправлен баг с окном коллекции",
         " Были улучшены визуальные эффекты они стали куда приятней чем были ранее, так же была добавлена система уведомлений теперь перед обновлением вылезает окно что скоро произойдет обновление и тд, так же была исправлена проблема при которой можно было бесконечно добавлять гифки в коллекцию(система работает не идеально все еще могут быть ошибки)",
@@ -50,8 +50,8 @@
         " icons on the buttons were changed and added, a language change was added, the theme system was completely corrected",
         " Fixed a bug where the text merged with the background when first launched, added ability to edit background image",
         " Added standart background, new icons, new sounds, New animations have been added, windows now appear and disappear smoothly, buttons for moving left and right have been removed from the store, adding to the collection is now free",
-        " New translate engine, new version controll, optimization",
-        " Added game menu, added display of recent changes to the menu, updated settings,adaptive desgin for mobile devices,fixing bugs "
+        " New translate engine, new version control, optimization",
+        " Added game menu, added display of recent changes to the menu, updated settings,adaptive desgin for mobile devices, new collection design , deleted version controller and fixing bugs "
     ],
     "versionStatus":[
         "Released","Released","Released","Released","Released","Released","Released","Released","Released","Released","Released","Released","Released","Released","Released","dev"
