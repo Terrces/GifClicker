@@ -31,7 +31,8 @@
         },
         "clicker":
         {
-
+            "collection_duplicate" : "Вы уже добавили эту гифку",
+            "lack" : "Не хватает средств: "
         }
     },
     "no_NOR": 
@@ -42,7 +43,8 @@
         },
         "clicker":
         {
-
+            "collection_duplicate" : "You have already added this gif",
+            "lack" : "Not enough funds: "
         }
     }
 }
