@@ -262,8 +262,8 @@ img{border-radius:0.5vw;}
 	flex-direction:column;
 	display:flex;
 	background-position: 50% 50%;
-	transition: 0.3s ease-in-out;
-	&:hover{border: solid white 2px; background-size: 130%; background-position: 50% 0%;}
+	transition: 0.4s ease-out;
+	&:hover{border: solid white 2px; background-size: 130%; background-position: 50% 0%;transition: 0.4s ease-in-out;}
 }
 .ProductBlock{
 	vertical-align:middle;
@@ -307,7 +307,7 @@ img{border-radius:0.5vw;}
 	background-color: rgba(0, 0, 0, 0.4);
 	backdrop-filter:blur(30px);
 	opacity:0;
-	transition:0.3s ease;
+	transition:0.4s ease-in-out;
 	z-index:2;
 }
 .LatestBuild
