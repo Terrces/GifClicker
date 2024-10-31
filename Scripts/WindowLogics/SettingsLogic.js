@@ -1,4 +1,8 @@
 let LanguageChoiser = document.querySelector("#LanguageChoise");
+let SystemAudio = document.querySelector("#ChangeSystemSound");
+
+SystemAudio.value = localStorage.getItem("volume");
+
 LanguageChoiser.value = localStorage.getItem("lang");
 if(localStorage.getItem("lang") == null){
     localStorage.setItem("lang","en_US");
@@ -8,4 +12,6 @@ LanguageChoiser.onchange = function(){
     localStorage.setItem("lang",LanguageChoiser.value);
     location.reload();
 }
-localStorage.setItem("volume",ChangeSystemSound.value)
+SystemAudio.onchange = function(){
+    localStorage.setItem("volume",SystemAudio.value);
+}

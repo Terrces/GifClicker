@@ -1,6 +1,7 @@
 document.body.style.opacity = "100%";
 
-window.addEventListener('resize',() => {
+function updatesize ()
+{
     let windowOuterWidth = window.outerWidth;
     try
     {
@@ -13,4 +14,8 @@ window.addEventListener('resize',() => {
         }
         
     }catch{}
+}
+updatesize ();
+window.addEventListener('resize',() => {
+    updatesize ();
 })
