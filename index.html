@@ -7,9 +7,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body style="height:100%; width:100%; left:0px; top: 0px; position: absolute; margin:-2px; overflow: hidden;">
+	<iframe src="./Windows/Menu/Menu.html" style="display: flex; position: absolute; left:0px; top:0px; width:100%; height:100%;"></iframe>
+	<script src="../../Scripts/Style.js" type="module"></script>
 	<script>
-		window.location.href='./Windows/Menu/Menu.html'
+		// window.location.href='./Windows/Menu/Menu.html'
 		if(localStorage.getItem("lang") == null){
     		localStorage.setItem("lang","en_US");
 			localStorage.setItem("volume",0.05)
