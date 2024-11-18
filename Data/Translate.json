@@ -42,6 +42,7 @@
         },
         "collection":
         {
+            "collection_null": "your collection is so far empty 😴",
             "copy_GIF": "Copy GIF",
             "choise": "Choise",
             "delete": "Delete"
@@ -104,6 +105,7 @@
         },
         "collection":
         {
+            "collection_null": "в вашей коллекции пока что пусто 😴",
             "copy_GIF": "Скопировать",
             "choise": "Выбрать",
             "delete": "Удалить"
@@ -166,6 +168,7 @@
         },
         "collection":
         {
+            "collection_null": "ваша колекція поки що порожня 😴",
             "copy_GIF": "Скопіювати",
             "choise": "Вибрати",
             "delete": "Видалити"
@@ -225,6 +228,7 @@
             "buy": "Kjøp"
         },
         "collection": {
+            "collection_null": "samlingen din er foreløpig tom 😴",
             "copy_GIF": "Kopier GIF",
             "choise": "Velg",
             "delete": "Slett"

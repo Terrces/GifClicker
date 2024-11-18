@@ -1,4 +1,4 @@
-import { priceAnother, priceUpgrades,GifRefresh,upgrade } from "./Clicker.js";
+import { priceAnother, priceUpgrades, GifRefresh, upgrade } from "./Clicker.js";
 
 let TranslateAlertsFetch = await fetch("../Data/TranslateAlerts.json");
 let TranslateAlerts = await TranslateAlertsFetch.json();
@@ -15,7 +15,7 @@ let ProductImage = ["https://media.tenor.com/PxoS152OMWwAAAAi/%D0%B0%D0%BD%D0%B8
 	"https://media.tenor.com/hgR97aG7R2YAAAAi/the-helpful-fox-senko-san-blushing.gif",
 	"https://media.tenor.com/lKiKX2lNvhUAAAAi/anime-girl-dance-anime-dance.gif"];
 
-function Update(){
+async function Update(){
 	let title = document.createElement("text");
 	let ProductBlock = document.createElement("div");
 	let buyIcon = document.createElement("img");
@@ -38,7 +38,7 @@ function Update(){
 	InfoBorder.className = "InfoBorder";
 	InfoBorder.id = "InfoBorder";
 
-	function updateText(priceFlag){
+	async function updateText(priceFlag){
 		switch(priceFlag){
 			case 1:
 				PriceText.textContent = Translate[Lang].shop.purchase_cost + priceAnother[CurrentPage].toFixed(1) + " Gifcoins";
@@ -69,7 +69,10 @@ function Update(){
 			StickersContainer = document.createElement("div");
 			StickersContainer.style.cssText = "display:flex; flex-direction:row; margin:16px 15px;";
 			StickersContainer.append(StickersText,CheckBox);
-
+			if(JSON.parse(localStorage.getItem("SearchImage"))[1] != "")
+			{
+				CheckBox.checked = true
+			}
 			Input.onchange = function(){
 				if(document.querySelector(".Search").value != null){
 					GifRefresh(document.querySelector(".Search").value);
@@ -196,7 +199,7 @@ function Update(){
 }
 Update();
 
-function GoPreviousPage(){
+async function GoPreviousPage(){
 	if(CurrentPage != 0){
 		document.querySelector(".ProductBlock").remove();
 		document.querySelector(".InfoBorder").remove();
@@ -212,7 +215,7 @@ function GoPreviousPage(){
 		document.querySelector(".ProductBlock").style.opacity = 0;
 	}
 }
-function GoNextPage(){
+async function GoNextPage(){
 	if(CurrentPage != categories.length-1){
 		
 		document.querySelector(".ProductBlock").remove();

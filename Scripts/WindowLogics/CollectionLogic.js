@@ -2,7 +2,23 @@ import GifLibrary from "./Clicker.js";
 let TranslateFetch = await fetch("../Data/Translate.json");
 let Translate = await TranslateFetch.json()
 
-export function GifsInLibraryCreate(){
+let Lang = localStorage.getItem("lang");
+
+async function checkNull()
+{
+	if(GifLibrary.length == 0)
+		{
+			const librarybase = document.querySelector(".allgifs");
+			const collectionzero = document.createElement('label');
+			librarybase.style.opacity = "1";
+			collectionzero.textContent = Translate[Lang].collection.collection_null;
+			librarybase.append(collectionzero)
+		}
+}
+
+export async function GifsInLibraryCreate(){
+	console.log(GifLibrary.length);
+	checkNull();
 	for(let i=0; i < GifLibrary.length; i++){
 		setTimeout(() => {
 			document.getElementById("AllGifsContainer").style.transform = "scale(1, 1)";
@@ -32,8 +48,6 @@ export function GifsInLibraryCreate(){
 
 		CreateBlock.className = "CollectionGif";
 		CreateBlock.id = "DeleteThis";
-		
-		let Lang = localStorage.getItem("lang");
 
 		CopyLinkbutton.textContent = Translate[Lang].collection.copy_GIF;
 		choisebutton.textContent = Translate[Lang].collection.choise;
@@ -107,8 +121,9 @@ export function GifsInLibraryCreate(){
 		CopyLinkbutton.id = removebutton.id = choisebutton.id = i;
 	}
 }
-export function DeleteById(id){
+export async function DeleteById(id){
 	for(let i=0;i < GifLibrary.length; i++){
 		document.getElementById(id).remove();
 	}
+	checkNull()
 }

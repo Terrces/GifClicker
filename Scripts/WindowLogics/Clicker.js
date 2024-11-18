@@ -30,6 +30,9 @@ if(localStorage.getItem('UpgradesPrice') != null){
 if(localStorage.getItem('GifCollection') != null){
 	GifLibrary = JSON.parse(localStorage.getItem('GifCollection'));
 }
+if(localStorage.getItem('GifRefreshPrice') != null){
+	priceAnother[0] = JSON.parse(localStorage.getItem('GifRefreshPrice'));
+}
 
 export function upgrade (id,addmultiply,addprice) {
 	if(GifCoin >= priceUpgrades[id]){
@@ -50,14 +53,18 @@ export function upgrade (id,addmultiply,addprice) {
 	}
 }
 
-export function GifRefresh(search){
+export async function GifRefresh(search){
 	if(GifCoin >= priceAnother[0]){
 		GifCoin -= priceAnother[0];
 		priceAnother[0] += 1.2;
-		document.getElementById("Main").style.opacity = 0;
-		setTimeout(() => {
-			document.getElementById("Main").style.opacity = 1;
-		},600)
+		document.getElementById("Main").style.filter = "blur(4px)";
+		document.getElementById("Main").style.opacity = "0.4";
+		document.getElementById("Main").addEventListener(("load"),()=>
+		{
+			document.getElementById("Main").style.filter = "blur(0px)";
+			document.getElementById("Main").style.opacity = "1";
+			localStorage.setItem("GifRefreshPrice",priceAnother[0])
+		})
 		var sound = new Audio();
 		sound.volume = localStorage.getItem("volume");
 		sound.src = "/Audio/Sounds/NewGif.mp3";
@@ -99,15 +106,15 @@ function AppendGifInCollection(){
 }
 
 
-clicker.addEventListener("click", function (){
+clicker.addEventListener("click",async function (){
 	GifCoin += multiply[0];
 	textcountupdate();
 	setTimeout(() => {document.getElementById("Main").style.transform = "scale(1,1)";},100);
-	document.getElementById("Main").style.transform = "scale(0.99,0.99)";
+	document.getElementById("Main").style.transform = "scale(0.96,0.96)";
 })
 
-document.getElementById("AppendInCollection").onclick = function(){AppendGifInCollection();}
-document.querySelector("#BuyGifRefresh").addEventListener("click",(event)=>{GifRefresh();})
+document.getElementById("AppendInCollection").onclick = async function(){AppendGifInCollection();}
+document.querySelector("#BuyGifRefresh").addEventListener("click",async ()=>{GifRefresh();})
 
 async function textcountupdate (){
 	localStorage.setItem('coins',GifCoin);
@@ -119,6 +126,6 @@ async function textcountupdate (){
 }
 textcountupdate();
 export default GifLibrary;
-setInterval(function(){
+setInterval(async function(){
 	GifCoin += multiply[1]; textcountupdate();
 },1000);

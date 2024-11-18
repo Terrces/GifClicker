@@ -51,11 +51,11 @@
         " Fixed a bug where the text merged with the background when first launched, added ability to edit background image",
         " Added standart background, new icons, new sounds, New animations have been added, windows now appear and disappear smoothly, buttons for moving left and right have been removed from the store, adding to the collection is now free",
         " New translate engine, new version control, optimization",
-        " Added game menu, added display of recent changes to the menu, updated settings,adaptive desgin for mobile devices, new collection design , deleted version controller and fixing bugs "
+        " This update is aimed at technical improvements of the game and bug fixes as well as changing the balance, now if you choose the type of gif stickers, this choice is saved when re-entering the game, also now the game is divided into different windows, such as settings are in another window that allowed to increase the performance of the game as well as fix some old bugs, as well as changes were subjected to the window of recent changes now you can see what has been recently updated. Quite an important change now clicker adapts to any size window regardless of whether you came from a phone or not. With this version of the download you will be clear whether the gif has loaded or not 😊. Removed the ability to change the background, yes before this feature could bring fun emotions, but this function is temporarily removed due to a change in the vector of development of the game. Fixed some bugs with translation as well as slightly changed the translation mechanism. Removed version control functionality Fixed minor bugs"
     ],
     "versionStatus":[
         "Released","Released","Released","Released","Released","Released","Released","Released","Released","Released","Released","Released","Released","Released","Released","dev"
     ],
     "UpdateNumbers":["0.3","0.4","0.4.1","0.4.2","0.4.3","0.4.4","0.4.5","0.4.6","0.4.7","0.4.8","0.4.9","0.5.0","0.5.1","0.5.2","0.5.3","0.5.4"],
-    "Date":["Утеряна","24.03.2024","25.03.2024","27.03.2024","28.03.2024","06.04.2024","15.04.2024","16.04.2024","19.04.2024","21.04.2024","01.05.2024","02.05.2024","03.05.2024","21.05.2024","08.09.2024","31.10.2024"]
+    "Date":["Утеряна","24.03.2024","25.03.2024","27.03.2024","28.03.2024","06.04.2024","15.04.2024","16.04.2024","19.04.2024","21.04.2024","01.05.2024","02.05.2024","03.05.2024","21.05.2024","08.09.2024","18.11.2024"]
 }
