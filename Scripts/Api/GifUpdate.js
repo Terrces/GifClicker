@@ -35,12 +35,19 @@ function tenorCallback_search(responsetext)
     // load the GIFs -- for our example we will load the first GIFs preview size (nanogif) and share size (gif)
 
     let temparray = JSON.parse(localStorage.getItem("SearchImage"))
-
-    if(temparray != null && temparray[1] == "sticker"){
-    	Main.src=gifs[10]["media_formats"]["gif_transparent"]["url"];
-    }else{
-        Main.src=gifs[10]["media_formats"]["gif"]["url"];
+    try
+    {
+        if(temparray != null && temparray[1] == "sticker"){
+            Main.src=gifs[0]["media_formats"]["gif_transparent"]["url"];
+        }else{
+            Main.src=gifs[0]["media_formats"]["gif"]["url"];
+        }
     }
+    catch
+    {
+        console.log("invalid request");
+    }
+
     return;
 }
 export function nextImage(search = "")
@@ -85,7 +92,7 @@ export function nextImage(search = "")
 
     //using default locale of en_US
 
-    var search_url = "https://tenor.googleapis.com/v2/search?q=" + search_term[0] + "&locale=en_US" +  "&key=" + apikey +"&client_key=" + clientkey + "&random=true"+"&searchfilter="+search_term[1];
+    var search_url = "https://tenor.googleapis.com/v2/search?q=" + search_term[0] + "&locale=en_US" + "&contentfilter=off" + "&key=" + apikey +"&client_key=" + clientkey + "&random=true"+"&searchfilter="+search_term[1]+"&limit=50"+"&ar_range=wide";
     
     httpGetAsync(search_url,tenorCallback_search);
     return;

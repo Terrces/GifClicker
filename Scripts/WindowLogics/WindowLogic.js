@@ -9,7 +9,7 @@ let MainWindow = document.querySelector("#MainWindow");
 //кнопки для открытия окон
 const CloseWindow = document.querySelectorAll("#CloseWindowbutton");
 
-function OpenWindow(WindowName){
+async function OpenWindow(WindowName){
 	setTimeout(()=> WindowName.style.opacity = 1,1);
 	WindowName.style.display = "block"
 }
@@ -20,9 +20,11 @@ CollectionOpen.onclick=function(){
 
 OpenShopWindow.onclick=function(){OpenWindow(shopWindow);}
 
-export function AutoCloseWindows(){
-	if(CollectionWindow.style.display == "block")
-		DeleteById("DeleteThis");
+export async function AutoCloseWindows(){
+	if(CollectionWindow.style.display == "block"){
+		const librarybase = document.querySelector(".allgifs");
+		librarybase.innerHTML = ""
+	}
 
 	shopWindow.style.opacity = 0;
 	SettingsWindow.style.opacity = 0;
@@ -41,7 +43,7 @@ CloseWindow.forEach(button => {
 	});
 });
 
-export function Alert(Messege,description,img,time,skip){
+export async function Alert(Messege,description,img,time,skip){
 	const alertwindow = document.createElement("form");
 	const text = document.createElement("text");
 	const Image = document.createElement("img");
@@ -88,7 +90,7 @@ export function Alert(Messege,description,img,time,skip){
 	},time);
 	if(skip == true){
 		alertwindow.onclick = function(){
-			alertwindow.style.transition = "0.5s ease-in-out"
+			alertwindow.style.transition = "0s ease-in-out"
 			alertwindow.style.opacity = 0;
 			setTimeout(() => {Image.src = "";alertwindow.remove();},550)
 		}

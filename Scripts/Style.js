@@ -1,6 +1,9 @@
-document.body.style.opacity = "100%";
+document.addEventListener("DOMContentLoaded", () => 
+{
+    document.body.style.opacity = "100%";
+})
 
-function updatesize ()
+async function updatesize ()
 {
     let windowOuterWidth = window.outerWidth;
     try

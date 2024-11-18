@@ -2,7 +2,7 @@ import {multiply,priceAnother} from "./WindowLogics/Clicker.js";
 let screenWidth = window.innerWidth;
 let screenHeight = window.innerHeight;
 
-export function GifAppendCollection(){
+export async function GifAppendCollection(){
     const gif = document.createElement("img");
     const container = document.createElement("div");
     gif.src = document.getElementById("Main").src;
