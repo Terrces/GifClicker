@@ -1,8 +1,8 @@
-import { priceAnother, priceUpgrades } from "../script.js";
-import {ThemeApply} from "./SettingsLogic.js";
-import {GifRefresh,upgrade} from '../script.js';
+import { priceAnother, priceUpgrades, GifRefresh, upgrade } from "./Clicker.js";
 
-let TranslateFetch = await fetch("Scripts/Localization/Translate.json");
+let TranslateAlertsFetch = await fetch("../Data/TranslateAlerts.json");
+let TranslateAlerts = await TranslateAlertsFetch.json();
+let TranslateFetch = await fetch("../Data/Translate.json");
 let Translate = await TranslateFetch.json()
 
 let Lang = localStorage.getItem("lang");
@@ -10,9 +10,12 @@ let Lang = localStorage.getItem("lang");
 let CurrentPage = 0;
 let categories = ["Changes gif:","Upgrade clicks:","Upgrade autoclicks:","Coming Soon"];
 let categorieBuy = ["ChangeGif","ClickUpgrade","AutoClickUpgrade"];
-let ProductImage = ["https://media.tenor.com/PxoS152OMWwAAAAi/%D0%B0%D0%BD%D0%B8%D0%BC%D0%B5.gif","https://media.tenor.com/5tvr3R-VgtEAAAAi/kyoko-toshino.gif","https://media.tenor.com/hgR97aG7R2YAAAAi/the-helpful-fox-senko-san-blushing.gif","https://media.tenor.com/fVcCLR2YQXUAAAAi/funny-anime.gif"];
+let ProductImage = ["https://media.tenor.com/PxoS152OMWwAAAAi/%D0%B0%D0%BD%D0%B8%D0%BC%D0%B5.gif",
+	"https://media.tenor.com/5tvr3R-VgtEAAAAi/kyoko-toshino.gif",
+	"https://media.tenor.com/hgR97aG7R2YAAAAi/the-helpful-fox-senko-san-blushing.gif",
+	"https://media.tenor.com/lKiKX2lNvhUAAAAi/anime-girl-dance-anime-dance.gif"];
 
-function Update(){
+async function Update(){
 	let title = document.createElement("text");
 	let ProductBlock = document.createElement("div");
 	let buyIcon = document.createElement("img");
@@ -35,7 +38,7 @@ function Update(){
 	InfoBorder.className = "InfoBorder";
 	InfoBorder.id = "InfoBorder";
 
-	function updateText(priceFlag){
+	async function updateText(priceFlag){
 		switch(priceFlag){
 			case 1:
 				PriceText.textContent = Translate[Lang].shop.purchase_cost + priceAnother[CurrentPage].toFixed(1) + " Gifcoins";
@@ -54,7 +57,7 @@ function Update(){
 			Input.style.width = "16em";
 			Input.type = "text";
 			Input.className = "Search";
-			Input.placeholder = localStorage.getItem("SearchImage")
+			Input.value = JSON.parse(localStorage.getItem("SearchImage"))[0]
 	
 			CheckBox = document.createElement("input");
 			CheckBox.type = "checkbox";
@@ -66,19 +69,20 @@ function Update(){
 			StickersContainer = document.createElement("div");
 			StickersContainer.style.cssText = "display:flex; flex-direction:row; margin:16px 15px;";
 			StickersContainer.append(StickersText,CheckBox);
-
+			if(JSON.parse(localStorage.getItem("SearchImage"))[1] != "")
+			{
+				CheckBox.checked = true
+			}
 			Input.onchange = function(){
 				if(document.querySelector(".Search").value != null){
-					localStorage.setItem('SearchImage', document.querySelector(".Search").value);
+					GifRefresh(document.querySelector(".Search").value);
 				}
-				GifRefresh();
 			}
 
 			BuyButton.addEventListener("click",()=>{
 				if(document.querySelector(".Search").value != null){
-					localStorage.setItem('SearchImage', document.querySelector(".Search").value);
+					GifRefresh(document.querySelector(".Search").value);
 				}
-				GifRefresh();
 				updateText(1);
 			})
 		break;
@@ -148,10 +152,10 @@ function Update(){
 
 	buyIcon.className = "buttonimg";
 	buyIcon.style.cssText = "margin:0px 0px -6px 0px;";
-	buyIcon.src = "Pictures/Icons/buy.svg";
+	buyIcon.src = "../Pictures/Icons/buy.svg";
 
 	Productimg.src = ProductImage[CurrentPage]
-	Productimg.style.cssText = "max-height:42vh;max-width:42vh;margin-top:16px;";
+	Productimg.style.cssText = "max-height:21vh;max-width:21vh;margin-top:16px; min-width:;min-height:;";
 
 	ProductBlock.style.opacity = 0;
 	setTimeout(() => {ProductBlock.style.opacity = 1;},100);
@@ -183,7 +187,6 @@ function Update(){
 	ProductBlock.append(title,StickersContainer,Input,hidden,Productimg,ButtonContainer);
 	document.querySelector("#ProductAppend").append(ProductBlock,InfoBorder);
 	document.querySelector("#ProductAppend").style.position = "absolute";
-	ThemeApply();
 
 	ProductBlock.addEventListener("wheel",(event)=>{
 		if(0 > event.deltaY){
@@ -196,7 +199,7 @@ function Update(){
 }
 Update();
 
-function GoPreviousPage(){
+async function GoPreviousPage(){
 	if(CurrentPage != 0){
 		document.querySelector(".ProductBlock").remove();
 		document.querySelector(".InfoBorder").remove();
@@ -212,7 +215,7 @@ function GoPreviousPage(){
 		document.querySelector(".ProductBlock").style.opacity = 0;
 	}
 }
-function GoNextPage(){
+async function GoNextPage(){
 	if(CurrentPage != categories.length-1){
 		
 		document.querySelector(".ProductBlock").remove();

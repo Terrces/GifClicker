@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+    <link>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GifClicker</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body style="opacity:100%; overflow-x:hidden; background-size:cover; background-image:url('https://images.unsplash.com/photo-1728023081225-01eef35ed93d?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+    <div class="UI" style="display: flex; align-items: center; vertical-align: middle; justify-content: center; height: 100%;">
+        <div  style="font-size:1.2em; padding:8px; border-radius:4%; display: flex; flex-direction: column; max-width:16em; left:16px; background-color:rgba(0,0,0,0.3);">
+            <button class="ButtonPlay" onclick="window.location.href='../Clicker.html'" type="button">Play</button>
+            <button class="ButtonSettings" onclick="window.location.href='./Settings'" type="button">Settings</button>
+            <button class="ButtonCredits" onclick="window.location.href='./Credits.html'" type="button">Credits</button>
+            <button class="ButtonExit" style="display: none;" type="button">Exit</button>
+            <button class="ButtonDevMenu" onclick="window.location.href='../../Dev/dev_menu.html'" type="button"></button>
+            <div style="filter: invert(1); border-radius:16px; padding:2px; margin-top:4px;">
+                <a href="https://x.com/terrces" target="_blank"><img src="../../Pictures/Icons/links/twitterx.svg" style="height:2em; width:2em;"></a>
+                <a href="https://t.me/terrces_dev" target="_blank"><img src="../../Pictures/Icons/links/telegram.svg" style="height:2em; width:2em;"></a>
+                <a href="https://github.com/Terrces" target="_blank"><img src="../../Pictures/Icons/links/github.svg" style="height:2em; width:2em;"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="LatestBuild">
+        <div><text class="CurrentBuild"></text><text class="CurrentBuildName"></text></div>
+        <img class="BuildImage" style="max-height: 16em; filter: drop-shadow(2px 2px 2px);">
+        <text class="Date"></text>
+        <text class="changes" style="word-wrap: break-word; overflow: scroll; width:100%; height:12em;"></text>
+    </div>
+    <script src="../../Scripts/Localization/Menu.js" type="module"></script>
+    <script src="../../Scripts/Style.js" type="module"></script>
+    <script src="../../Scripts/WindowLogics/Menu.js" type="module"></script>
+</body>

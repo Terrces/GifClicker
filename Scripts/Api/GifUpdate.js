@@ -1,11 +1,7 @@
-//import {Search} from "../WindowLogics/ShopLogic.js"
+let FirstStartSearch = "Anime Dance";
 
-// import { InputSearch } from "../Variables";
-
-//const InputSearch = document.querySelector(".Search");
-
-if(localStorage.getItem("SearchImage") == null || localStorage.getItem("SearchImage")==""){
-    localStorage.setItem("SearchImage","anime hello");
+if(localStorage.getItem("SearchImage") == null){
+    localStorage.setItem("SearchImage",JSON.stringify([FirstStartSearch,"sticker"]));
 }
 
 function httpGetAsync(theUrl, callback)
@@ -37,36 +33,67 @@ function tenorCallback_search(responsetext)
 
     let gifs = response_objects["results"];
     // load the GIFs -- for our example we will load the first GIFs preview size (nanogif) and share size (gif)
-    if(document.querySelector(".stickers") != null && document.querySelector(".stickers").checked == true){
-    	Main.src=gifs[10]["media_formats"]["gif_transparent"]["url"];
-    }else{
-        Main.src=gifs[10]["media_formats"]["gif"]["url"];
+
+    let temparray = JSON.parse(localStorage.getItem("SearchImage"))
+    try
+    {
+        if(temparray != null && temparray[1] == "sticker"){
+            Main.src=gifs[0]["media_formats"]["gif_transparent"]["url"];
+        }else{
+            Main.src=gifs[0]["media_formats"]["gif"]["url"];
+        }
     }
+    catch
+    {
+        console.log("invalid request");
+    }
+
     return;
 }
-export function nextImage()
+export function nextImage(search = "")
 {
-    var search_term = "anime hello";
-    var InputSearch = localStorage.getItem("SearchImage");
-
-    if(localStorage.getItem("SearchImage") == ""){
-        localStorage.setItem("SearchImage","anime hello");
+    function StorageSave()
+    {
+        localStorage.setItem("SearchImage",JSON.stringify(search_term));
     }
 
+    var search_term = [FirstStartSearch,"sticker"];
+    var InputSearch = JSON.parse(localStorage.getItem("SearchImage"));
+
     search_term = InputSearch;
+    if(search != null && search.trim() != "")
+    {
+        search_term[0] = search
+        StorageSave();
+    }
+
+    //Сохранение данных о том является ли гифка стикром иначе пустота что значит что гифка это гифка жесть да
+    if(document.querySelector(".stickers") != null)
+    {
+        document.querySelector(".stickers").addEventListener("click", () => {
+            if(document.querySelector(".stickers").checked == true)
+            {
+                search_term[1] = "sticker"
+                StorageSave();
+            }
+            else
+            {
+                search_term[1] = ""
+                StorageSave();
+            }
+        })
+    }
+
+
 
     // set the apikey and limit
     var apikey = "AIzaSyBPCEe-KyjlWdroCAE0fFvS5Yxbrk6YhJ0";
     var clientkey = "RandomImage";
 
     //using default locale of en_US
-    if(document.querySelector(".stickers") != null && document.querySelector(".stickers").checked == true){
-        var search_url = "https://tenor.googleapis.com/v2/search?q=" + search_term + "&locale=ru_RU" +  "&key=" + apikey +"&client_key=" + clientkey + "&random=true"+"&searchfilter=sticker";
-    }
-	else{
-        var search_url = "https://tenor.googleapis.com/v2/search?q=" + search_term + "&locale=ru_RU" +  "&key=" + apikey +"&client_key=" + clientkey + "&random=true";
-    	
-    }
+
+    var search_url = "https://tenor.googleapis.com/v2/search?q=" + search_term[0] + "&locale=en_US" + "&contentfilter=off" + "&key=" + apikey +"&client_key=" + clientkey + "&random=true"+"&searchfilter="+search_term[1]+"&limit=50"+"&ar_range=wide";
+    
     httpGetAsync(search_url,tenorCallback_search);
     return;
 }

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Achivements</title>
+	<link rel="stylesheet" href="../style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body style="text-align: center; display: flex; flex-direction:column; width:10%;">
+    <button onclick="window.history.back()">Back</button>
+    <text>
+    </text>
+</body>
+<script>
+    if(localStorage.getItem("Theme") >= 120){
+        document.querySelector("body").style.color = "black";
+        document.querySelector("body").style.backgroundColor = "White";
+    }
+    else{
+        document.querySelector("body").style.color = "white";
+        document.querySelector("body").style.backgroundColor = "black";
+    }
+</script>
+<script src="../../Scripts/Style.js" type="module"></script>
+<script src="../Scripts/WindowLogics/Achivements.js" type="module"></script>

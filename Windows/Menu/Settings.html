@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Menu</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body style="height:97vh; display:flex; flex-direction: column; background-size:cover; background-attachment:fixed; background-image:url('https://images.unsplash.com/photo-1511796638626-185958765b0f?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+    <div style="background-color:rgba(0,0,0,0.2); height: fit-content; border-radius:16px;">
+        <button class="ButtonBack" onclick="window.history.back()" type="button">Back</button>
+		<button class="ButtonGeneral" onclick="" type="button">General</button>
+		<div style="display: none;">
+			<button class="ButtonGraphics" onclick="" type="button">Graphics</button>
+			<button class="ButtonAudio" onclick="" type="button">Audio</button>
+			<button class="ButtonThemes" onclick="" type="button">Advanced Themes</button>
+		</div>
+
+    </div>
+    <div style="background-color:rgba(0,0,0,0.5); height:auto; padding:1em; margin-top:8px; border-radius:16px;">
+		<div class="Heading">
+			<text id="SoundsSettingsHeading">Sounds Settings</text>
+		</div>
+		
+		<text id="SoundsvolumeText">Sounds volume</text>
+		<input class="range" id="ChangeSystemSound" type="range" min="0" max="1" step="0.04" value="0.05" onchange=" var sound = new Audio; sound.src='/Audio/Sounds/BuyConfirm.mp3'; sound.volume = document.getElementById('ChangeSystemSound').value; sound.play().catch(()=>{})">
+		<!-- App Description -->
+
+		<div class="Heading" style="margin-top:64px;">
+			<text id="AnotherSettingsHeading">Another</text>
+		</div>
+
+		<text id="LanguageText">Language:</text>
+		<select id="LanguageChoise" style="background-color:rgba(255,255,255,0.2);">
+			<option value="en_US">English</option>
+			<option value="ru_RU">Русский</option>
+            <option value="no_NOR">Norsk</option>
+			<option value="uk_UKR">Український</option>
+			
+		</select>
+
+		<div class="horizontalCenter" style="margin-top:32px;">
+			<div style="display:flex; flex-direction: column;">
+			</div>
+		</div>
+		<button id="Credits" type="button" onclick="window.location.href='../Windows/Credits.html'">Credits</button>
+    </div>
+	<script src="../../Scripts/Style.js" type="module"></script>
+    <script src="../../Scripts/Localization/Menu.js" type="module"></script>
+	<script src="../../Scripts/WindowLogics/SettingsLogic.js" type="module"></script>
+</body>
+</html>

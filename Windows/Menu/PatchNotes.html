@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>GifClicker Patch Notes</title>
+	<link rel="stylesheet" href="../../style.css">
+</head>
+<body style="text-align: center; display: flex; flex-direction:column; background-image:url(https://images.unsplash.com/photo-1569428034239-f9565e32e224?q=80&w=2079&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+    <button class="Back" onclick="window.history.back()" style="position: absolute; z-index:1;margin-top:16px; margin-left:16px;">back</button>
+    <div class="PatchNotesContainer" id="PatchNotesContainer" style="display: flex; flex-direction: column;">
+    </div>
+    <div class="horizontalCenter">
+        <text> If you find any errors, write in the comments under the post of the latest update: <a style="color: lightblue;" href="https://t.me/+0Bo_FBFgVMBiOWZi">https://t.me/+0Bo_FBFgVMBiOWZi</a></text>
+    </div>
+        
+    <script src="../../Scripts/PatchNotes/Load.js" type="module"></script>
+    <script src="../../Scripts/Style.js" type="module"></script>
+    <script type="module">
+            let LocalizationFetch = await fetch("../../Data/Translate.json");
+    let Localization = await LocalizationFetch.json();
+
+    let lang = localStorage.getItem("lang");
+
+    document.querySelector(".Back").innerHTML = Localization[lang].general.back;
+    </script>
+    
+</body>

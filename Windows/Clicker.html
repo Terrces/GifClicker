@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<head>
+	<link rel="shortcut icon" href="https://i.pinimg.com/736x/f4/f8/a4/f4f8a4207dbf846cc4496e3499645806.jpg"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<title>GIFClicker</title>
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body style="
+background-image:url(https://images.unsplash.com/photo-1729836599373-9517a778b798?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+background-size: cover;
+">
+	<!-- окно коллекции -->
+	<div class="window" id="Collection">
+		<div class="left" style="margin-top:15px; z-index: 1;">
+			<button type="button" id="CloseWindowbutton" title="Закрыть коллекцию"><img class="buttonimg" src="../Pictures/Icons/close.svg" style="height:1.4em; margin-bottom:-0.3em;"></button>
+		</div>
+
+		<br>
+		<div class="allgifs" id="AllGifsContainer" style="display: flex; justify-content: center;">
+		</div>
+	</div>
+
+	<!-- Настройки -->
+	<div class="window" id="SettingsWindow">
+	</div>
+
+	<!-- Магазин -->
+	<form class="window" id="shopWindow" style="display:none;">
+		<br>
+		<!-- top GUi -->
+		<div class="left" style="flex-direction:row; vertical-align:middle; z-index:6;height:80vh;">
+			<button type="button" id="CloseWindowbutton" title="Закрыть магазин" style="width:48px; height:48px;"><img class="buttonimg" src="../Pictures/Icons/close.svg" style="width:100%;height:100%; margin:0em;"></button>
+		</div>
+		<div class="horizontalCenter" ><text class="money" style="font-size: 1em; margin-top:16px;"></text></div>
+		<div class="center" id="ProductAppend" style="bottom:0px; left: 0px; right:0px; position: absolute; max-width:100%;"></div>
+	</form>
+
+	<!-- Основное окно -->
+	<form id="MainWindow" style="position:absolute;margin-left:-6px;margin-top:-6px;">
+	<div class="top">
+		<div class="left">
+			<button type="button" id="OpenShopWindow" title="Вход в магазин"><img class="buttonimg" src="../Pictures/Icons/shop.svg" style="height:1.2em; margin-bottom:-3px;"></button>
+			<div style="display: flex; flex-direction: row;" >
+				<button type="button" id="leave" onclick="window.location.href='./Menu/Menu.html'" title="Кнопка позволяет выйти в меню" style="width:2em; height:2em; padding:0em;"><img class="buttonimg" src="../Pictures/Icons/menu.svg" style="padding-right:0em;height:1.5em;"></button>
+			</div>
+		</div>
+		<div class="TopCenter">
+			<text class="count" id="count">
+			</text>
+		</div>
+		<div class="right">
+			<button type="button" id="CollectionOpen" title="Вход в вашу коллекцию"><img class="buttonimg" src="../Pictures/Icons/collection.svg" style="height:1em;"></button>
+			<div style="display: flex; flex-direction: row;">
+				<button type="button" id="OpenSettingsButton" onclick="window.location.href = './Menu/Settings.html'"  style="width:2em; height:2em; padding:0em;"><img class="buttonimg" src="../Pictures/Icons/settings.svg" style="padding-right:0em;height:1.5em;"></button>
+			</div>
+		</div>
+	</div>
+
+	<div class="center">
+		<div id="clicker">
+			<image class="clicker" id="Main" maxheight="27vw" maxwidth="27vw" src="https://media.tenor.com/kapiIMBSRgYAAAAi/lindo-cute.gif"></image>
+		</div>
+	</div>
+	<div class="bottom">
+		</div>
+		<div class="horizontalCenter">
+			<div class="bottom">
+				<div class="horizontalCenter">
+					<text class="price" id="GifRefresh1">Price: 2</text>
+					<div style="display: flex; flex-direction: row;">
+						<button type="button" id="copy" style="padding:4px;" onclick="
+							let tempInput = document.createElement('input'); 
+							tempInput.value = getElementById('Main').src; 
+							document.body.appendChild(tempInput); 
+							tempInput.select(); 
+							document.execCommand('copy');
+							document.body.removeChild(tempInput);
+							var sound = new Audio();
+							sound.volume = localStorage.getItem('volume');
+							sound.src = '../Audio/Sounds/Copy.mp3';
+							sound.play().catch(()=>{});
+							avalible = false;
+							">
+							<img class="buttonimg" src="../Pictures/Icons/copy.svg" style="height:1.5em;">
+						</button>
+						<button type="button" id="BuyGifRefresh" title="Обновить 'GIF'"><img class="buttonimg" src="../Pictures/Icons/update.svg" style="height:1em;"></button>
+						<button type="button" id="AppendInCollection"><img class="buttonimg" src="../Pictures/Icons/bookmark.svg" style="height:1em;"></button>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	</form>
+	<script src="../Scripts/WindowLogics/Clicker.js" type="module"></script>
+	<script src="../Scripts/KeyboardEvents.js" type="module"></script>
+	<script src="../Scripts/WindowLogics/ShopLogic.js" type="module"></script>
+	<script src="../Scripts/WindowLogics/WindowLogic.js" type="module"></script>
+	<script src="../Scripts/Api/GifUpdate.js" type="module"></script>
+	<script src="../Scripts/Style.js" type="module"></script>
+	<script src="../Scripts/Localization/Translater.js" type="module"></script>
+</body>

@@ -1,0 +1,50 @@
+{
+    "en_US": 
+    {
+        "general":
+        {
+
+        },
+        "clicker":
+        {
+            "collection_duplicate" : "You have already added this gif",
+            "lack" : "Not enough funds: "
+        }
+    },
+    "ru_RU": 
+    {
+        "general":
+        {
+
+        },
+        "clicker":
+        {
+            "collection_duplicate" : "Вы уже добавили эту гифку",
+            "lack" : "Не хватает средств: "
+        }
+    },
+    "uk_UKR": 
+    {
+        "general":
+        {
+
+        },
+        "clicker":
+        {
+            "collection_duplicate" : "Вы уже добавили эту гифку",
+            "lack" : "Не хватает средств: "
+        }
+    },
+    "no_NOR": 
+    {
+        "general":
+        {
+
+        },
+        "clicker":
+        {
+            "collection_duplicate" : "You have already added this gif",
+            "lack" : "Not enough funds: "
+        }
+    }
+}
